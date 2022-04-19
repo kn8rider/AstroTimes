@@ -10,11 +10,10 @@ import {
   Dimensions,
 } from 'react-native';
 import {ScrollView, TouchableOpacity} from 'react-native-gesture-handler';
-import {Card, Avatar, List, Appbar, RadioButton} from 'react-native-paper';
+import {Card, Appbar, RadioButton} from 'react-native-paper';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import AIcon from 'react-native-vector-icons/Ionicons';
 import SnapCarousal from 'react-native-snap-carousel';
-import {color} from 'react-native-reanimated';
+import color from '../GlobalVariables';
 const data = [
   {
     val: 'Online Pooja',
@@ -75,18 +74,18 @@ export default class AstroMall extends Component {
   }
   render() {
     return (
-      <SafeAreaView style={{flex: 1, backgroundColor: 'black'}}>
-        <Appbar style={{backgroundColor: '#FABD0B'}}>
+      <SafeAreaView style={{flex: 1, backgroundColor: color.primary}}>
+        <Appbar style={{backgroundColor: color.themeColor}}>
           <Icon
             name={'arrow-left'}
             size={30}
-            color={'white'}
+            color={color.secondary}
             style={{marginLeft: 10}}
             onPress={() => this.props.navigation.goBack()}
           />
           <Text
             style={{
-              color: 'white',
+              color: color.secondary,
               fontWeight: '400',
               fontSize: 18,
               marginLeft: 20,
@@ -96,7 +95,7 @@ export default class AstroMall extends Component {
           <Icon
             name="magnify"
             size={30}
-            color={'white'}
+            color={color.secondary}
             style={{position: 'absolute', right: 10}}
             onPress={() => this.props.navigation.navigate('search')}
           />
@@ -104,7 +103,7 @@ export default class AstroMall extends Component {
         <ScrollView
           showsVerticalScrollIndicator={false}
           contentContainerStyle={{
-            backgroundColor: 'black',
+            backgroundColor: color.primary,
           }}>
           <View
             style={{
@@ -151,7 +150,7 @@ export default class AstroMall extends Component {
                     name="checkbox-blank-circle"
                     size={8}
                     style={{marginHorizontal: 3}}
-                    color={'black'}
+                    color={color.primary}
                   />
                 ) : (
                   <Icon
@@ -181,7 +180,7 @@ export default class AstroMall extends Component {
                 width: '80%',
                 alignSelf: 'center',
                 alignContent: 'center',
-                color: 'white',
+                color: color.secondary,
                 fontSize: 16,
                 fontWeight: '400',
                 marginLeft: 20,
@@ -196,7 +195,7 @@ export default class AstroMall extends Component {
             <Icon
               name="magnify"
               size={30}
-              color={'white'}
+              color={color.secondary}
               style={{position: 'absolute', right: 10}}
               onPress={() => this.props.navigation.navigate('search')}
             />
@@ -235,7 +234,7 @@ export default class AstroMall extends Component {
                     alignSelf: 'center',
                     fontSize: 20,
                     fontWeight: '500',
-                    color: 'white',
+                    color: color.secondary,
                   }}>
                   {item.val}
                 </Text>
@@ -244,13 +243,13 @@ export default class AstroMall extends Component {
           </View>
           <View
             style={{
-              backgroundColor: '#FABD0B',
+              backgroundColor: color.themeColor,
               paddingVertical: 10,
               marginVertical: 10,
             }}>
             <Text
               style={{
-                color: 'white',
+                color: color.secondary,
                 fontWeight: '500',
                 fontSize: 18,
                 marginLeft: 20,
@@ -281,7 +280,7 @@ export default class AstroMall extends Component {
                   </View>
                   <Text
                     style={{
-                      color: 'white',
+                      color: color.secondary,
                       fontSize: 15,
                       fontWeight: '400',
                       textAlign: 'center',
@@ -298,13 +297,13 @@ export default class AstroMall extends Component {
           </View>
           <View
             style={{
-              backgroundColor: '#FABD0B',
+              backgroundColor: color.themeColor,
               paddingVertical: 10,
               marginVertical: 10,
             }}>
             <Text
               style={{
-                color: 'white',
+                color: color.secondary,
                 fontWeight: '500',
                 fontSize: 18,
                 marginLeft: 20,
@@ -335,7 +334,7 @@ export default class AstroMall extends Component {
                   </View>
                   <Text
                     style={{
-                      color: 'white',
+                      color: color.secondary,
                       fontSize: 15,
                       fontWeight: '400',
                       textAlign: 'center',
@@ -352,13 +351,13 @@ export default class AstroMall extends Component {
           </View>
           <View
             style={{
-              backgroundColor: '#FABD0B',
+              backgroundColor: color.themeColor,
               paddingVertical: 10,
               marginVertical: 10,
             }}>
             <Text
               style={{
-                color: 'white',
+                color: color.secondary,
                 fontWeight: '500',
                 fontSize: 18,
                 marginLeft: 20,
@@ -389,7 +388,7 @@ export default class AstroMall extends Component {
                   </View>
                   <Text
                     style={{
-                      color: 'white',
+                      color: color.secondary,
                       fontSize: 15,
                       fontWeight: '400',
                       textAlign: 'center',

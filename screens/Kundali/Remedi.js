@@ -8,17 +8,9 @@ import {
   ActivityIndicator,
 } from 'react-native';
 import {ScrollView, TouchableOpacity} from 'react-native-gesture-handler';
-import {
-  Card,
-  Avatar,
-  List,
-  Appbar,
-  TextInput,
-  RadioButton,
-} from 'react-native-paper';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import base64 from 'react-native-base64';
 import {DataTable} from 'react-native-paper';
+import color from '../GlobalVariables';
 const userId = '618328';
 const apiKey = '51e43ea9a639e025dd62e04a4b7a32e0';
 export default class Remedi extends Component {
@@ -70,18 +62,18 @@ export default class Remedi extends Component {
   render() {
     // console.log('char : ', this.props.data);
     return (
-      <SafeAreaView style={{flex: 1, backgroundColor: 'black'}}>
+      <SafeAreaView style={{flex: 1, backgroundColor: color.primary}}>
         <ScrollView
           showsVerticalScrollIndicator={false}
           style={{
-            backgroundColor: 'black ',
+            backgroundColor: color.primary,
             flex: 1,
           }}>
           <Text
             style={{
               fontSize: 20,
               fontWeight: '500',
-              color: 'white',
+              color: color.secondary,
               marginLeft: '5%',
               marginTop: 20,
             }}>
@@ -90,7 +82,7 @@ export default class Remedi extends Component {
           <ScrollView
             horizontal={true}
             style={{
-              borderColor: 'white',
+              borderColor: color.secondary,
               borderWidth: 1,
               borderRadius: 10,
               alignSelf: 'center',
@@ -105,7 +97,7 @@ export default class Remedi extends Component {
                       style={{
                         fontSize: 15,
                         fontWeight: '400',
-                        color: 'white',
+                        color: color.secondary,
                       }}>
                       Name
                     </Text>
@@ -115,7 +107,7 @@ export default class Remedi extends Component {
                       style={{
                         fontSize: 15,
                         fontWeight: '400',
-                        color: 'white',
+                        color: color.secondary,
                         alignSelf: 'center',
                       }}>
                       {this.state.data?.BENEFIC?.name}
@@ -128,7 +120,7 @@ export default class Remedi extends Component {
                       style={{
                         fontSize: 15,
                         fontWeight: '400',
-                        color: 'white',
+                        color: color.secondary,
                       }}>
                       Gem Key
                     </Text>
@@ -138,7 +130,7 @@ export default class Remedi extends Component {
                       style={{
                         fontSize: 15,
                         fontWeight: '400',
-                        color: 'white',
+                        color: color.secondary,
                         alignSelf: 'center',
                       }}>
                       {this.state.data?.BENEFIC?.gem_key}
@@ -151,7 +143,7 @@ export default class Remedi extends Component {
                       style={{
                         fontSize: 15,
                         fontWeight: '400',
-                        color: 'white',
+                        color: color.secondary,
                       }}>
                       Semi Gem
                     </Text>
@@ -161,7 +153,7 @@ export default class Remedi extends Component {
                       style={{
                         fontSize: 15,
                         fontWeight: '400',
-                        color: 'white',
+                        color: color.secondary,
                         alignSelf: 'center',
                       }}>
                       {this.state.data?.BENEFIC?.semi_gem}
@@ -174,7 +166,7 @@ export default class Remedi extends Component {
                       style={{
                         fontSize: 15,
                         fontWeight: '400',
-                        color: 'white',
+                        color: color.secondary,
                       }}>
                       Wear Finger
                     </Text>
@@ -184,7 +176,7 @@ export default class Remedi extends Component {
                       style={{
                         fontSize: 15,
                         fontWeight: '400',
-                        color: 'white',
+                        color: color.secondary,
                         alignSelf: 'center',
                       }}>
                       {this.state.data?.BENEFIC?.wear_finger}
@@ -197,7 +189,7 @@ export default class Remedi extends Component {
                       style={{
                         fontSize: 15,
                         fontWeight: '400',
-                        color: 'white',
+                        color: color.secondary,
                       }}>
                       Weight Carat
                     </Text>
@@ -207,7 +199,7 @@ export default class Remedi extends Component {
                       style={{
                         fontSize: 15,
                         fontWeight: '400',
-                        color: 'white',
+                        color: color.secondary,
                         alignSelf: 'center',
                       }}>
                       {this.state.data?.BENEFIC?.weight_caret}
@@ -220,7 +212,7 @@ export default class Remedi extends Component {
                       style={{
                         fontSize: 15,
                         fontWeight: '400',
-                        color: 'white',
+                        color: color.secondary,
                       }}>
                       Wear Metal
                     </Text>
@@ -230,7 +222,7 @@ export default class Remedi extends Component {
                       style={{
                         fontSize: 15,
                         fontWeight: '400',
-                        color: 'white',
+                        color: color.secondary,
                         alignSelf: 'center',
                       }}>
                       {this.state.data?.BENEFIC?.wear_metal}
@@ -243,7 +235,7 @@ export default class Remedi extends Component {
                       style={{
                         fontSize: 15,
                         fontWeight: '400',
-                        color: 'white',
+                        color: color.secondary,
                       }}>
                       Wear Day
                     </Text>
@@ -253,7 +245,7 @@ export default class Remedi extends Component {
                       style={{
                         fontSize: 15,
                         fontWeight: '400',
-                        color: 'white',
+                        color: color.secondary,
                         alignSelf: 'center',
                       }}>
                       {this.state.data?.BENEFIC?.wear_day}
@@ -266,7 +258,7 @@ export default class Remedi extends Component {
                       style={{
                         fontSize: 15,
                         fontWeight: '400',
-                        color: 'white',
+                        color: color.secondary,
                       }}>
                       Gem Deity
                     </Text>
@@ -276,7 +268,7 @@ export default class Remedi extends Component {
                       style={{
                         fontSize: 15,
                         fontWeight: '400',
-                        color: 'white',
+                        color: color.secondary,
                         alignSelf: 'center',
                       }}>
                       {this.state.data?.BENEFIC?.gem_deity}
@@ -290,7 +282,7 @@ export default class Remedi extends Component {
             style={{
               fontSize: 20,
               fontWeight: '500',
-              color: 'white',
+              color: color.secondary,
               marginLeft: '5%',
             }}>
             Life
@@ -298,7 +290,7 @@ export default class Remedi extends Component {
           <ScrollView
             horizontal={true}
             style={{
-              borderColor: 'white',
+              borderColor: color.secondary,
               borderWidth: 1,
               borderRadius: 10,
               alignSelf: 'center',
@@ -313,7 +305,7 @@ export default class Remedi extends Component {
                       style={{
                         fontSize: 15,
                         fontWeight: '400',
-                        color: 'white',
+                        color: color.secondary,
                       }}>
                       Name
                     </Text>
@@ -323,7 +315,7 @@ export default class Remedi extends Component {
                       style={{
                         fontSize: 15,
                         fontWeight: '400',
-                        color: 'white',
+                        color: color.secondary,
                         alignSelf: 'center',
                       }}>
                       {this.state.data?.LIFE?.name}
@@ -336,7 +328,7 @@ export default class Remedi extends Component {
                       style={{
                         fontSize: 15,
                         fontWeight: '400',
-                        color: 'white',
+                        color: color.secondary,
                       }}>
                       Gem Key
                     </Text>
@@ -346,7 +338,7 @@ export default class Remedi extends Component {
                       style={{
                         fontSize: 15,
                         fontWeight: '400',
-                        color: 'white',
+                        color: color.secondary,
                         alignSelf: 'center',
                       }}>
                       {this.state.data?.LIFE?.gem_key}
@@ -359,7 +351,7 @@ export default class Remedi extends Component {
                       style={{
                         fontSize: 15,
                         fontWeight: '400',
-                        color: 'white',
+                        color: color.secondary,
                       }}>
                       Semi Gem
                     </Text>
@@ -369,7 +361,7 @@ export default class Remedi extends Component {
                       style={{
                         fontSize: 15,
                         fontWeight: '400',
-                        color: 'white',
+                        color: color.secondary,
                         alignSelf: 'center',
                       }}>
                       {this.state.data?.LIFE?.semi_gem}
@@ -382,7 +374,7 @@ export default class Remedi extends Component {
                       style={{
                         fontSize: 15,
                         fontWeight: '400',
-                        color: 'white',
+                        color: color.secondary,
                       }}>
                       Wear Finger
                     </Text>
@@ -392,7 +384,7 @@ export default class Remedi extends Component {
                       style={{
                         fontSize: 15,
                         fontWeight: '400',
-                        color: 'white',
+                        color: color.secondary,
                         alignSelf: 'center',
                       }}>
                       {this.state.data?.LIFE?.wear_finger}
@@ -405,7 +397,7 @@ export default class Remedi extends Component {
                       style={{
                         fontSize: 15,
                         fontWeight: '400',
-                        color: 'white',
+                        color: color.secondary,
                       }}>
                       Weight Carat
                     </Text>
@@ -415,7 +407,7 @@ export default class Remedi extends Component {
                       style={{
                         fontSize: 15,
                         fontWeight: '400',
-                        color: 'white',
+                        color: color.secondary,
                         alignSelf: 'center',
                       }}>
                       {this.state.data?.LIFE?.weight_caret}
@@ -428,7 +420,7 @@ export default class Remedi extends Component {
                       style={{
                         fontSize: 15,
                         fontWeight: '400',
-                        color: 'white',
+                        color: color.secondary,
                       }}>
                       Wear Metal
                     </Text>
@@ -438,7 +430,7 @@ export default class Remedi extends Component {
                       style={{
                         fontSize: 15,
                         fontWeight: '400',
-                        color: 'white',
+                        color: color.secondary,
                         alignSelf: 'center',
                       }}>
                       {this.state.data?.LIFE?.wear_metal}
@@ -451,7 +443,7 @@ export default class Remedi extends Component {
                       style={{
                         fontSize: 15,
                         fontWeight: '400',
-                        color: 'white',
+                        color: color.secondary,
                       }}>
                       Wear Day
                     </Text>
@@ -461,7 +453,7 @@ export default class Remedi extends Component {
                       style={{
                         fontSize: 15,
                         fontWeight: '400',
-                        color: 'white',
+                        color: color.secondary,
                         alignSelf: 'center',
                       }}>
                       {this.state.data?.LIFE?.wear_day}
@@ -474,7 +466,7 @@ export default class Remedi extends Component {
                       style={{
                         fontSize: 15,
                         fontWeight: '400',
-                        color: 'white',
+                        color: color.secondary,
                       }}>
                       Gem Deity
                     </Text>
@@ -484,7 +476,7 @@ export default class Remedi extends Component {
                       style={{
                         fontSize: 15,
                         fontWeight: '400',
-                        color: 'white',
+                        color: color.secondary,
                         alignSelf: 'center',
                       }}>
                       {this.state.data?.LIFE?.gem_deity}
@@ -498,7 +490,7 @@ export default class Remedi extends Component {
             style={{
               fontSize: 20,
               fontWeight: '500',
-              color: 'white',
+              color: color.secondary,
               marginLeft: '5%',
             }}>
             Lucky
@@ -506,7 +498,7 @@ export default class Remedi extends Component {
           <ScrollView
             horizontal={true}
             style={{
-              borderColor: 'white',
+              borderColor: color.secondary,
               borderWidth: 1,
               borderRadius: 10,
               alignSelf: 'center',
@@ -521,7 +513,7 @@ export default class Remedi extends Component {
                       style={{
                         fontSize: 15,
                         fontWeight: '400',
-                        color: 'white',
+                        color: color.secondary,
                       }}>
                       Name
                     </Text>
@@ -531,7 +523,7 @@ export default class Remedi extends Component {
                       style={{
                         fontSize: 15,
                         fontWeight: '400',
-                        color: 'white',
+                        color: color.secondary,
                         alignSelf: 'center',
                       }}>
                       {this.state.data?.LUCKY?.name}
@@ -544,7 +536,7 @@ export default class Remedi extends Component {
                       style={{
                         fontSize: 15,
                         fontWeight: '400',
-                        color: 'white',
+                        color: color.secondary,
                       }}>
                       Gem Key
                     </Text>
@@ -554,7 +546,7 @@ export default class Remedi extends Component {
                       style={{
                         fontSize: 15,
                         fontWeight: '400',
-                        color: 'white',
+                        color: color.secondary,
                         alignSelf: 'center',
                       }}>
                       {this.state.data?.LUCKY?.gem_key}
@@ -567,7 +559,7 @@ export default class Remedi extends Component {
                       style={{
                         fontSize: 15,
                         fontWeight: '400',
-                        color: 'white',
+                        color: color.secondary,
                       }}>
                       Semi Gem
                     </Text>
@@ -577,7 +569,7 @@ export default class Remedi extends Component {
                       style={{
                         fontSize: 15,
                         fontWeight: '400',
-                        color: 'white',
+                        color: color.secondary,
                         alignSelf: 'center',
                       }}>
                       {this.state.data?.LUCKY?.semi_gem}
@@ -590,7 +582,7 @@ export default class Remedi extends Component {
                       style={{
                         fontSize: 15,
                         fontWeight: '400',
-                        color: 'white',
+                        color: color.secondary,
                       }}>
                       Wear Finger
                     </Text>
@@ -600,7 +592,7 @@ export default class Remedi extends Component {
                       style={{
                         fontSize: 15,
                         fontWeight: '400',
-                        color: 'white',
+                        color: color.secondary,
                         alignSelf: 'center',
                       }}>
                       {this.state.data?.LUCKY?.wear_finger}
@@ -613,7 +605,7 @@ export default class Remedi extends Component {
                       style={{
                         fontSize: 15,
                         fontWeight: '400',
-                        color: 'white',
+                        color: color.secondary,
                       }}>
                       Weight Carat
                     </Text>
@@ -623,7 +615,7 @@ export default class Remedi extends Component {
                       style={{
                         fontSize: 15,
                         fontWeight: '400',
-                        color: 'white',
+                        color: color.secondary,
                         alignSelf: 'center',
                       }}>
                       {this.state.data?.LUCKY?.weight_caret}
@@ -636,7 +628,7 @@ export default class Remedi extends Component {
                       style={{
                         fontSize: 15,
                         fontWeight: '400',
-                        color: 'white',
+                        color: color.secondary,
                       }}>
                       Wear Metal
                     </Text>
@@ -646,7 +638,7 @@ export default class Remedi extends Component {
                       style={{
                         fontSize: 15,
                         fontWeight: '400',
-                        color: 'white',
+                        color: color.secondary,
                         alignSelf: 'center',
                       }}>
                       {this.state.data?.LUCKY?.wear_metal}
@@ -659,7 +651,7 @@ export default class Remedi extends Component {
                       style={{
                         fontSize: 15,
                         fontWeight: '400',
-                        color: 'white',
+                        color: color.secondary,
                       }}>
                       Wear Day
                     </Text>
@@ -669,7 +661,7 @@ export default class Remedi extends Component {
                       style={{
                         fontSize: 15,
                         fontWeight: '400',
-                        color: 'white',
+                        color: color.secondary,
                         alignSelf: 'center',
                       }}>
                       {this.state.data?.LUCKY?.wear_day}
@@ -682,7 +674,7 @@ export default class Remedi extends Component {
                       style={{
                         fontSize: 15,
                         fontWeight: '400',
-                        color: 'white',
+                        color: color.secondary,
                       }}>
                       Gem Deity
                     </Text>
@@ -692,7 +684,7 @@ export default class Remedi extends Component {
                       style={{
                         fontSize: 15,
                         fontWeight: '400',
-                        color: 'white',
+                        color: color.secondary,
                         alignSelf: 'center',
                       }}>
                       {this.state.data?.LUCKY?.gem_deity}

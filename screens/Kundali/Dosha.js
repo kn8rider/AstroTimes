@@ -10,8 +10,8 @@ import {
 } from 'react-native';
 import {ScrollView, TouchableOpacity} from 'react-native-gesture-handler';
 const height = Dimensions.get('window').height;
-
 import base64 from 'react-native-base64';
+import color from '../GlobalVariables';
 const userId = '618328';
 const apiKey = '51e43ea9a639e025dd62e04a4b7a32e0';
 
@@ -138,11 +138,11 @@ export default class Dosha extends Component {
   render() {
     // console.log('char : ', this.props.data);
     return (
-      <SafeAreaView style={{flex: 1, backgroundColor: 'black'}}>
+      <SafeAreaView style={{flex: 1, backgroundColor: color.primary}}>
         <ScrollView
           showsVerticalScrollIndicator={false}
           style={{
-            backgroundColor: 'black ',
+            backgroundColor: color.primary,
             flex: 1,
           }}>
           {this.state.load == true ? (
@@ -160,7 +160,7 @@ export default class Dosha extends Component {
                 style={{
                   fontSize: 20,
                   fontWeight: '500',
-                  color: 'white',
+                  color: color.secondary,
                   marginLeft: '5%',
                   marginTop: 20,
                   textAlign: 'center',
@@ -171,7 +171,7 @@ export default class Dosha extends Component {
                 style={{
                   fontSize: 18,
                   fontWeight: '500',
-                  color: 'white',
+                  color: color.secondary,
                   marginLeft: '5%',
                   marginTop: 20,
                 }}>
@@ -188,7 +188,7 @@ export default class Dosha extends Component {
                 style={{
                   fontSize: 18,
                   fontWeight: '500',
-                  color: 'white',
+                  color: color.secondary,
                   marginLeft: '5%',
                   marginTop: 20,
                 }}>
@@ -205,7 +205,7 @@ export default class Dosha extends Component {
                 style={{
                   fontSize: 18,
                   fontWeight: '500',
-                  color: 'white',
+                  color: color.secondary,
                   marginLeft: '5%',
                   marginTop: 20,
                 }}>
@@ -223,7 +223,7 @@ export default class Dosha extends Component {
                 style={{
                   fontSize: 18,
                   fontWeight: '500',
-                  color: 'white',
+                  color: color.secondary,
                   marginLeft: '5%',
                   marginTop: 20,
                 }}>
@@ -241,7 +241,7 @@ export default class Dosha extends Component {
                 style={{
                   fontSize: 20,
                   fontWeight: '500',
-                  color: 'white',
+                  color: color.secondary,
                   marginLeft: '5%',
                   marginTop: 20,
                   textAlign: 'center',
@@ -252,7 +252,7 @@ export default class Dosha extends Component {
                 style={{
                   fontSize: 18,
                   fontWeight: '500',
-                  color: 'white',
+                  color: color.secondary,
                   marginLeft: '5%',
                   marginTop: 20,
                 }}>
@@ -275,7 +275,7 @@ export default class Dosha extends Component {
                 style={{
                   fontSize: 18,
                   fontWeight: '500',
-                  color: 'white',
+                  color: color.secondary,
                   marginLeft: '5%',
                   marginTop: 20,
                   marginBottom: 10,
@@ -299,7 +299,7 @@ export default class Dosha extends Component {
                 style={{
                   fontSize: 18,
                   fontWeight: '500',
-                  color: 'white',
+                  color: color.secondary,
                   marginLeft: '5%',
                   marginTop: 20,
                 }}>
@@ -322,7 +322,7 @@ export default class Dosha extends Component {
                 style={{
                   fontSize: 18,
                   fontWeight: '500',
-                  color: 'white',
+                  color: color.secondary,
                   marginLeft: '5%',
                   marginTop: 20,
                 }}>
@@ -340,7 +340,7 @@ export default class Dosha extends Component {
                 style={{
                   fontSize: 20,
                   fontWeight: '500',
-                  color: 'white',
+                  color: color.secondary,
                   marginLeft: '5%',
                   marginTop: 20,
                   textAlign: 'center',
@@ -351,7 +351,7 @@ export default class Dosha extends Component {
                 style={{
                   fontSize: 18,
                   fontWeight: '500',
-                  color: 'white',
+                  color: color.secondary,
                   marginLeft: '5%',
                   marginTop: 20,
                 }}>
@@ -369,7 +369,7 @@ export default class Dosha extends Component {
                 style={{
                   fontSize: 18,
                   fontWeight: '500',
-                  color: 'white',
+                  color: color.secondary,
                   marginLeft: '5%',
                   marginTop: 10,
                 }}>
@@ -387,7 +387,7 @@ export default class Dosha extends Component {
                 style={{
                   fontSize: 18,
                   fontWeight: '500',
-                  color: 'white',
+                  color: color.secondary,
                   marginLeft: '5%',
                   marginTop: 10,
                 }}>
@@ -405,7 +405,7 @@ export default class Dosha extends Component {
                 style={{
                   fontSize: 18,
                   fontWeight: '500',
-                  color: 'white',
+                  color: color.secondary,
                   marginLeft: '5%',
                   marginTop: 10,
                 }}>
@@ -423,7 +423,7 @@ export default class Dosha extends Component {
                 style={{
                   fontSize: 18,
                   fontWeight: '500',
-                  color: 'white',
+                  color: color.secondary,
                   marginLeft: '5%',
                   marginTop: 10,
                 }}>
@@ -441,7 +441,7 @@ export default class Dosha extends Component {
                 style={{
                   fontSize: 18,
                   fontWeight: '500',
-                  color: 'white',
+                  color: color.secondary,
                   marginLeft: '5%',
                   marginTop: 10,
                 }}>
@@ -459,7 +459,7 @@ export default class Dosha extends Component {
                 style={{
                   fontSize: 18,
                   fontWeight: '500',
-                  color: 'white',
+                  color: color.secondary,
                   marginLeft: '5%',
                   marginTop: 10,
                 }}>
@@ -477,7 +477,7 @@ export default class Dosha extends Component {
                 style={{
                   fontSize: 18,
                   fontWeight: '500',
-                  color: 'white',
+                  color: color.secondary,
                   marginLeft: '5%',
                   marginTop: 10,
                 }}>
@@ -495,7 +495,7 @@ export default class Dosha extends Component {
                 style={{
                   fontSize: 18,
                   fontWeight: '500',
-                  color: 'white',
+                  color: color.secondary,
                   marginLeft: '5%',
                   marginTop: 10,
                 }}>
@@ -513,7 +513,7 @@ export default class Dosha extends Component {
                 style={{
                   fontSize: 18,
                   fontWeight: '500',
-                  color: 'white',
+                  color: color.secondary,
                   marginLeft: '5%',
                   marginTop: 10,
                   marginBottom: 30,

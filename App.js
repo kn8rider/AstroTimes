@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
@@ -13,6 +13,7 @@ import Details from './screens/Details';
 import Profile from './screens/Profile';
 import {store} from './redux/store';
 import {Provider} from 'react-redux';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import Horoscope from './screens/Horoscope';
 import Login from './screens/Login/Login';
 import Home from './screens/Home/Home';
@@ -38,6 +39,7 @@ import Panchang from './screens/Panchang/Panchang';
 import PanchangData from './screens/Panchang/PanchangData';
 import MatchMakingf from './screens/MatchMaking/Matchmakingf';
 import MatchTab from './screens/MatchMaking/MatchTab';
+import Meeting from './screens/Meeting/Meeting';
 const Drawer = createDrawerNavigator();
 function MyDrawer() {
   return (
@@ -105,7 +107,7 @@ function HomeScreen() {
         tabBarInactiveBackgroundColor: 'black',
       })}>
       <Tab.Screen name="Home" component={MyDrawer} />
-      <Tab.Screen name="Chat" component={Chat} />
+      <Tab.Screen name="Chat" component={Chat} initialParams={{type: 0}} />
       <Tab.Screen name="Live" component={Live} />
       <Tab.Screen name="Free" component={Free} />
       <Tab.Screen name="Profile" component={Profile} />
@@ -119,16 +121,17 @@ const App = () => {
   return (
     <Provider store={store}>
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="Main">
+        <Stack.Navigator initialRouteName={'Main'}>
           <Stack.Screen
             name="Main"
             component={Login}
             options={{headerShown: false}}
+            // initialParams={{auth: isAuth}}
           />
           <Stack.Screen
             name="home"
-            component={HomeScreen}
             options={{headerShown: false}}
+            component={HomeScreen}
           />
           <Stack.Screen
             name="Horoscope"
@@ -233,6 +236,11 @@ const App = () => {
           <Stack.Screen
             name="panchangData"
             component={PanchangData}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="Meeting"
+            component={Meeting}
             options={{headerShown: false}}
           />
         </Stack.Navigator>

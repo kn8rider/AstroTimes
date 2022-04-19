@@ -1,55 +1,73 @@
 import {DrawerContentScrollView, DrawerItem} from '@react-navigation/drawer';
 import React, {Component} from 'react';
-import {
-  View,
-  SafeAreaView,
-  StyleSheet,
-  Pressable,
-  Text,
-  Image,
-} from 'react-native';
+import {View, SafeAreaView, StyleSheet, Text, Image} from 'react-native';
 
 import {Avatar, Title, Drawer} from 'react-native-paper';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import FIcon from 'react-native-vector-icons/Feather';
 import {connect} from 'react-redux';
-
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import color from '../GlobalVariables';
 class DrawerContent extends Component {
   constructor() {
     super();
     this.state = {
       signIn: false,
+      uData: [],
     };
   }
-
+  async setLogOut() {
+    try {
+      await AsyncStorage.removeItem('userData');
+      this.props.navigation.navigate('Main');
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  componentDidMount() {}
   render() {
-    console.log('userDate : ', this.props.itemArr);
     return (
-      <SafeAreaView style={{flex: 1, backgroundColor: 'black'}}>
+      <SafeAreaView style={{flex: 1, backgroundColor: color.primary}}>
         <DrawerContentScrollView>
           <View style={style.userinfo}>
             <View>
-              {this.props.itemArr.name ? (
+              {this.props.itemArr ? (
                 <>
                   <Image
-                    source={{uri: this.props.itemArr.picture}}
+                    source={{
+                      uri:
+                        this.props.itemArr.picture ??
+                        JSON.parse(this.props.itemArr).picture,
+                    }}
                     style={{height: 50, width: 50, borderRadius: 25}}
                   />
                 </>
               ) : (
                 <>
-                  <Icon name="account-circle" size={50} color={'#FABD0B'} />
+                  <Icon
+                    name="account-circle"
+                    size={50}
+                    color={color.themeColor}
+                  />
                 </>
               )}
             </View>
             <View style={{marginTop: 1, marginStart: 10}}>
-              <Text style={{fontSize: 16, color: 'white', fontWeight: '400'}}>
-                {this.props.itemArr.name ? this.props.itemArr.name : 'Username'}
+              <Text
+                style={{
+                  fontSize: 16,
+                  color: color.secondary,
+                  fontWeight: '400',
+                }}>
+                {this.props.itemArr
+                  ? this.props.itemArr.name ??
+                    JSON.parse(this.props.itemArr).name
+                  : 'Username'}
               </Text>
               <Text
                 style={{
                   fontSize: 15,
-                  color: 'white',
+                  color: color.secondary,
                   fontWeight: '300',
                   marginTop: 10,
                 }}>
@@ -75,6 +93,14 @@ class DrawerContent extends Component {
             <Drawer.Section title="My Options">
               <DrawerItem
                 icon={() => (
+                  <Icon name="logout" color={color.secondary} size={25} />
+                )}
+                label="Logout"
+                labelStyle={{fontWeight: '400', color: color.secondary}}
+                onPress={() => this.setLogOut()}
+              />
+              <DrawerItem
+                icon={() => (
                   <Image
                     source={require('../../assets/media/free.png')}
                     style={{
@@ -86,43 +112,51 @@ class DrawerContent extends Component {
                   />
                 )}
                 label="Free Session"
-                labelStyle={{fontWeight: '400', color: 'white'}}
+                labelStyle={{fontWeight: '400', color: color.secondary}}
               />
               <DrawerItem
                 icon={() => (
-                  <Icon name="wallet-outline" color={'white'} size={25} />
+                  <Icon
+                    name="wallet-outline"
+                    color={color.secondary}
+                    size={25}
+                  />
                 )}
                 label="Wallet Transactions"
-                labelStyle={{fontWeight: '400', color: 'white'}}
+                labelStyle={{fontWeight: '400', color: color.secondary}}
               />
               <DrawerItem
                 icon={() => (
                   <Icon
                     name="clock-time-four-outline"
-                    color={'white'}
+                    color={color.secondary}
                     size={25}
                   />
                 )}
                 label="Order History"
-                labelStyle={{fontWeight: '400', color: 'white'}}
+                labelStyle={{fontWeight: '400', color: color.secondary}}
               />
 
               <DrawerItem
                 icon={() => (
-                  <Icon name="headphones" color={'white'} size={25} />
+                  <Icon name="headphones" color={color.secondary} size={25} />
                 )}
                 label="Customer Support Chat"
-                labelStyle={{fontWeight: '400', color: 'white'}}
+                labelStyle={{fontWeight: '400', color: color.secondary}}
                 onPress={() => {
                   this.props.navigation.navigate('chat');
                 }}
               />
               <DrawerItem
                 icon={() => (
-                  <Icon name="chat-processing" color={'white'} size={25} />
+                  <Icon
+                    name="chat-processing"
+                    color={color.secondary}
+                    size={25}
+                  />
                 )}
                 label="Chat with Astrologers"
-                labelStyle={{fontWeight: '400', color: 'white'}}
+                labelStyle={{fontWeight: '400', color: color.secondary}}
                 onPress={() => {
                   this.props.navigation.navigate('chat');
                 }}
@@ -131,32 +165,40 @@ class DrawerContent extends Component {
                 icon={() => (
                   <Icon
                     name="file-document-outline"
-                    color={'white'}
+                    color={color.secondary}
                     size={25}
                   />
                 )}
                 label="Get Report"
-                labelStyle={{fontWeight: '400', color: 'white'}}
+                labelStyle={{fontWeight: '400', color: color.secondary}}
                 onPress={() => {
                   this.props.navigation.navigate('report');
                 }}
               />
               <DrawerItem
                 icon={() => (
-                  <Icon name="wallet-travel" color={'white'} size={25} />
+                  <Icon
+                    name="wallet-travel"
+                    color={color.secondary}
+                    size={25}
+                  />
                 )}
                 label="Astromall"
-                labelStyle={{fontWeight: '400', color: 'white'}}
+                labelStyle={{fontWeight: '400', color: color.secondary}}
                 onPress={() => {
                   this.props.navigation.navigate('astroMall');
                 }}
               />
               <DrawerItem
                 icon={() => (
-                  <Icon name="crown-outline" color={'white'} size={25} />
+                  <Icon
+                    name="crown-outline"
+                    color={color.secondary}
+                    size={25}
+                  />
                 )}
                 label="Gold Membership"
-                labelStyle={{fontWeight: '400', color: 'white'}}
+                labelStyle={{fontWeight: '400', color: color.secondary}}
                 onPress={() => {
                   this.props.navigation.navigate('gold');
                 }}
@@ -174,7 +216,7 @@ class DrawerContent extends Component {
                   />
                 )}
                 label="Free Kundali"
-                labelStyle={{fontWeight: '400', color: 'white'}}
+                labelStyle={{fontWeight: '400', color: color.secondary}}
                 onPress={() => {
                   this.props.navigation.navigate('kundali');
                 }}
@@ -192,7 +234,7 @@ class DrawerContent extends Component {
                   />
                 )}
                 label="Panchang"
-                labelStyle={{fontWeight: '400', color: 'white'}}
+                labelStyle={{fontWeight: '400', color: color.secondary}}
                 onPress={() => {
                   this.props.navigation.navigate('panchang');
                 }}
@@ -210,7 +252,7 @@ class DrawerContent extends Component {
                   />
                 )}
                 label="Nemerology"
-                labelStyle={{fontWeight: '400', color: 'white'}}
+                labelStyle={{fontWeight: '400', color: color.secondary}}
                 onPress={() => {
                   this.props.navigation.navigate('numerology');
                 }}
@@ -219,12 +261,12 @@ class DrawerContent extends Component {
                 icon={() => (
                   <Icon
                     name="heart-multiple-outline"
-                    color={'white'}
+                    color={color.secondary}
                     size={25}
                   />
                 )}
                 label="Match Making"
-                labelStyle={{fontWeight: '400', color: 'white'}}
+                labelStyle={{fontWeight: '400', color: color.secondary}}
                 onPress={() => {
                   this.props.navigation.navigate('match');
                 }}
@@ -242,7 +284,7 @@ class DrawerContent extends Component {
                   />
                 )}
                 label="Daily Horoscope"
-                labelStyle={{fontWeight: '400', color: 'white'}}
+                labelStyle={{fontWeight: '400', color: color.secondary}}
                 onPress={() => {
                   this.props.navigation.navigate('Horoscope', {
                     sign: 'ARIES',
@@ -251,39 +293,43 @@ class DrawerContent extends Component {
                 }}
               />
               <DrawerItem
-                icon={() => <FIcon name="settings" color={'white'} size={25} />}
+                icon={() => (
+                  <FIcon name="settings" color={color.secondary} size={25} />
+                )}
                 label="Settings"
-                labelStyle={{fontWeight: '400', color: 'white'}}
+                labelStyle={{fontWeight: '400', color: color.secondary}}
               />
               <DrawerItem
                 icon={() => (
-                  <Icon name="bell-outline" color={'white'} size={25} />
+                  <Icon name="bell-outline" color={color.secondary} size={25} />
                 )}
                 label="Notifications"
-                labelStyle={{fontWeight: '400', color: 'white'}}
+                labelStyle={{fontWeight: '400', color: color.secondary}}
               />
               <DrawerItem
                 icon={() => (
                   <Icon
                     name="account-check-outline"
-                    color={'white'}
+                    color={color.secondary}
                     size={25}
                   />
                 )}
                 label="Following"
-                labelStyle={{fontWeight: '400', color: 'white'}}
+                labelStyle={{fontWeight: '400', color: color.secondary}}
               />
               <DrawerItem
                 icon={() => (
-                  <Icon name="star-outline" color={'white'} size={25} />
+                  <Icon name="star-outline" color={color.secondary} size={25} />
                 )}
                 label="Rate us on Playstore"
-                labelStyle={{fontWeight: '400', color: 'white'}}
+                labelStyle={{fontWeight: '400', color: color.secondary}}
               />
               <DrawerItem
-                icon={() => <FIcon name="share-2" color={'white'} size={20} />}
+                icon={() => (
+                  <FIcon name="share-2" color={color.secondary} size={20} />
+                )}
                 label="Share"
-                labelStyle={{fontWeight: '400', color: 'white'}}
+                labelStyle={{fontWeight: '400', color: color.secondary}}
               />
             </Drawer.Section>
           </View>

@@ -22,6 +22,7 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import base64 from 'react-native-base64';
 import {DataTable} from 'react-native-paper';
 import {SvgUri, SvgXml} from 'react-native-svg';
+import color from '../GlobalVariables';
 const height = Dimensions.get('window').height;
 const userId = '618328';
 const apiKey = '51e43ea9a639e025dd62e04a4b7a32e0';
@@ -190,11 +191,11 @@ export default class HoroscopeChart extends Component {
   render() {
     // console.log('char : ', this.props.data);
     return (
-      <SafeAreaView style={{flex: 1, backgroundColor: 'black'}}>
+      <SafeAreaView style={{flex: 1, backgroundColor: color.primary}}>
         <ScrollView
           showsVerticalScrollIndicator={false}
           style={{
-            backgroundColor: 'black ',
+            backgroundColor: color.primary,
             flex: 1,
           }}>
           <ScrollView
@@ -202,7 +203,7 @@ export default class HoroscopeChart extends Component {
             showsHorizontalScrollIndicator={false}
             style={{
               height: 40,
-              borderColor: 'white',
+              borderColor: color.secondary,
               borderWidth: 1,
               borderRightWidth: 0,
               borderTopLeftRadius: 10,
@@ -306,7 +307,7 @@ export default class HoroscopeChart extends Component {
                   <DataTable>
                     <DataTable.Header
                       style={{
-                        backgroundColor: '#FABD0B',
+                        backgroundColor: color.themeColor,
                         borderTopRightRadius: 10,
                         borderTopLeftRadius: 10,
                       }}>

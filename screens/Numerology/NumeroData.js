@@ -10,12 +10,10 @@ import {
   Dimensions,
 } from 'react-native';
 import {ScrollView, TouchableOpacity} from 'react-native-gesture-handler';
-import {Card, Avatar, List, Appbar, RadioButton} from 'react-native-paper';
+import {Appbar, RadioButton} from 'react-native-paper';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import AIcon from 'react-native-vector-icons/Ionicons';
-import DateTimePicker from '@react-native-community/datetimepicker';
 import base64 from 'react-native-base64';
-import {Picker} from '@react-native-picker/picker';
+import color from '../GlobalVariables';
 const height = Dimensions.get('window').height;
 
 const userId = '618328';
@@ -168,18 +166,18 @@ export default class NumeroData extends Component {
   render() {
     // console.log(this.state.activeIndex);
     return (
-      <SafeAreaView style={{flex: 1, backgroundColor: 'black'}}>
-        <Appbar style={{backgroundColor: '#FABD0B'}}>
+      <SafeAreaView style={{flex: 1, backgroundColor: color.primary}}>
+        <Appbar style={{backgroundColor: color.themeColor}}>
           <Icon
             name={'arrow-left'}
             size={30}
-            color={'white'}
+            color={color.secondary}
             style={{marginLeft: 10}}
             onPress={() => this.props.navigation.goBack()}
           />
           <Text
             style={{
-              color: 'white',
+              color: color.secondary,
               fontWeight: '400',
               fontSize: 18,
               marginLeft: 20,
@@ -197,7 +195,7 @@ export default class NumeroData extends Component {
             showsHorizontalScrollIndicator={false}
             style={{
               height: 40,
-              borderColor: 'white',
+              borderColor: color.secondary,
               borderWidth: 1,
               borderRightWidth: 0,
               borderTopLeftRadius: 10,
@@ -215,14 +213,19 @@ export default class NumeroData extends Component {
                   alignItems: 'center',
                   height: '100%',
                   paddingHorizontal: 10,
-                  borderColor: 'white',
+                  borderColor: color.secondary,
                   borderWidth: this.state.activeIndex == index ? 1 : 0,
                   borderRadius: 10,
                 }}
                 onPress={() => {
                   this.setState({activeIndex: index});
                 }}>
-                <Text style={{fontSize: 17, color: 'white', fontWeight: '400'}}>
+                <Text
+                  style={{
+                    fontSize: 17,
+                    color: color.secondary,
+                    fontWeight: '400',
+                  }}>
                   {item.val}
                 </Text>
               </TouchableOpacity>
@@ -248,7 +251,7 @@ export default class NumeroData extends Component {
                       fontWeight: '400',
                       marginLeft: 10,
                       marginTop: 20,
-                      color: 'white',
+                      color: color.secondary,
                     }}>
                     Title : {this.state.report?.title ?? ''}
                   </Text>
@@ -258,7 +261,7 @@ export default class NumeroData extends Component {
                       fontWeight: '400',
                       marginLeft: 10,
                       marginTop: 20,
-                      color: 'white',
+                      color: color.secondary,
                       maxWidth: '95%',
                       marginHorizontal: '2%',
                     }}>
@@ -280,7 +283,7 @@ export default class NumeroData extends Component {
                       fontWeight: '400',
                       marginLeft: 20,
                       marginTop: 20,
-                      color: 'white',
+                      color: color.secondary,
                     }}>
                     Title : {this.state.favTime?.title ?? ''}
                   </Text>
@@ -290,7 +293,7 @@ export default class NumeroData extends Component {
                       fontWeight: '400',
                       marginLeft: 20,
                       marginTop: 20,
-                      color: 'white',
+                      color: color.secondary,
                       maxWidth: '95%',
                       marginHorizontal: '2%',
                     }}>
@@ -312,7 +315,7 @@ export default class NumeroData extends Component {
                       fontWeight: '400',
                       marginLeft: 20,
                       marginTop: 20,
-                      color: 'white',
+                      color: color.secondary,
                     }}>
                     Title : {this.state.place?.title ?? ''}
                   </Text>
@@ -322,7 +325,7 @@ export default class NumeroData extends Component {
                       fontWeight: '400',
                       marginLeft: 20,
                       marginTop: 20,
-                      color: 'white',
+                      color: color.secondary,
                       maxWidth: '95%',
                       marginHorizontal: '2%',
                     }}>
@@ -344,7 +347,7 @@ export default class NumeroData extends Component {
                       fontWeight: '400',
                       marginLeft: 20,
                       marginTop: 20,
-                      color: 'white',
+                      color: color.secondary,
                     }}>
                     Name : {this.state.table?.name ?? ''}
                   </Text>
@@ -354,7 +357,7 @@ export default class NumeroData extends Component {
                       fontWeight: '400',
                       marginLeft: 20,
                       marginTop: 10,
-                      color: 'white',
+                      color: color.secondary,
                       maxWidth: '95%',
                       marginHorizontal: '2%',
                     }}>
@@ -366,7 +369,7 @@ export default class NumeroData extends Component {
                       fontWeight: '400',
                       marginLeft: 20,
                       marginTop: 10,
-                      color: 'white',
+                      color: color.secondary,
                       maxWidth: '95%',
                       marginHorizontal: '2%',
                     }}>
@@ -378,7 +381,7 @@ export default class NumeroData extends Component {
                       fontWeight: '400',
                       marginLeft: 20,
                       marginTop: 10,
-                      color: 'white',
+                      color: color.secondary,
                       maxWidth: '95%',
                       marginHorizontal: '2%',
                     }}>
@@ -390,7 +393,7 @@ export default class NumeroData extends Component {
                       fontWeight: '400',
                       marginLeft: 20,
                       marginTop: 10,
-                      color: 'white',
+                      color: color.secondary,
                       maxWidth: '95%',
                       marginHorizontal: '2%',
                     }}>
@@ -402,7 +405,7 @@ export default class NumeroData extends Component {
                       fontWeight: '400',
                       marginLeft: 20,
                       marginTop: 10,
-                      color: 'white',
+                      color: color.secondary,
                       maxWidth: '95%',
                       marginHorizontal: '2%',
                     }}>
@@ -414,7 +417,7 @@ export default class NumeroData extends Component {
                       fontWeight: '400',
                       marginLeft: 20,
                       marginTop: 10,
-                      color: 'white',
+                      color: color.secondary,
                       maxWidth: '95%',
                       marginHorizontal: '2%',
                     }}>
@@ -426,7 +429,7 @@ export default class NumeroData extends Component {
                       fontWeight: '400',
                       marginLeft: 20,
                       marginTop: 10,
-                      color: 'white',
+                      color: color.secondary,
                       maxWidth: '95%',
                       marginHorizontal: '2%',
                     }}>
@@ -438,7 +441,7 @@ export default class NumeroData extends Component {
                       fontWeight: '400',
                       marginLeft: 20,
                       marginTop: 10,
-                      color: 'white',
+                      color: color.secondary,
                       maxWidth: '95%',
                       marginHorizontal: '2%',
                     }}>
@@ -450,7 +453,7 @@ export default class NumeroData extends Component {
                       fontWeight: '400',
                       marginLeft: 20,
                       marginTop: 10,
-                      color: 'white',
+                      color: color.secondary,
                       maxWidth: '95%',
                       marginHorizontal: '2%',
                     }}>
@@ -462,7 +465,7 @@ export default class NumeroData extends Component {
                       fontWeight: '400',
                       marginLeft: 20,
                       marginTop: 10,
-                      color: 'white',
+                      color: color.secondary,
                       maxWidth: '95%',
                       marginHorizontal: '2%',
                     }}>
@@ -474,7 +477,7 @@ export default class NumeroData extends Component {
                       fontWeight: '400',
                       marginLeft: 20,
                       marginTop: 10,
-                      color: 'white',
+                      color: color.secondary,
                       maxWidth: '95%',
                       marginHorizontal: '2%',
                     }}>
@@ -486,7 +489,7 @@ export default class NumeroData extends Component {
                       fontWeight: '400',
                       marginLeft: 20,
                       marginTop: 10,
-                      color: 'white',
+                      color: color.secondary,
                       maxWidth: '95%',
                       marginHorizontal: '2%',
                     }}>
@@ -498,7 +501,7 @@ export default class NumeroData extends Component {
                       fontWeight: '400',
                       marginLeft: 20,
                       marginTop: 10,
-                      color: 'white',
+                      color: color.secondary,
                       maxWidth: '95%',
                       marginHorizontal: '2%',
                     }}>
@@ -510,7 +513,7 @@ export default class NumeroData extends Component {
                       fontWeight: '400',
                       marginLeft: 20,
                       marginTop: 10,
-                      color: 'white',
+                      color: color.secondary,
                       maxWidth: '95%',
                       marginHorizontal: '2%',
                     }}>
@@ -522,7 +525,7 @@ export default class NumeroData extends Component {
                       fontWeight: '400',
                       marginLeft: 20,
                       marginTop: 10,
-                      color: 'white',
+                      color: color.secondary,
                       maxWidth: '95%',
                       marginHorizontal: '2%',
                       marginBottom: 30,

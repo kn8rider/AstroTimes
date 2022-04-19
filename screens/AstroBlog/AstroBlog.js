@@ -8,12 +8,9 @@ import {
   Image,
   Dimensions,
 } from 'react-native';
-import {ScrollView, TouchableOpacity} from 'react-native-gesture-handler';
-import {Card, Avatar, List, Appbar, RadioButton} from 'react-native-paper';
+import {Card, Appbar} from 'react-native-paper';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import AIcon from 'react-native-vector-icons/Ionicons';
-import SnapCarousal from 'react-native-snap-carousel';
-import {color} from 'react-native-reanimated';
+import color from '../GlobalVariables';
 const data = [
   {
     val: 'Online Pooja',
@@ -67,18 +64,18 @@ const data = [
 export default class AstroBlog extends Component {
   render() {
     return (
-      <SafeAreaView style={{flex: 1, backgroundColor: 'black'}}>
-        <Appbar style={{backgroundColor: '#425325'}}>
+      <SafeAreaView style={{flex: 1, backgroundColor: color.primary}}>
+        <Appbar style={{backgroundColor: color.themeColor}}>
           <Icon
             name={'arrow-left'}
             size={30}
-            color={'white'}
+            color={color.secondary}
             style={{marginLeft: 10}}
             onPress={() => this.props.navigation.goBack()}
           />
           <Text
             style={{
-              color: 'white',
+              color: color.secondary,
               fontWeight: '400',
               fontSize: 18,
               marginLeft: 20,
@@ -88,13 +85,13 @@ export default class AstroBlog extends Component {
           <Icon
             name="magnify"
             size={30}
-            color={'white'}
+            color={color.secondary}
             style={{position: 'absolute', right: 10}}
             onPress={() => this.props.navigation.navigate('search')}
           />
         </Appbar>
 
-        <View style={{flex: 1, backgroundColor: 'black', paddingTop: 10}}>
+        <View style={{flex: 1, backgroundColor: color.primary, paddingTop: 10}}>
           <FlatList
             data={data}
             showsVerticalScrollIndicator={false}
@@ -129,7 +126,7 @@ export default class AstroBlog extends Component {
                   }}>
                   <Text
                     style={{
-                      color: 'white',
+                      color: color.secondary,
                       fontSize: 16,
                       fontWeight: '500',
                       marginLeft: 10,
@@ -146,7 +143,7 @@ export default class AstroBlog extends Component {
                     }}>
                     <Text
                       style={{
-                        color: 'white',
+                        color: color.secondary,
                         fontSize: 13,
                         fontWeight: '400',
                       }}>
@@ -154,7 +151,7 @@ export default class AstroBlog extends Component {
                     </Text>
                     <Text
                       style={{
-                        color: 'white',
+                        color: color.secondary,
                         fontSize: 13,
                         fontWeight: '400',
                       }}>

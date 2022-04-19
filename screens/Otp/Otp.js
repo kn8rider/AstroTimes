@@ -9,10 +9,9 @@ import {
   ActivityIndicator,
 } from 'react-native';
 import {ScrollView, TouchableOpacity} from 'react-native-gesture-handler';
-import {Card, Avatar, List, Appbar, RadioButton} from 'react-native-paper';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import AIcon from 'react-native-vector-icons/AntDesign';
 import OTPInputView from '@twotalltotems/react-native-otp-input';
+import color from '../GlobalVariables';
 export default class Otp extends Component {
   constructor(props) {
     super(props);
@@ -22,11 +21,11 @@ export default class Otp extends Component {
   }
   render() {
     return (
-      <SafeAreaView style={{flex: 1, backgroundColor: 'black'}}>
+      <SafeAreaView style={{flex: 1, backgroundColor: color.primary}}>
         <ScrollView contentContainerStyle={{flexGrow: 1}}>
           <View
             style={{
-              backgroundColor: 'white',
+              backgroundColor: color.secondary,
               flex: 3,
             }}>
             <Image
@@ -51,19 +50,19 @@ export default class Otp extends Component {
                 paddingVertical: 5,
                 paddingHorizontal: 20,
                 borderWidth: 1,
-                borderColor: '#4A3C8C',
+                borderColor: '#5C025C',
                 justifyContent: 'center',
                 borderRadius: 20,
                 position: 'absolute',
                 alignSelf: 'center',
-                backgroundColor: 'white',
+                backgroundColor: color.secondary,
                 top: -15,
               }}>
               <Text
                 style={{
                   fontSize: 18,
                   fontWeight: '400',
-                  color: '#4A3C8C',
+                  color: '#5C025C',
                   alignSelf: 'center',
                 }}>
                 First chat with Astrologer is FREE!
@@ -75,7 +74,7 @@ export default class Otp extends Component {
                 height: 100,
                 alignSelf: 'center',
                 marginTop: 20,
-                color: '#4A3C8C',
+                color: '#5C025C',
               }}
               pinCount={6}
               autoFocusOnLoad
@@ -87,7 +86,7 @@ export default class Otp extends Component {
               }}
               keyboardType="number-pad"
               codeInputHighlightStyle={{
-                borderColor: '#4A3C8C',
+                borderColor: '#5C025C',
               }}
               onCodeFilled={code => {
                 this.setState({otp: code});
@@ -103,7 +102,7 @@ export default class Otp extends Component {
                 justifyContent: 'center',
                 borderRadius: 20,
                 alignSelf: 'center',
-                backgroundColor: '#4A3C8C',
+                backgroundColor: '#5C025C',
                 width: '90%',
                 marginTop: 20,
                 flexDirection: 'row',
@@ -114,7 +113,7 @@ export default class Otp extends Component {
                 style={{
                   fontSize: 17,
                   fontWeight: '500',
-                  color: 'white',
+                  color: color.secondary,
                   alignSelf: 'center',
                 }}>
                 SEND OTP
@@ -122,7 +121,7 @@ export default class Otp extends Component {
               <Icon
                 name={'arrow-right'}
                 size={30}
-                color={'white'}
+                color={color.secondary}
                 style={{position: 'absolute', right: 30, top: 5}}
               />
             </TouchableOpacity>
@@ -130,7 +129,7 @@ export default class Otp extends Component {
               style={{
                 fontSize: 13,
                 fontWeight: '300',
-                color: 'black',
+                color: color.primary,
                 marginTop: 10,
                 alignSelf: 'center',
               }}>

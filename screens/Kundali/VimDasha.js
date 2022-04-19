@@ -8,17 +8,9 @@ import {
   ActivityIndicator,
 } from 'react-native';
 import {ScrollView, TouchableOpacity} from 'react-native-gesture-handler';
-import {
-  Card,
-  Avatar,
-  List,
-  Appbar,
-  TextInput,
-  RadioButton,
-} from 'react-native-paper';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import base64 from 'react-native-base64';
 import {DataTable} from 'react-native-paper';
+import color from '../GlobalVariables';
 const userId = '618328';
 const apiKey = '51e43ea9a639e025dd62e04a4b7a32e0';
 export default class VimDasha extends Component {
@@ -236,18 +228,18 @@ export default class VimDasha extends Component {
   render() {
     // console.log('char : ', this.props.data);
     return (
-      <SafeAreaView style={{flex: 1, backgroundColor: 'black'}}>
+      <SafeAreaView style={{flex: 1, backgroundColor: color.primary}}>
         <ScrollView
           showsVerticalScrollIndicator={false}
           style={{
-            backgroundColor: 'black ',
+            backgroundColor: color.primary,
             flex: 1,
           }}>
           <Text
             style={{
               fontSize: 20,
               fontWeight: '500',
-              color: 'white',
+              color: color.secondary,
               marginLeft: '5%',
               marginTop: 10,
             }}>
@@ -255,7 +247,7 @@ export default class VimDasha extends Component {
           </Text>
           <View
             style={{
-              borderColor: 'white',
+              borderColor: color.secondary,
               borderWidth: 1,
               borderRadius: 10,
               alignSelf: 'center',
@@ -267,7 +259,7 @@ export default class VimDasha extends Component {
               <DataTable>
                 <DataTable.Header
                   style={{
-                    backgroundColor: '#FABD0B',
+                    backgroundColor: color.themeColor,
                     borderTopRightRadius: 10,
                     borderTopLeftRadius: 10,
                   }}>
@@ -276,7 +268,7 @@ export default class VimDasha extends Component {
                       style={{
                         fontSize: 17,
                         fontWeight: '500',
-                        color: 'white',
+                        color: color.secondary,
                       }}>
                       Planet
                     </Text>
@@ -286,7 +278,7 @@ export default class VimDasha extends Component {
                       style={{
                         fontSize: 17,
                         fontWeight: '500',
-                        color: 'white',
+                        color: color.secondary,
                         marginLeft: 30,
                       }}>
                       Start Date
@@ -297,7 +289,7 @@ export default class VimDasha extends Component {
                       style={{
                         fontSize: 17,
                         fontWeight: '500',
-                        color: 'white',
+                        color: color.secondary,
                       }}>
                       End Date
                     </Text>
@@ -310,7 +302,7 @@ export default class VimDasha extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                         }}>
                         {item.planet}
                       </Text>
@@ -320,7 +312,7 @@ export default class VimDasha extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           alignSelf: 'center',
                         }}>
                         {item.start}
@@ -331,7 +323,7 @@ export default class VimDasha extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           alignSelf: 'center',
                         }}>
                         {item.end}
@@ -348,7 +340,7 @@ export default class VimDasha extends Component {
                 style={{
                   fontSize: 20,
                   fontWeight: '500',
-                  color: 'white',
+                  color: color.secondary,
                   marginLeft: '5%',
                   marginTop: 10,
                 }}>
@@ -356,7 +348,7 @@ export default class VimDasha extends Component {
               </Text>
               <View
                 style={{
-                  borderColor: 'white',
+                  borderColor: color.secondary,
                   borderWidth: 1,
                   borderRadius: 10,
                   alignSelf: 'center',
@@ -368,7 +360,7 @@ export default class VimDasha extends Component {
                   <DataTable>
                     <DataTable.Header
                       style={{
-                        backgroundColor: '#FABD0B',
+                        backgroundColor: color.themeColor,
                         borderTopRightRadius: 10,
                         borderTopLeftRadius: 10,
                       }}>
@@ -377,7 +369,7 @@ export default class VimDasha extends Component {
                           style={{
                             fontSize: 17,
                             fontWeight: '500',
-                            color: 'white',
+                            color: color.secondary,
                           }}>
                           Planet
                         </Text>
@@ -387,7 +379,7 @@ export default class VimDasha extends Component {
                           style={{
                             fontSize: 17,
                             fontWeight: '500',
-                            color: 'white',
+                            color: color.secondary,
                             marginLeft: 30,
                           }}>
                           Start Date
@@ -398,7 +390,7 @@ export default class VimDasha extends Component {
                           style={{
                             fontSize: 17,
                             fontWeight: '500',
-                            color: 'white',
+                            color: color.secondary,
                           }}>
                           End Date
                         </Text>
@@ -411,7 +403,7 @@ export default class VimDasha extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                           }}>
                           {this.state.currentDetails?.major?.planet}
                         </Text>
@@ -421,7 +413,7 @@ export default class VimDasha extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.currentDetails?.major?.start}
@@ -432,7 +424,7 @@ export default class VimDasha extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.currentDetails?.major?.end}
@@ -446,7 +438,7 @@ export default class VimDasha extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                           }}>
                           {this.state.currentDetails?.minor?.planet}
                         </Text>
@@ -456,7 +448,7 @@ export default class VimDasha extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.currentDetails?.minor?.start}
@@ -467,7 +459,7 @@ export default class VimDasha extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.currentDetails?.minor?.end}
@@ -480,7 +472,7 @@ export default class VimDasha extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                           }}>
                           {this.state.currentDetails?.sub_minor?.planet}
                         </Text>
@@ -490,7 +482,7 @@ export default class VimDasha extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.currentDetails?.sub_minor?.start}
@@ -501,7 +493,7 @@ export default class VimDasha extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.currentDetails?.sub_minor?.end}
@@ -514,7 +506,7 @@ export default class VimDasha extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                           }}>
                           {this.state.currentDetails?.sub_sub_minor?.planet}
                         </Text>
@@ -524,7 +516,7 @@ export default class VimDasha extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.currentDetails?.sub_sub_minor?.start}
@@ -535,7 +527,7 @@ export default class VimDasha extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.currentDetails?.sub_sub_minor?.end}
@@ -548,7 +540,7 @@ export default class VimDasha extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                           }}>
                           {this.state.currentDetails?.sub_sub_sub_minor?.planet}
                         </Text>
@@ -558,7 +550,7 @@ export default class VimDasha extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.currentDetails?.sub_sub_sub_minor?.start}
@@ -569,7 +561,7 @@ export default class VimDasha extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.currentDetails?.sub_sub_sub_minor?.end}
@@ -587,7 +579,7 @@ export default class VimDasha extends Component {
             style={{
               fontSize: 20,
               fontWeight: '500',
-              color: 'white',
+              color: color.secondary,
               marginLeft: '5%',
               marginTop: 10,
             }}>
@@ -595,7 +587,7 @@ export default class VimDasha extends Component {
           </Text>
           <View
             style={{
-              borderColor: 'white',
+              borderColor: color.secondary,
               borderWidth: 1,
               borderRadius: 10,
               alignSelf: 'center',
@@ -607,7 +599,7 @@ export default class VimDasha extends Component {
               <DataTable>
                 <DataTable.Header
                   style={{
-                    backgroundColor: '#FABD0B',
+                    backgroundColor: color.themeColor,
                     borderTopRightRadius: 10,
                     borderTopLeftRadius: 10,
                   }}>
@@ -616,7 +608,7 @@ export default class VimDasha extends Component {
                       style={{
                         fontSize: 17,
                         fontWeight: '500',
-                        color: 'white',
+                        color: color.secondary,
                       }}>
                       Planet
                     </Text>
@@ -626,7 +618,7 @@ export default class VimDasha extends Component {
                       style={{
                         fontSize: 17,
                         fontWeight: '500',
-                        color: 'white',
+                        color: color.secondary,
                         marginLeft: 30,
                       }}>
                       Start Date
@@ -637,7 +629,7 @@ export default class VimDasha extends Component {
                       style={{
                         fontSize: 17,
                         fontWeight: '500',
-                        color: 'white',
+                        color: color.secondary,
                       }}>
                       End Date
                     </Text>
@@ -650,7 +642,7 @@ export default class VimDasha extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                         }}>
                         {item.planet}
                       </Text>
@@ -660,7 +652,7 @@ export default class VimDasha extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           alignSelf: 'center',
                         }}>
                         {item.start}
@@ -671,7 +663,7 @@ export default class VimDasha extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           alignSelf: 'center',
                         }}>
                         {item.end}
@@ -686,7 +678,7 @@ export default class VimDasha extends Component {
             style={{
               fontSize: 20,
               fontWeight: '500',
-              color: 'white',
+              color: color.secondary,
               marginLeft: '5%',
               marginTop: 10,
             }}>
@@ -694,7 +686,7 @@ export default class VimDasha extends Component {
           </Text>
           <View
             style={{
-              borderColor: 'white',
+              borderColor: color.secondary,
               borderWidth: 1,
               borderRadius: 10,
               alignSelf: 'center',
@@ -706,7 +698,7 @@ export default class VimDasha extends Component {
               <DataTable>
                 <DataTable.Header
                   style={{
-                    backgroundColor: '#FABD0B',
+                    backgroundColor: color.themeColor,
                     borderTopRightRadius: 10,
                     borderTopLeftRadius: 10,
                   }}>
@@ -715,7 +707,7 @@ export default class VimDasha extends Component {
                       style={{
                         fontSize: 17,
                         fontWeight: '500',
-                        color: 'white',
+                        color: color.secondary,
                       }}>
                       Planet
                     </Text>
@@ -725,7 +717,7 @@ export default class VimDasha extends Component {
                       style={{
                         fontSize: 17,
                         fontWeight: '500',
-                        color: 'white',
+                        color: color.secondary,
                         marginLeft: 30,
                       }}>
                       Start Date
@@ -736,7 +728,7 @@ export default class VimDasha extends Component {
                       style={{
                         fontSize: 17,
                         fontWeight: '500',
-                        color: 'white',
+                        color: color.secondary,
                       }}>
                       End Date
                     </Text>
@@ -749,7 +741,7 @@ export default class VimDasha extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                         }}>
                         {item.planet}
                       </Text>
@@ -759,7 +751,7 @@ export default class VimDasha extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           alignSelf: 'center',
                         }}>
                         {item.start}
@@ -770,7 +762,7 @@ export default class VimDasha extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           alignSelf: 'center',
                         }}>
                         {item.end}
@@ -785,7 +777,7 @@ export default class VimDasha extends Component {
             style={{
               fontSize: 20,
               fontWeight: '500',
-              color: 'white',
+              color: color.secondary,
               marginLeft: '5%',
               marginTop: 10,
             }}>
@@ -793,7 +785,7 @@ export default class VimDasha extends Component {
           </Text>
           <View
             style={{
-              borderColor: 'white',
+              borderColor: color.secondary,
               borderWidth: 1,
               borderRadius: 10,
               alignSelf: 'center',
@@ -805,7 +797,7 @@ export default class VimDasha extends Component {
               <DataTable>
                 <DataTable.Header
                   style={{
-                    backgroundColor: '#FABD0B',
+                    backgroundColor: color.themeColor,
                     borderTopRightRadius: 10,
                     borderTopLeftRadius: 10,
                   }}>
@@ -814,7 +806,7 @@ export default class VimDasha extends Component {
                       style={{
                         fontSize: 17,
                         fontWeight: '500',
-                        color: 'white',
+                        color: color.secondary,
                       }}>
                       Planet
                     </Text>
@@ -824,7 +816,7 @@ export default class VimDasha extends Component {
                       style={{
                         fontSize: 17,
                         fontWeight: '500',
-                        color: 'white',
+                        color: color.secondary,
                         marginLeft: 30,
                       }}>
                       Start Date
@@ -835,7 +827,7 @@ export default class VimDasha extends Component {
                       style={{
                         fontSize: 17,
                         fontWeight: '500',
-                        color: 'white',
+                        color: color.secondary,
                       }}>
                       End Date
                     </Text>
@@ -848,7 +840,7 @@ export default class VimDasha extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                         }}>
                         {item.planet}
                       </Text>
@@ -858,7 +850,7 @@ export default class VimDasha extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           alignSelf: 'center',
                         }}>
                         {item.start}
@@ -869,7 +861,7 @@ export default class VimDasha extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           alignSelf: 'center',
                         }}>
                         {item.end}
@@ -884,7 +876,7 @@ export default class VimDasha extends Component {
             style={{
               fontSize: 20,
               fontWeight: '500',
-              color: 'white',
+              color: color.secondary,
               marginLeft: '5%',
               marginTop: 10,
             }}>
@@ -892,7 +884,7 @@ export default class VimDasha extends Component {
           </Text>
           <View
             style={{
-              borderColor: 'white',
+              borderColor: color.secondary,
               borderWidth: 1,
               borderRadius: 10,
               alignSelf: 'center',
@@ -904,7 +896,7 @@ export default class VimDasha extends Component {
               <DataTable>
                 <DataTable.Header
                   style={{
-                    backgroundColor: '#FABD0B',
+                    backgroundColor: color.themeColor,
                     borderTopRightRadius: 10,
                     borderTopLeftRadius: 10,
                   }}>
@@ -913,7 +905,7 @@ export default class VimDasha extends Component {
                       style={{
                         fontSize: 17,
                         fontWeight: '500',
-                        color: 'white',
+                        color: color.secondary,
                       }}>
                       Planet
                     </Text>
@@ -923,7 +915,7 @@ export default class VimDasha extends Component {
                       style={{
                         fontSize: 17,
                         fontWeight: '500',
-                        color: 'white',
+                        color: color.secondary,
                         marginLeft: 30,
                       }}>
                       Start Date
@@ -934,7 +926,7 @@ export default class VimDasha extends Component {
                       style={{
                         fontSize: 17,
                         fontWeight: '500',
-                        color: 'white',
+                        color: color.secondary,
                       }}>
                       End Date
                     </Text>
@@ -947,7 +939,7 @@ export default class VimDasha extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                         }}>
                         {item.planet}
                       </Text>
@@ -957,7 +949,7 @@ export default class VimDasha extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           alignSelf: 'center',
                         }}>
                         {item.start}
@@ -968,7 +960,7 @@ export default class VimDasha extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           alignSelf: 'center',
                         }}>
                         {item.end}

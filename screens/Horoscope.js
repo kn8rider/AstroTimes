@@ -17,6 +17,7 @@ import {
   RadioButton,
 } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import color from './GlobalVariables';
 const Hdata = [
   {val: 'Daily'},
   {val: 'Weekly'},
@@ -232,18 +233,18 @@ export default class Horoscope extends Component {
     //   this.props.route.params.ind,
     // );
     return (
-      <SafeAreaView style={{flex: 1, backgroundColor: 'black'}}>
-        <Appbar style={{backgroundColor: '#FABD0B'}}>
+      <SafeAreaView style={{flex: 1, backgroundColor: color.primary}}>
+        <Appbar style={{backgroundColor: color.themeColor}}>
           <Icon
             name={'arrow-left'}
             size={30}
-            color={'white'}
+            color={color.secondary}
             style={{marginLeft: 10}}
             onPress={() => this.props.navigation.goBack()}
           />
           <Text
             style={{
-              color: 'white',
+              color: color.secondary,
               fontWeight: '400',
               fontSize: 18,
               marginLeft: 20,
@@ -252,14 +253,18 @@ export default class Horoscope extends Component {
           </Text>
         </Appbar>
         <View
-          style={{backgroundColor: 'black', flex: 1, justifyContent: 'center'}}>
+          style={{
+            backgroundColor: color.primary,
+            flex: 1,
+            justifyContent: 'center',
+          }}>
           {this.state.first ? (
             <ActivityIndicator size={50} style={{alignSelf: 'center'}} />
           ) : (
             <View
               style={{
                 flex: 1,
-                backgroundColor: 'black',
+                backgroundColor: color.primary,
                 width: '100%',
               }}>
               <View
@@ -282,9 +287,11 @@ export default class Horoscope extends Component {
                         borderWidth: 1,
                         marginHorizontal: 5,
                         elevation: 10,
-                        borderColor: 'white',
+                        borderColor: color.secondary,
                         backgroundColor:
-                          this.state.active == index ? '#FABD0B' : 'black',
+                          this.state.active == index
+                            ? color.themeColor
+                            : color.primary,
                         height: 30,
                         width: 80,
                       }}
@@ -296,7 +303,7 @@ export default class Horoscope extends Component {
                         style={{
                           fontSize: 14,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           alignSelf: 'center',
                         }}>
                         {item.val}
@@ -319,7 +326,7 @@ export default class Horoscope extends Component {
                           style={{
                             fontSize: 18,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                             marginTop: 10,
                           }}>
@@ -334,7 +341,7 @@ export default class Horoscope extends Component {
                             style={{
                               height: 1,
                               width: 20,
-                              backgroundColor: 'white',
+                              backgroundColor: color.secondary,
                               alignSelf: 'center',
                               marginTop: 8,
                               marginHorizontal: 5,
@@ -345,7 +352,7 @@ export default class Horoscope extends Component {
                             style={{
                               fontSize: 14,
                               fontWeight: '300',
-                              color: 'white',
+                              color: color.secondary,
                               alignSelf: 'center',
                               marginTop: 5,
                             }}>
@@ -355,7 +362,7 @@ export default class Horoscope extends Component {
                             style={{
                               height: 1,
                               width: 20,
-                              backgroundColor: 'white',
+                              backgroundColor: color.secondary,
                               alignSelf: 'center',
                               marginTop: 8,
                               marginHorizontal: 5,
@@ -367,7 +374,7 @@ export default class Horoscope extends Component {
                             style={{
                               fontSize: 14,
                               fontWeight: '400',
-                              color: 'white',
+                              color: color.secondary,
                               alignSelf: 'center',
                               marginTop: 20,
                               maxWidth: '90%',
@@ -378,7 +385,7 @@ export default class Horoscope extends Component {
                             style={{
                               fontSize: 14,
                               fontWeight: '400',
-                              color: 'white',
+                              color: color.secondary,
                               alignSelf: 'center',
                               marginTop: 10,
                               maxWidth: '90%',
@@ -389,7 +396,7 @@ export default class Horoscope extends Component {
                             style={{
                               fontSize: 14,
                               fontWeight: '400',
-                              color: 'white',
+                              color: color.secondary,
                               alignSelf: 'center',
                               marginTop: 20,
                               maxWidth: '90%',
@@ -400,7 +407,7 @@ export default class Horoscope extends Component {
                             style={{
                               fontSize: 14,
                               fontWeight: '400',
-                              color: 'white',
+                              color: color.secondary,
                               alignSelf: 'center',
                               marginTop: 20,
                               maxWidth: '90%',
@@ -411,7 +418,7 @@ export default class Horoscope extends Component {
                             style={{
                               fontSize: 14,
                               fontWeight: '400',
-                              color: 'white',
+                              color: color.secondary,
                               alignSelf: 'center',
                               marginTop: 20,
                               maxWidth: '90%',
@@ -422,7 +429,7 @@ export default class Horoscope extends Component {
                             style={{
                               fontSize: 14,
                               fontWeight: '400',
-                              color: 'white',
+                              color: color.secondary,
                               alignSelf: 'center',
                               marginTop: 20,
                               maxWidth: '90%',
@@ -441,7 +448,7 @@ export default class Horoscope extends Component {
                   bottom: 0,
                   paddingTop: 20,
                   // position: 'absolute',
-                  backgroundColor: 'black',
+                  backgroundColor: color.primary,
                 }}>
                 <FlatList
                   horizontal={true}
@@ -455,9 +462,11 @@ export default class Horoscope extends Component {
                         borderRadius: 15,
                         borderWidth: 1,
                         elevation: 10,
-                        borderColor: 'white',
+                        borderColor: color.secondary,
                         backgroundColor:
-                          this.state.activeSign == index ? '#FABD0B' : 'black',
+                          this.state.activeSign == index
+                            ? color.themeColor
+                            : color.primary,
                         marginHorizontal: 8,
                       }}
                       onPress={() => {
@@ -486,7 +495,7 @@ export default class Horoscope extends Component {
                         </View>
                         <Text
                           style={{
-                            color: 'white',
+                            color: color.secondary,
                             fontSize: 14,
                             fontWeight: '300',
                             textAlign: 'center',

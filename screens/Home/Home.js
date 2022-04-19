@@ -23,7 +23,7 @@ import {
 } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import FIcon from 'react-native-vector-icons/FontAwesome';
-
+import color from '../GlobalVariables';
 const data = [
   {
     img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsvMnPhxiHD42Q7XTcM3H-HPtN7_9cVZwFDQ&usqp=CAU',
@@ -117,27 +117,30 @@ export default class Home extends Component {
     super(props);
     this.state = {
       search: '',
-      user: null,
+      user: [],
     };
   }
+
   componentDidMount() {
     // console.log('home : ', this.props.route.params.user);
     // this.setState({user: this.props.route.params.user});
+    // this.getData();
   }
   render() {
+    // console.log('asData : ', this.state.user);
     return (
-      <SafeAreaView style={{flex: 1, backgroundColor: 'black'}}>
-        <Appbar style={{backgroundColor: 'black'}}>
+      <SafeAreaView style={{flex: 1, backgroundColor: color.primary}}>
+        <Appbar style={{backgroundColor: color.primary}}>
           <Icon
             name={'menu'}
             size={30}
-            color={'white'}
+            color={color.secondary}
             style={{marginLeft: 10}}
             onPress={() => this.props.navigation.openDrawer()}
           />
           <Text
             style={{
-              color: 'white',
+              color: color.secondary,
               fontWeight: '400',
               fontSize: 20,
               marginLeft: 30,
@@ -154,20 +157,20 @@ export default class Home extends Component {
             <Icon
               name={'wallet-outline'}
               size={30}
-              color={'white'}
+              color={color.secondary}
               onPress={() => this.props.navigation.goBack()}
             />
             <FIcon
               name={'language'}
               size={30}
-              color={'white'}
+              color={color.secondary}
               style={{marginHorizontal: 20}}
               onPress={() => this.props.navigation.goBack()}
             />
             <Icon
               name={'account-outline'}
               size={30}
-              color={'white'}
+              color={color.secondary}
               onPress={() => this.props.navigation.goBack()}
             />
           </View>
@@ -193,7 +196,7 @@ export default class Home extends Component {
               borderRadius: 10,
               elevation: 10,
               height: 130,
-              backgroundColor: 'black',
+              backgroundColor: color.primary,
               marginTop: 10,
               width: '90%',
             }}
@@ -209,7 +212,7 @@ export default class Home extends Component {
               resizeMode={'cover'}
             />
           </Card>
-          <ScrollView
+          {/* <ScrollView
             horizontal={true}
             showsHorizontalScrollIndicator={false}
             style={{
@@ -249,7 +252,7 @@ export default class Home extends Component {
               </View>
               <Text
                 style={{
-                  color: 'white',
+                  color: color.secondary,
                   fontSize: 16,
                   fontWeight: '400',
                   textAlign: 'center',
@@ -285,7 +288,7 @@ export default class Home extends Component {
               </View>
               <Text
                 style={{
-                  color: 'white',
+                  color: color.secondary,
                   fontSize: 16,
                   fontWeight: '400',
                   textAlign: 'center',
@@ -320,7 +323,7 @@ export default class Home extends Component {
               </View>
               <Text
                 style={{
-                  color: 'white',
+                  color: color.secondary,
                   fontSize: 16,
                   fontWeight: '400',
                   textAlign: 'center',
@@ -356,7 +359,7 @@ export default class Home extends Component {
               </View>
               <Text
                 style={{
-                  color: 'white',
+                  color: color.secondary,
                   fontSize: 16,
                   fontWeight: '400',
                   textAlign: 'center',
@@ -369,7 +372,7 @@ export default class Home extends Component {
             </TouchableOpacity>
             <TouchableOpacity
               style={{justifyContent: 'center', marginTop: 10, marginRight: 10}}
-              onPress={() => this.props.navigation.navigate('match')}>
+              onPress={() => this.props.navigation.navigate('panchang')}>
               <View
                 style={{
                   justifyContent: 'center',
@@ -392,7 +395,7 @@ export default class Home extends Component {
               </View>
               <Text
                 style={{
-                  color: 'white',
+                  color: color.secondary,
                   fontSize: 16,
                   fontWeight: '400',
                   textAlign: 'center',
@@ -403,7 +406,7 @@ export default class Home extends Component {
                 Panchang
               </Text>
             </TouchableOpacity>
-          </ScrollView>
+          </ScrollView> */}
 
           <View
             style={{
@@ -415,7 +418,7 @@ export default class Home extends Component {
             }}>
             <Text
               style={{
-                color: 'white',
+                color: color.secondary,
                 fontSize: 18,
                 fontWeight: '500',
                 textAlign: 'center',
@@ -427,16 +430,16 @@ export default class Home extends Component {
               style={{
                 justifyContent: 'center',
                 borderRadius: 15,
-                borderColor: 'white',
+                borderColor: color.secondary,
                 padding: 5,
                 paddingHorizontal: 10,
                 borderWidth: 1,
-                backgroundColor: 'black',
+                backgroundColor: color.primary,
               }}
               onPress={() => this.props.navigation.navigate('liveEvents')}>
               <Text
                 style={{
-                  color: 'white',
+                  color: color.secondary,
                   fontSize: 13,
                   fontWeight: '400',
                   textAlign: 'center',
@@ -479,7 +482,7 @@ export default class Home extends Component {
                     />
                     <View
                       style={{
-                        backgroundColor: 'black',
+                        backgroundColor: color.primary,
                         position: 'absolute',
                         borderRadius: 5,
                         paddingHorizontal: 5,
@@ -495,7 +498,7 @@ export default class Home extends Component {
                         •{' '}
                         <Text
                           style={{
-                            color: 'white',
+                            color: color.secondary,
                             fontSize: 12,
                             fontWeight: '400',
                             textAlign: 'center',
@@ -508,7 +511,7 @@ export default class Home extends Component {
                   </View>
                   <Text
                     style={{
-                      color: 'black',
+                      color: color.primary,
                       fontSize: 14,
                       fontWeight: '400',
                       textAlign: 'center',
@@ -533,7 +536,7 @@ export default class Home extends Component {
             }}>
             <Text
               style={{
-                color: 'white',
+                color: color.secondary,
                 fontSize: 18,
                 fontWeight: '500',
                 textAlign: 'center',
@@ -545,16 +548,16 @@ export default class Home extends Component {
               style={{
                 justifyContent: 'center',
                 borderRadius: 15,
-                borderColor: 'white',
+                borderColor: color.secondary,
                 padding: 5,
                 paddingHorizontal: 10,
                 borderWidth: 1,
-                backgroundColor: 'black',
+                backgroundColor: color.primary,
               }}
-              onPress={() => this.props.navigation.navigate('chat')}>
+              onPress={() => this.props.navigation.navigate('chat', {type: 1})}>
               <Text
                 style={{
-                  color: 'white',
+                  color: color.secondary,
                   fontSize: 13,
                   fontWeight: '400',
                   textAlign: 'center',
@@ -575,7 +578,7 @@ export default class Home extends Component {
                     alignItems: 'center',
                     borderRadius: 10,
                     elevation: 10,
-                    backgroundColor: 'black',
+                    backgroundColor: color.primary,
                     height: 160,
                     width: 120,
                     borderWidth: 0.5,
@@ -601,7 +604,7 @@ export default class Home extends Component {
                   </View>
                   <Text
                     style={{
-                      color: 'white',
+                      color: color.secondary,
                       fontSize: 16,
                       fontWeight: '500',
                       textAlign: 'center',
@@ -612,7 +615,7 @@ export default class Home extends Component {
                   </Text>
                   <Text
                     style={{
-                      color: 'white',
+                      color: color.secondary,
                       fontSize: 14,
                       fontWeight: '400',
                       textAlign: 'center',
@@ -635,7 +638,7 @@ export default class Home extends Component {
             }}>
             <Text
               style={{
-                color: 'white',
+                color: color.secondary,
                 fontSize: 18,
                 fontWeight: '500',
                 textAlign: 'center',
@@ -647,16 +650,16 @@ export default class Home extends Component {
               style={{
                 justifyContent: 'center',
                 borderRadius: 15,
-                borderColor: 'white',
+                borderColor: color.secondary,
                 padding: 5,
                 paddingHorizontal: 10,
                 borderWidth: 1,
-                backgroundColor: 'black',
+                backgroundColor: color.primary,
               }}
-              onPress={() => this.props.navigation.navigate('chat')}>
+              onPress={() => this.props.navigation.navigate('chat', {type: 1})}>
               <Text
                 style={{
-                  color: 'white',
+                  color: color.secondary,
                   fontSize: 13,
                   fontWeight: '400',
                   textAlign: 'center',
@@ -677,7 +680,7 @@ export default class Home extends Component {
                     alignItems: 'center',
                     borderRadius: 10,
                     elevation: 10,
-                    backgroundColor: 'black',
+                    backgroundColor: color.primary,
                     height: 160,
                     width: 120,
                     borderWidth: 0.5,
@@ -703,7 +706,7 @@ export default class Home extends Component {
                   </View>
                   <Text
                     style={{
-                      color: 'white',
+                      color: color.secondary,
                       fontSize: 16,
                       fontWeight: '500',
                       textAlign: 'center',
@@ -714,7 +717,7 @@ export default class Home extends Component {
                   </Text>
                   <Text
                     style={{
-                      color: 'white',
+                      color: color.secondary,
                       fontSize: 14,
                       fontWeight: '400',
                       textAlign: 'center',
@@ -733,7 +736,7 @@ export default class Home extends Component {
               borderRadius: 10,
               elevation: 10,
               height: 130,
-              backgroundColor: 'black',
+              backgroundColor: color.primary,
               marginTop: 10,
               width: '90%',
               marginBottom: 20,
@@ -759,7 +762,7 @@ export default class Home extends Component {
             }}>
             <Text
               style={{
-                color: 'white',
+                color: color.secondary,
                 fontSize: 18,
                 fontWeight: '500',
                 textAlign: 'center',
@@ -771,16 +774,16 @@ export default class Home extends Component {
               style={{
                 justifyContent: 'center',
                 borderRadius: 15,
-                borderColor: 'white',
+                borderColor: color.secondary,
                 padding: 5,
                 paddingHorizontal: 10,
                 borderWidth: 1,
-                backgroundColor: 'black',
+                backgroundColor: color.primary,
               }}
-              onPress={() => this.props.navigation.navigate('chat')}>
+              onPress={() => this.props.navigation.navigate('chat', {type: 0})}>
               <Text
                 style={{
-                  color: 'white',
+                  color: color.secondary,
                   fontSize: 13,
                   fontWeight: '400',
                   textAlign: 'center',
@@ -801,7 +804,7 @@ export default class Home extends Component {
                     alignItems: 'center',
                     borderRadius: 10,
                     elevation: 10,
-                    backgroundColor: 'black',
+                    backgroundColor: color.primary,
                     height: 160,
                     width: 120,
                     borderWidth: 0.5,
@@ -827,7 +830,7 @@ export default class Home extends Component {
                   </View>
                   <Text
                     style={{
-                      color: 'white',
+                      color: color.secondary,
                       fontSize: 16,
                       fontWeight: '500',
                       textAlign: 'center',
@@ -838,7 +841,7 @@ export default class Home extends Component {
                   </Text>
                   <Text
                     style={{
-                      color: 'white',
+                      color: color.secondary,
                       fontSize: 14,
                       fontWeight: '400',
                       textAlign: 'center',
@@ -853,7 +856,7 @@ export default class Home extends Component {
           </View>
           <Text
             style={{
-              color: 'white',
+              color: color.secondary,
               fontSize: 18,
               fontWeight: '500',
               marginLeft: '5%',
@@ -870,7 +873,7 @@ export default class Home extends Component {
                   style={{
                     alignItems: 'center',
                     elevation: 10,
-                    backgroundColor: 'black',
+                    backgroundColor: color.primary,
                     marginHorizontal: 10,
                   }}
                   onPress={() =>
@@ -887,7 +890,7 @@ export default class Home extends Component {
                       justifyContent: 'center',
                       marginTop: 10,
                       borderWidth: 1,
-                      borderColor: 'white',
+                      borderColor: color.secondary,
                       padding: 15,
                     }}>
                     <Image
@@ -898,7 +901,7 @@ export default class Home extends Component {
                   </View>
                   <Text
                     style={{
-                      color: 'white',
+                      color: color.secondary,
                       fontSize: 14,
                       fontWeight: '300',
                       textAlign: 'center',
@@ -922,7 +925,7 @@ export default class Home extends Component {
             }}>
             <Text
               style={{
-                color: 'white',
+                color: color.secondary,
                 fontSize: 18,
                 fontWeight: '500',
                 textAlign: 'center',
@@ -934,16 +937,16 @@ export default class Home extends Component {
               style={{
                 justifyContent: 'center',
                 borderRadius: 15,
-                borderColor: 'white',
+                borderColor: color.secondary,
                 padding: 5,
                 paddingHorizontal: 10,
                 borderWidth: 1,
-                backgroundColor: 'black',
+                backgroundColor: color.primary,
               }}
-              onPress={() => this.props.navigation.navigate('chat')}>
+              onPress={() => this.props.navigation.navigate('chat', {type: 0})}>
               <Text
                 style={{
-                  color: 'white',
+                  color: color.secondary,
                   fontSize: 13,
                   fontWeight: '400',
                   textAlign: 'center',
@@ -964,7 +967,7 @@ export default class Home extends Component {
                     alignItems: 'center',
                     borderRadius: 10,
                     elevation: 10,
-                    backgroundColor: 'black',
+                    backgroundColor: color.primary,
                     height: 160,
                     width: 120,
                     borderWidth: 0.5,
@@ -990,7 +993,7 @@ export default class Home extends Component {
                   </View>
                   <Text
                     style={{
-                      color: 'white',
+                      color: color.secondary,
                       fontSize: 16,
                       fontWeight: '500',
                       textAlign: 'center',
@@ -1001,7 +1004,7 @@ export default class Home extends Component {
                   </Text>
                   <Text
                     style={{
-                      color: 'white',
+                      color: color.secondary,
                       fontSize: 14,
                       fontWeight: '400',
                       textAlign: 'center',
@@ -1024,7 +1027,7 @@ export default class Home extends Component {
             }}>
             <Text
               style={{
-                color: 'white',
+                color: color.secondary,
                 fontSize: 18,
                 fontWeight: '500',
                 textAlign: 'center',
@@ -1036,16 +1039,16 @@ export default class Home extends Component {
               style={{
                 justifyContent: 'center',
                 borderRadius: 15,
-                borderColor: 'white',
+                borderColor: color.secondary,
                 padding: 5,
                 paddingHorizontal: 10,
                 borderWidth: 1,
-                backgroundColor: 'black',
+                backgroundColor: color.primary,
               }}
               onPress={() => this.props.navigation.navigate('astroMall')}>
               <Text
                 style={{
-                  color: 'white',
+                  color: color.secondary,
                   fontSize: 13,
                   fontWeight: '400',
                   textAlign: 'center',
@@ -1075,7 +1078,7 @@ export default class Home extends Component {
                   />
                   <Text
                     style={{
-                      color: 'white',
+                      color: color.secondary,
                       fontSize: 15,
                       fontWeight: '400',
                       textAlign: 'center',
@@ -1100,7 +1103,7 @@ export default class Home extends Component {
             }}>
             <Text
               style={{
-                color: 'white',
+                color: color.secondary,
                 fontSize: 18,
                 fontWeight: '500',
                 textAlign: 'center',
@@ -1112,16 +1115,16 @@ export default class Home extends Component {
               style={{
                 justifyContent: 'center',
                 borderRadius: 15,
-                borderColor: 'white',
+                borderColor: color.secondary,
                 padding: 5,
                 paddingHorizontal: 10,
                 borderWidth: 1,
-                backgroundColor: 'black',
+                backgroundColor: color.primary,
               }}
               onPress={() => this.props.navigation.navigate('astroBlog')}>
               <Text
                 style={{
-                  color: 'white',
+                  color: color.secondary,
                   fontSize: 13,
                   fontWeight: '400',
                   textAlign: 'center',
@@ -1164,7 +1167,7 @@ export default class Home extends Component {
                     }}>
                     <Text
                       style={{
-                        color: 'white',
+                        color: color.secondary,
                         fontSize: 15,
                         fontWeight: '400',
                         textAlign: 'center',
@@ -1182,7 +1185,7 @@ export default class Home extends Component {
                       }}>
                       <Text
                         style={{
-                          color: 'white',
+                          color: color.secondary,
                           fontSize: 13,
                           fontWeight: '400',
                           textAlign: 'center',
@@ -1192,7 +1195,7 @@ export default class Home extends Component {
                       </Text>
                       <Text
                         style={{
-                          color: 'white',
+                          color: color.secondary,
                           fontSize: 13,
                           fontWeight: '400',
                           textAlign: 'center',
@@ -1218,7 +1221,7 @@ export default class Home extends Component {
             }}>
             <Text
               style={{
-                color: 'white',
+                color: color.secondary,
                 fontSize: 18,
                 fontWeight: '500',
                 textAlign: 'center',
@@ -1230,16 +1233,16 @@ export default class Home extends Component {
               style={{
                 justifyContent: 'center',
                 borderRadius: 15,
-                borderColor: 'white',
+                borderColor: color.secondary,
                 padding: 5,
                 paddingHorizontal: 10,
                 borderWidth: 1,
-                backgroundColor: 'black',
+                backgroundColor: color.primary,
               }}
               onPress={() => this.props.navigation.navigate('astroNews')}>
               <Text
                 style={{
-                  color: 'white',
+                  color: color.secondary,
                   fontSize: 13,
                   fontWeight: '400',
                   textAlign: 'center',
@@ -1282,7 +1285,7 @@ export default class Home extends Component {
                     }}>
                     <Text
                       style={{
-                        color: 'white',
+                        color: color.secondary,
                         fontSize: 15,
                         fontWeight: '400',
                         textAlign: 'center',
@@ -1301,7 +1304,7 @@ export default class Home extends Component {
                       }}>
                       <Text
                         style={{
-                          color: 'white',
+                          color: color.secondary,
                           fontSize: 13,
                           fontWeight: '400',
                           textAlign: 'center',
@@ -1311,7 +1314,7 @@ export default class Home extends Component {
                       </Text>
                       <Text
                         style={{
-                          color: 'white',
+                          color: color.secondary,
                           fontSize: 13,
                           fontWeight: '400',
                           textAlign: 'center',
@@ -1337,14 +1340,14 @@ export default class Home extends Component {
             }}>
             <Text
               style={{
-                color: 'white',
+                color: color.secondary,
                 fontSize: 20,
                 fontWeight: '400',
               }}>
               Get AstroTime Gold at{' '}
               <Text
                 style={{
-                  color: 'white',
+                  color: color.secondary,
                   fontSize: 20,
                   fontWeight: '400',
                   textDecorationLine: 'line-through',
@@ -1355,7 +1358,7 @@ export default class Home extends Component {
             </Text>
             <Text
               style={{
-                color: 'white',
+                color: color.secondary,
                 fontSize: 16,
                 fontWeight: '400',
                 marginTop: 5,
@@ -1364,7 +1367,7 @@ export default class Home extends Component {
             </Text>
             <Text
               style={{
-                color: 'white',
+                color: color.secondary,
                 fontSize: 17,
                 fontWeight: '600',
                 marginTop: 5,
@@ -1386,7 +1389,7 @@ export default class Home extends Component {
               }}>
               <Text
                 style={{
-                  color: 'white',
+                  color: color.secondary,
                   fontSize: 17,
                   fontWeight: '600',
                   textAlign: 'center',
@@ -1398,7 +1401,7 @@ export default class Home extends Component {
           </View> */}
           <Text
             style={{
-              color: 'white',
+              color: color.secondary,
               fontSize: 18,
               fontWeight: '500',
               marginLeft: '5%',
@@ -1432,7 +1435,7 @@ export default class Home extends Component {
           </View>
           <Text
             style={{
-              color: 'white',
+              color: color.secondary,
               fontSize: 18,
               fontWeight: '500',
               marginLeft: '5%',
@@ -1471,7 +1474,7 @@ export default class Home extends Component {
                     }}>
                     <Text
                       style={{
-                        color: 'white',
+                        color: color.secondary,
                         fontSize: 15,
                         fontWeight: '400',
                         textAlign: 'center',
@@ -1482,7 +1485,7 @@ export default class Home extends Component {
                     </Text>
                     <Text
                       style={{
-                        color: 'white',
+                        color: color.secondary,
                         fontSize: 15,
                         fontWeight: '400',
                         textAlign: 'center',
@@ -1510,7 +1513,7 @@ export default class Home extends Component {
                       }}>
                       <Text
                         style={{
-                          color: 'white',
+                          color: color.secondary,
                           fontSize: 16,
                           fontWeight: '400',
                           textAlign: 'center',
@@ -1548,7 +1551,7 @@ export default class Home extends Component {
               </View>
               <Text
                 style={{
-                  color: 'white',
+                  color: color.secondary,
                   fontSize: 16,
                   fontWeight: '400',
                   textAlign: 'center',
@@ -1582,7 +1585,7 @@ export default class Home extends Component {
               </View>
               <Text
                 style={{
-                  color: 'white',
+                  color: color.secondary,
                   fontSize: 16,
                   fontWeight: '400',
                   textAlign: 'center',
@@ -1616,7 +1619,7 @@ export default class Home extends Component {
               </View>
               <Text
                 style={{
-                  color: 'white',
+                  color: color.secondary,
                   fontSize: 16,
                   fontWeight: '400',
                   textAlign: 'center',
@@ -1646,7 +1649,8 @@ export default class Home extends Component {
             size={30}
             color="white"
             name="chat-processing-outline"
-            onPress={() => this.props.navigation.navigate('chat')}
+            // onPress={() => this.props.navigation.navigate('chat', {type: 0})}
+            onPress={() => this.props.navigation.navigate('Meeting')}
           />
         </View>
       </SafeAreaView>

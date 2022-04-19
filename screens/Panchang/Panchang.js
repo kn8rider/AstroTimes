@@ -9,12 +9,13 @@ import {
   TextInput,
 } from 'react-native';
 import {ScrollView, TouchableOpacity} from 'react-native-gesture-handler';
-import {Card, Avatar, List, Appbar, RadioButton} from 'react-native-paper';
+import {Appbar, RadioButton} from 'react-native-paper';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import AIcon from 'react-native-vector-icons/Ionicons';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import base64 from 'react-native-base64';
 import {Picker} from '@react-native-picker/picker';
+import color from '../GlobalVariables';
 const userId = '618328';
 const apiKey = '51e43ea9a639e025dd62e04a4b7a32e0';
 var arrData = [];
@@ -87,7 +88,7 @@ const exploreData = [
   },
   {
     title: 'Vibes of the Day',
-    color: '#FABD0B',
+    color: color.themeColor,
     iname: require('../../assets/media/smile.png'),
   },
   {
@@ -270,18 +271,18 @@ export default class Panchang extends Component {
   render() {
     // console.log(this.state.lat, this.state.lon);
     return (
-      <SafeAreaView style={{flex: 1, backgroundColor: 'black'}}>
-        <Appbar style={{backgroundColor: '#FABD0B'}}>
+      <SafeAreaView style={{flex: 1, backgroundColor: color.primary}}>
+        <Appbar style={{backgroundColor: color.themeColor}}>
           <Icon
             name={'arrow-left'}
             size={30}
-            color={'white'}
+            color={color.secondary}
             style={{marginLeft: 10}}
             onPress={() => this.props.navigation.goBack()}
           />
           <Text
             style={{
-              color: 'white',
+              color: color.secondary,
               fontWeight: '400',
               fontSize: 18,
               marginLeft: 20,
@@ -292,7 +293,7 @@ export default class Panchang extends Component {
         <ScrollView
           showsVerticalScrollIndicator={false}
           contentContainerStyle={{
-            backgroundColor: 'black',
+            backgroundColor: color.primary,
           }}>
           <View
             style={{
@@ -307,7 +308,7 @@ export default class Panchang extends Component {
               style={{
                 fontSize: 18,
                 fontWeight: '500',
-                color: 'white',
+                color: color.secondary,
                 marginTop: 10,
               }}>
               Birth Date
@@ -325,7 +326,7 @@ export default class Panchang extends Component {
               <Icon
                 name="calendar-month-outline"
                 size={15}
-                color={'white'}
+                color={color.secondary}
                 onPress={this.showDatepicker}
               />
               <TextInput
@@ -334,7 +335,7 @@ export default class Panchang extends Component {
                   width: '90%',
                   alignSelf: 'center',
                   alignContent: 'center',
-                  color: 'white',
+                  color: color.secondary,
                   fontSize: 16,
                   fontWeight: '400',
                   marginLeft: 20,
@@ -342,7 +343,7 @@ export default class Panchang extends Component {
                 onChangeText={text => this.setState({dateF: text})}
                 value={this.state.date.toDateString().substring(3)}
                 placeholder={this.state.date.toDateString().substring(3)}
-                placeholderTextColor={'white'}
+                placeholderTextColor={color.secondary}
                 underlineColorAndroid={'transparent'}
                 onFocus={() => this.showDatepicker()}
                 // onSubmitEditing={event => this.getData(event.nativeEvent.text)}
@@ -352,7 +353,7 @@ export default class Panchang extends Component {
               style={{
                 fontSize: 18,
                 fontWeight: '500',
-                color: 'white',
+                color: color.secondary,
                 marginTop: 10,
               }}>
               Birth Time
@@ -368,7 +369,7 @@ export default class Panchang extends Component {
                   style={{
                     fontSize: 18,
                     fontWeight: '400',
-                    color: 'white',
+                    color: color.secondary,
                     marginTop: 10,
                   }}>
                   Hour
@@ -387,7 +388,7 @@ export default class Panchang extends Component {
                   <Picker
                     mode="dropdown"
                     style={{
-                      backgroundColor: 'white',
+                      backgroundColor: color.secondary,
                       borderWidth: 1,
                       borderColor: 'blue',
                       borderRadius: 10,
@@ -432,7 +433,7 @@ export default class Panchang extends Component {
                   style={{
                     fontSize: 18,
                     fontWeight: '400',
-                    color: 'white',
+                    color: color.secondary,
                     marginTop: 10,
                   }}>
                   Minute
@@ -451,7 +452,7 @@ export default class Panchang extends Component {
                   <Picker
                     mode="dropdown"
                     style={{
-                      backgroundColor: 'white',
+                      backgroundColor: color.secondary,
                       borderWidth: 1,
                       borderColor: 'blue',
                       borderRadius: 10,
@@ -533,7 +534,7 @@ export default class Panchang extends Component {
                   style={{
                     fontSize: 18,
                     fontWeight: '400',
-                    color: 'white',
+                    color: color.secondary,
                     marginTop: 10,
                   }}>
                   Seconds
@@ -552,7 +553,7 @@ export default class Panchang extends Component {
                   <Picker
                     mode="dropdown"
                     style={{
-                      backgroundColor: 'white',
+                      backgroundColor: color.secondary,
                       borderWidth: 1,
                       borderColor: 'blue',
                       borderRadius: 10,
@@ -634,7 +635,7 @@ export default class Panchang extends Component {
               style={{
                 fontSize: 18,
                 fontWeight: '500',
-                color: 'white',
+                color: color.secondary,
                 marginTop: 10,
               }}>
               Birth Place
@@ -649,14 +650,18 @@ export default class Panchang extends Component {
                 borderWidth: 1,
                 paddingLeft: 10,
               }}>
-              <AIcon name="md-location-outline" size={15} color={'white'} />
+              <AIcon
+                name="md-location-outline"
+                size={15}
+                color={color.secondary}
+              />
               <TextInput
                 style={{
                   height: 45,
                   width: '90%',
                   alignSelf: 'center',
                   alignContent: 'center',
-                  color: 'white',
+                  color: color.secondary,
                   fontSize: 16,
                   fontWeight: '400',
                   marginLeft: 20,
@@ -667,7 +672,7 @@ export default class Panchang extends Component {
                 }}
                 value={this.state.birthPlace}
                 placeholder="Raipur, Chhattisgarh, India"
-                placeholderTextColor={'white'}
+                placeholderTextColor={color.secondary}
                 underlineColorAndroid={'transparent'}
                 onSubmitEditing={event => this.getData(event.nativeEvent.text)}
               />
@@ -697,7 +702,7 @@ export default class Panchang extends Component {
                     }}>
                     <Text
                       style={{
-                        color: 'white',
+                        color: color.secondary,
                         fontSize: 18,
                         fontWeight: '400',
                         marginTop: 5,
@@ -725,7 +730,7 @@ export default class Panchang extends Component {
           <TouchableOpacity
             style={{
               width: '90%',
-              backgroundColor: '#FABD0B',
+              backgroundColor: color.themeColor,
               justifyContent: 'center',
               borderRadius: 10,
               alignSelf: 'center',
@@ -737,7 +742,7 @@ export default class Panchang extends Component {
               style={{
                 fontSize: 18,
                 fontWeight: '400',
-                color: 'white',
+                color: color.secondary,
                 textAlign: 'center',
               }}>
               Genrate Panchang

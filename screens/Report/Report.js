@@ -8,15 +8,9 @@ import {
   ActivityIndicator,
 } from 'react-native';
 import {ScrollView, TouchableOpacity} from 'react-native-gesture-handler';
-import {
-  Card,
-  Avatar,
-  List,
-  Appbar,
-  TextInput,
-  RadioButton,
-} from 'react-native-paper';
+import {Appbar} from 'react-native-paper';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import color from '../GlobalVariables';
 const type = [
   {
     val: 'ARIES',
@@ -76,18 +70,18 @@ export default class Report extends Component {
   }
   render() {
     return (
-      <SafeAreaView style={{flex: 1, backgroundColor: 'black'}}>
-        <Appbar style={{backgroundColor: '#425325'}}>
+      <SafeAreaView style={{flex: 1, backgroundColor: color.primary}}>
+        <Appbar style={{backgroundColor: color.themeColor}}>
           <Icon
             name={'arrow-left'}
             size={30}
-            color={'white'}
+            color={color.secondary}
             style={{marginLeft: 10}}
             onPress={() => this.props.navigation.goBack()}
           />
           <Text
             style={{
-              color: 'white',
+              color: color.secondary,
               fontWeight: '400',
               fontSize: 18,
               marginLeft: 20,
@@ -97,19 +91,19 @@ export default class Report extends Component {
           <Icon
             name={'wallet-outline'}
             size={30}
-            color={'white'}
+            color={color.secondary}
             style={{marginLeft: 80}}
           />
           <Icon
             name={'magnify'}
             size={30}
-            color={'white'}
+            color={color.secondary}
             style={{marginLeft: 10}}
           />
         </Appbar>
         <View
           style={{
-            backgroundColor: 'black',
+            backgroundColor: color.primary,
             flex: 1,
             paddingTop: 10,
           }}>
@@ -149,11 +143,11 @@ export default class Report extends Component {
                       maxWidth: '70%',
                       marginTop: 10,
                     }}>
-                    <Icon name="star" size={15} color={'white'} />
-                    <Icon name="star" size={15} color={'white'} />
-                    <Icon name="star" size={15} color={'white'} />
-                    <Icon name="star" size={15} color={'white'} />
-                    <Icon name="star" size={15} color={'white'} />
+                    <Icon name="star" size={15} color={color.secondary} />
+                    <Icon name="star" size={15} color={color.secondary} />
+                    <Icon name="star" size={15} color={color.secondary} />
+                    <Icon name="star" size={15} color={color.secondary} />
+                    <Icon name="star" size={15} color={color.secondary} />
                   </View>
                   <View
                     style={{
@@ -162,20 +156,24 @@ export default class Report extends Component {
                       marginTop: 5,
                       marginBottom: 10,
                     }}>
-                    <Icon name="account" size={15} color={'white'} />
-                    <Text style={{color: 'white', marginRight: 20}}>
+                    <Icon name="account" size={15} color={color.secondary} />
+                    <Text style={{color: color.secondary, marginRight: 20}}>
                       100072 total
                     </Text>
                   </View>
                 </View>
                 <View>
                   <Text
-                    style={{color: 'white', fontSize: 20, fontWeight: '500'}}>
+                    style={{
+                      color: color.secondary,
+                      fontSize: 20,
+                      fontWeight: '500',
+                    }}>
                     Beenu
                   </Text>
                   <Text
                     style={{
-                      color: 'white',
+                      color: color.secondary,
                       fontSize: 14,
                       fontWeight: '400',
                       marginTop: 7,
@@ -184,7 +182,7 @@ export default class Report extends Component {
                   </Text>
                   <Text
                     style={{
-                      color: 'white',
+                      color: color.secondary,
                       fontSize: 14,
                       fontWeight: '400',
                       marginTop: 5,
@@ -193,7 +191,7 @@ export default class Report extends Component {
                   </Text>
                   <Text
                     style={{
-                      color: 'white',
+                      color: color.secondary,
                       fontSize: 14,
                       fontWeight: '400',
                       marginTop: 5,
@@ -202,7 +200,7 @@ export default class Report extends Component {
                   </Text>
                   <Text
                     style={{
-                      color: 'white',
+                      color: color.secondary,
                       fontSize: 16,
                       fontWeight: '500',
                       marginTop: 5,
@@ -219,7 +217,7 @@ export default class Report extends Component {
                   />
                   <TouchableOpacity
                     style={{
-                      backgroundColor: 'black',
+                      backgroundColor: color.primary,
                       borderRadius: 10,
                       borderColor: 'green',
                       borderWidth: 1,

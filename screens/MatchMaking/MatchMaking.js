@@ -15,6 +15,7 @@ import AIcon from 'react-native-vector-icons/Ionicons';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import base64 from 'react-native-base64';
 import {Picker} from '@react-native-picker/picker';
+import color from '../GlobalVariables';
 const userId = '618328';
 const apiKey = '51e43ea9a639e025dd62e04a4b7a32e0';
 var arrData = [];
@@ -193,18 +194,18 @@ export default class MatchMakingm extends Component {
   render() {
     // console.log(this.state.lat, this.state.lon);
     return (
-      <SafeAreaView style={{flex: 1, backgroundColor: 'black'}}>
-        <Appbar style={{backgroundColor: '#FABD0B'}}>
+      <SafeAreaView style={{flex: 1, backgroundColor: color.primary}}>
+        <Appbar style={{backgroundColor: color.themeColor}}>
           <Icon
             name={'arrow-left'}
             size={30}
-            color={'white'}
+            color={color.themeColor}
             style={{marginLeft: 10}}
             onPress={() => this.props.navigation.goBack()}
           />
           <Text
             style={{
-              color: 'white',
+              color: color.themeColor,
               fontWeight: '400',
               fontSize: 18,
               marginLeft: 20,
@@ -215,7 +216,7 @@ export default class MatchMakingm extends Component {
         <ScrollView
           showsVerticalScrollIndicator={false}
           contentContainerStyle={{
-            backgroundColor: 'black',
+            backgroundColor: color.primary,
           }}>
           <View
             style={{
@@ -230,7 +231,7 @@ export default class MatchMakingm extends Component {
               style={{
                 fontSize: 18,
                 fontWeight: '500',
-                color: 'white',
+                color: color.themeColor,
                 marginTop: 10,
                 marginBottom: 20,
                 textAlign: 'center',
@@ -241,7 +242,7 @@ export default class MatchMakingm extends Component {
               style={{
                 fontSize: 18,
                 fontWeight: '500',
-                color: 'white',
+                color: color.themeColor,
                 marginTop: 10,
               }}>
               Birth Date
@@ -259,7 +260,7 @@ export default class MatchMakingm extends Component {
               <Icon
                 name="calendar-month-outline"
                 size={15}
-                color={'white'}
+                color={color.themeColor}
                 onPress={this.showDatepicker}
               />
               <TextInput
@@ -268,7 +269,7 @@ export default class MatchMakingm extends Component {
                   width: '90%',
                   alignSelf: 'center',
                   alignContent: 'center',
-                  color: 'white',
+                  color: color.themeColor,
                   fontSize: 16,
                   fontWeight: '400',
                   marginLeft: 20,
@@ -276,7 +277,7 @@ export default class MatchMakingm extends Component {
                 onChangeText={text => this.setState({dateF: text})}
                 value={this.state.date.toDateString().substring(3)}
                 placeholder={this.state.date.toDateString().substring(3)}
-                placeholderTextColor={'white'}
+                placeholderTextColor={color.themeColor}
                 underlineColorAndroid={'transparent'}
                 onFocus={() => this.showDatepicker()}
                 // onSubmitEditing={event => this.getData(event.nativeEvent.text)}
@@ -286,7 +287,7 @@ export default class MatchMakingm extends Component {
               style={{
                 fontSize: 18,
                 fontWeight: '500',
-                color: 'white',
+                color: color.themeColor,
                 marginTop: 10,
               }}>
               Birth Time
@@ -302,7 +303,7 @@ export default class MatchMakingm extends Component {
                   style={{
                     fontSize: 18,
                     fontWeight: '400',
-                    color: 'white',
+                    color: color.themeColor,
                     marginTop: 10,
                   }}>
                   Hour
@@ -321,7 +322,7 @@ export default class MatchMakingm extends Component {
                   <Picker
                     mode="dropdown"
                     style={{
-                      backgroundColor: 'white',
+                      backgroundColor: color.themeColor,
                       borderWidth: 1,
                       borderColor: 'blue',
                       borderRadius: 10,
@@ -366,7 +367,7 @@ export default class MatchMakingm extends Component {
                   style={{
                     fontSize: 18,
                     fontWeight: '400',
-                    color: 'white',
+                    color: color.themeColor,
                     marginTop: 10,
                   }}>
                   Minute
@@ -385,7 +386,7 @@ export default class MatchMakingm extends Component {
                   <Picker
                     mode="dropdown"
                     style={{
-                      backgroundColor: 'white',
+                      backgroundColor: color.themeColor,
                       borderWidth: 1,
                       borderColor: 'blue',
                       borderRadius: 10,
@@ -467,7 +468,7 @@ export default class MatchMakingm extends Component {
                   style={{
                     fontSize: 18,
                     fontWeight: '400',
-                    color: 'white',
+                    color: color.themeColor,
                     marginTop: 10,
                   }}>
                   Seconds
@@ -486,7 +487,7 @@ export default class MatchMakingm extends Component {
                   <Picker
                     mode="dropdown"
                     style={{
-                      backgroundColor: 'white',
+                      backgroundColor: color.themeColor,
                       borderWidth: 1,
                       borderColor: 'blue',
                       borderRadius: 10,
@@ -568,7 +569,7 @@ export default class MatchMakingm extends Component {
               style={{
                 fontSize: 18,
                 fontWeight: '500',
-                color: 'white',
+                color: color.themeColor,
                 marginTop: 10,
               }}>
               Birth Place
@@ -583,14 +584,18 @@ export default class MatchMakingm extends Component {
                 borderWidth: 1,
                 paddingLeft: 10,
               }}>
-              <AIcon name="md-location-outline" size={15} color={'white'} />
+              <AIcon
+                name="md-location-outline"
+                size={15}
+                color={color.themeColor}
+              />
               <TextInput
                 style={{
                   height: 45,
                   width: '90%',
                   alignSelf: 'center',
                   alignContent: 'center',
-                  color: 'white',
+                  color: color.themeColor,
                   fontSize: 16,
                   fontWeight: '400',
                   marginLeft: 20,
@@ -601,7 +606,7 @@ export default class MatchMakingm extends Component {
                 }}
                 value={this.state.birthPlace}
                 placeholder="Raipur, Chhattisgarh, India"
-                placeholderTextColor={'white'}
+                placeholderTextColor={color.themeColor}
                 underlineColorAndroid={'transparent'}
                 // onFocus={this.setState({showData: true})}
                 // onBlur={this.setState({showData: false})}
@@ -633,7 +638,7 @@ export default class MatchMakingm extends Component {
                     }}>
                     <Text
                       style={{
-                        color: 'white',
+                        color: color.themeColor,
                         fontSize: 18,
                         fontWeight: '400',
                         marginTop: 5,
@@ -661,7 +666,7 @@ export default class MatchMakingm extends Component {
           <TouchableOpacity
             style={{
               width: '90%',
-              backgroundColor: '#FABD0B',
+              backgroundColor: color.themeColor,
               justifyContent: 'center',
               borderRadius: 10,
               alignSelf: 'center',
@@ -673,7 +678,7 @@ export default class MatchMakingm extends Component {
               style={{
                 fontSize: 18,
                 fontWeight: '400',
-                color: 'white',
+                color: color.themeColor,
                 textAlign: 'center',
               }}>
               Next

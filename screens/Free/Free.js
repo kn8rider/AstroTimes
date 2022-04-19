@@ -17,8 +17,7 @@ import {
   RadioButton,
 } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import FIcon from 'react-native-vector-icons/Feather';
-
+import color from '../GlobalVariables';
 const type = [
   {
     val: 'ARIES',
@@ -87,7 +86,7 @@ const exploreData = [
   },
   {
     title: 'Vibes of the Day',
-    color: '#FABD0B',
+    color: color.themeColor,
     iname: require('../../assets/media/smile.png'),
   },
   {
@@ -112,18 +111,18 @@ export default class Free extends Component {
     console.log('data in Free : ', this.props.data);
 
     return (
-      <SafeAreaView style={{flex: 1, backgroundColor: 'black'}}>
-        <Appbar style={{backgroundColor: '#FABD0B'}}>
+      <SafeAreaView style={{flex: 1, backgroundColor: color.primary}}>
+        <Appbar style={{backgroundColor: color.themeColor}}>
           <Icon
             name={'arrow-left'}
             size={30}
-            color={'white'}
+            color={color.secondary}
             style={{marginLeft: 10}}
             onPress={() => this.props.navigation.goBack()}
           />
           <Text
             style={{
-              color: 'white',
+              color: color.secondary,
               fontWeight: '400',
               fontSize: 18,
               marginLeft: 20,
@@ -134,11 +133,11 @@ export default class Free extends Component {
         <ScrollView
           showsVerticalScrollIndicator={false}
           contentContainerStyle={{
-            backgroundColor: 'black',
+            backgroundColor: color.primary,
           }}>
           <Text
             style={{
-              color: 'white',
+              color: color.secondary,
               fontSize: 18,
               fontWeight: '500',
               marginLeft: '5%',
@@ -155,7 +154,7 @@ export default class Free extends Component {
                   style={{
                     alignItems: 'center',
                     elevation: 10,
-                    backgroundColor: 'black',
+                    backgroundColor: color.primary,
                     marginHorizontal: 5,
                   }}
                   onPress={() =>
@@ -171,10 +170,10 @@ export default class Free extends Component {
                       width: 80,
                       justifyContent: 'center',
                       marginTop: 10,
-                      // borderColor: 'white',
+                      // borderColor: color.secondary,
                       // borderWidth: 1,
                       padding: 15,
-                      backgroundColor: '#FABD0B',
+                      backgroundColor: color.themeColor,
                     }}>
                     <Image
                       source={{uri: item.img}}
@@ -184,7 +183,7 @@ export default class Free extends Component {
                   </View>
                   <Text
                     style={{
-                      color: 'white',
+                      color: color.secondary,
                       fontSize: 14,
                       fontWeight: '300',
                       textAlign: 'center',
@@ -232,14 +231,19 @@ export default class Free extends Component {
                 width: '50%',
                 paddingLeft: 20,
               }}>
-              <Text style={{fontSize: 20, fontWeight: '500', color: 'white'}}>
+              <Text
+                style={{
+                  fontSize: 20,
+                  fontWeight: '500',
+                  color: color.secondary,
+                }}>
                 Free Kundali
               </Text>
               <Text
                 style={{
                   fontSize: 14,
                   fontWeight: '300',
-                  color: 'white',
+                  color: color.secondary,
                   marginTop: 15,
                 }}>
                 Enter your birth details {'&'} get a personalised kundali report
@@ -247,7 +251,7 @@ export default class Free extends Component {
               </Text>
               <TouchableOpacity
                 style={{
-                  backgroundColor: '#FABD0B',
+                  backgroundColor: color.themeColor,
                   padding: 10,
                   borderRadius: 20,
                   width: 100,
@@ -257,7 +261,7 @@ export default class Free extends Component {
                   style={{
                     fontSize: 16,
                     fontWeight: '400',
-                    color: 'white',
+                    color: color.secondary,
                     textAlign: 'center',
                   }}>
                   Get report
@@ -279,14 +283,19 @@ export default class Free extends Component {
                 height: 200,
                 width: '50%',
               }}>
-              <Text style={{fontSize: 20, fontWeight: '500', color: 'white'}}>
+              <Text
+                style={{
+                  fontSize: 20,
+                  fontWeight: '500',
+                  color: color.secondary,
+                }}>
                 Match Making
               </Text>
               <Text
                 style={{
                   fontSize: 14,
                   fontWeight: '300',
-                  color: 'white',
+                  color: color.secondary,
                   marginTop: 15,
                 }}>
                 Enter your birth details {'&'} get a personalised kundali report
@@ -294,7 +303,7 @@ export default class Free extends Component {
               </Text>
               <TouchableOpacity
                 style={{
-                  backgroundColor: '#FABD0B',
+                  backgroundColor: color.themeColor,
                   padding: 10,
                   borderRadius: 20,
                   width: 100,
@@ -304,7 +313,7 @@ export default class Free extends Component {
                   style={{
                     fontSize: 16,
                     fontWeight: '400',
-                    color: 'white',
+                    color: color.secondary,
                     textAlign: 'center',
                   }}>
                   Get report
@@ -343,7 +352,7 @@ export default class Free extends Component {
             }}>
             <Text
               style={{
-                color: 'white',
+                color: color.secondary,
                 fontSize: 18,
                 fontWeight: '500',
                 textAlign: 'center',
@@ -355,15 +364,15 @@ export default class Free extends Component {
               style={{
                 justifyContent: 'center',
                 borderRadius: 15,
-                borderColor: 'white',
+                borderColor: color.secondary,
                 padding: 5,
                 paddingHorizontal: 10,
                 borderWidth: 1,
-                backgroundColor: 'black',
+                backgroundColor: color.primary,
               }}>
               <Text
                 style={{
-                  color: 'white',
+                  color: color.secondary,
                   fontSize: 13,
                   fontWeight: '400',
                   textAlign: 'center',
@@ -405,7 +414,7 @@ export default class Free extends Component {
                     }}>
                     <Text
                       style={{
-                        color: 'white',
+                        color: color.secondary,
                         fontSize: 15,
                         fontWeight: '400',
                         textAlign: 'center',
@@ -423,7 +432,7 @@ export default class Free extends Component {
                       }}>
                       <Text
                         style={{
-                          color: 'white',
+                          color: color.secondary,
                           fontSize: 13,
                           fontWeight: '400',
                           textAlign: 'center',
@@ -433,7 +442,7 @@ export default class Free extends Component {
                       </Text>
                       <Text
                         style={{
-                          color: 'white',
+                          color: color.secondary,
                           fontSize: 13,
                           fontWeight: '400',
                           textAlign: 'center',
@@ -451,7 +460,7 @@ export default class Free extends Component {
 
           <Text
             style={{
-              color: 'white',
+              color: color.secondary,
               fontSize: 18,
               fontWeight: '500',
               marginLeft: 20,
@@ -471,7 +480,7 @@ export default class Free extends Component {
               key={index}>
               <Text
                 style={{
-                  color: 'white',
+                  color: color.secondary,
                   fontSize: 18,
                   fontWeight: '500',
                 }}>
@@ -479,7 +488,7 @@ export default class Free extends Component {
               </Text>
               <Text
                 style={{
-                  color: 'white',
+                  color: color.secondary,
                   fontSize: 14,
                   fontWeight: '300',
                   marginTop: 20,

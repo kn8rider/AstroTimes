@@ -8,16 +8,10 @@ import {
   ActivityIndicator,
 } from 'react-native';
 import {ScrollView, TouchableOpacity} from 'react-native-gesture-handler';
-import {
-  Card,
-  Avatar,
-  List,
-  Appbar,
-  TextInput,
-  RadioButton,
-} from 'react-native-paper';
+import {Appbar} from 'react-native-paper';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import FIcon from 'react-native-vector-icons/Feather';
+import color from '../GlobalVariables';
 const type = [
   {
     val: 'ARIES',
@@ -101,18 +95,18 @@ const model = [
 export default class Live extends Component {
   render() {
     return (
-      <SafeAreaView style={{flex: 1, backgroundColor: 'black'}}>
-        <Appbar style={{backgroundColor: '#FABD0B'}}>
+      <SafeAreaView style={{flex: 1, backgroundColor: color.primary}}>
+        <Appbar style={{backgroundColor: color.themeColor}}>
           <Icon
             name={'arrow-left'}
             size={30}
-            color={'white'}
+            color={color.secondary}
             style={{marginLeft: 10}}
             onPress={() => this.props.navigation.goBack()}
           />
           <Text
             style={{
-              color: 'white',
+              color: color.secondary,
               fontWeight: '400',
               fontSize: 20,
               marginLeft: 30,
@@ -122,19 +116,20 @@ export default class Live extends Component {
           <Icon
             name={'magnify'}
             size={30}
-            color={'white'}
+            color={color.secondary}
             style={{position: 'absolute', right: 20}}
           />
         </Appbar>
         <View
           style={{
-            backgroundColor: 'black',
+            backgroundColor: color.primary,
             flex: 1,
           }}>
           <ScrollView
             showsVerticalScrollIndicator={false}
             contentContainerStyle={{padding: 10}}>
-            <Text style={{fontSize: 19, fontWeight: '400', color: 'white'}}>
+            <Text
+              style={{fontSize: 19, fontWeight: '400', color: color.secondary}}>
               Ongoing Events
             </Text>
             <View
@@ -161,7 +156,7 @@ export default class Live extends Component {
                       justifyContent: 'center',
                       marginTop: 20,
                       padding: 5,
-                      backgroundColor: 'black',
+                      backgroundColor: color.primary,
                     }}>
                     <Image
                       source={{
@@ -172,7 +167,7 @@ export default class Live extends Component {
                     />
                     <View
                       style={{
-                        backgroundColor: 'black',
+                        backgroundColor: color.primary,
                         position: 'absolute',
                         borderRadius: 5,
                         paddingHorizontal: 5,
@@ -188,7 +183,7 @@ export default class Live extends Component {
                         •{' '}
                         <Text
                           style={{
-                            color: 'white',
+                            color: color.secondary,
                             fontSize: 12,
                             fontWeight: '400',
                             textAlign: 'center',
@@ -204,7 +199,7 @@ export default class Live extends Component {
                       textAlign: 'center',
                       fontSize: 16,
                       fontWeight: '300',
-                      color: 'white',
+                      color: color.secondary,
                       marginTop: 5,
                     }}>
                     Priyanka
@@ -216,7 +211,7 @@ export default class Live extends Component {
               style={{
                 fontSize: 19,
                 fontWeight: '400',
-                color: 'white',
+                color: color.secondary,
                 marginBottom: 15,
               }}>
               Upcoming Events
@@ -242,7 +237,7 @@ export default class Live extends Component {
                       width: 90,
                       borderRadius: 45,
                       padding: 5,
-                      backgroundColor: 'black',
+                      backgroundColor: color.primary,
                       borderColor: '#BC8218',
                       borderWidth: 1,
                     }}>
@@ -260,7 +255,7 @@ export default class Live extends Component {
 
                   <Text
                     style={{
-                      color: 'white',
+                      color: color.secondary,
                       marginRight: 20,
                       fontSize: 16,
                       fontWeight: '500',
@@ -270,12 +265,16 @@ export default class Live extends Component {
                 </View>
                 <View style={{justifyContent: 'center'}}>
                   <Text
-                    style={{color: 'white', fontSize: 20, fontWeight: '500'}}>
+                    style={{
+                      color: color.secondary,
+                      fontSize: 20,
+                      fontWeight: '500',
+                    }}>
                     Tarot Reading
                   </Text>
                   <Text
                     style={{
-                      color: 'white',
+                      color: color.secondary,
                       fontSize: 16,
                       fontWeight: '400',
                       marginTop: 7,
@@ -284,7 +283,7 @@ export default class Live extends Component {
                   </Text>
                   <Text
                     style={{
-                      color: 'white',
+                      color: color.secondary,
                       fontSize: 16,
                       fontWeight: '400',
                       marginTop: 7,
@@ -314,9 +313,9 @@ export default class Live extends Component {
                   </View>
                   <TouchableOpacity
                     style={{
-                      backgroundColor: 'black',
+                      backgroundColor: color.primary,
                       borderRadius: 10,
-                      borderColor: 'white',
+                      borderColor: color.secondary,
                       borderWidth: 1,
                       justifyContent: 'center',
                       alignItems: 'center',
@@ -325,7 +324,7 @@ export default class Live extends Component {
                     }}>
                     <Text
                       style={{
-                        color: 'white',
+                        color: color.secondary,
                         fontSize: 16,
                         fontWeight: '400',
                       }}>

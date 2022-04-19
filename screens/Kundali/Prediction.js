@@ -8,17 +8,9 @@ import {
   ActivityIndicator,
 } from 'react-native';
 import {ScrollView, TouchableOpacity} from 'react-native-gesture-handler';
-import {
-  Card,
-  Avatar,
-  List,
-  Appbar,
-  TextInput,
-  RadioButton,
-} from 'react-native-paper';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+
 import base64 from 'react-native-base64';
-import {DataTable} from 'react-native-paper';
+import color from '../GlobalVariables';
 const userId = '618328';
 const apiKey = '51e43ea9a639e025dd62e04a4b7a32e0';
 export default class Prediction extends Component {
@@ -69,18 +61,18 @@ export default class Prediction extends Component {
   render() {
     // console.log('char : ', this.props.data);
     return (
-      <SafeAreaView style={{flex: 1, backgroundColor: 'black'}}>
+      <SafeAreaView style={{flex: 1, backgroundColor: color.primary}}>
         <ScrollView
           showsVerticalScrollIndicator={false}
           style={{
-            backgroundColor: 'black ',
+            backgroundColor: color.primary,
             flex: 1,
           }}>
           <Text
             style={{
               fontSize: 18,
               fontWeight: '500',
-              color: 'white',
+              color: color.secondary,
               marginLeft: '5%',
               marginTop: 20,
             }}>
@@ -98,7 +90,7 @@ export default class Prediction extends Component {
             style={{
               fontSize: 18,
               fontWeight: '500',
-              color: 'white',
+              color: color.secondary,
               marginLeft: '5%',
               marginTop: 10,
             }}>
@@ -116,7 +108,7 @@ export default class Prediction extends Component {
             style={{
               fontSize: 18,
               fontWeight: '500',
-              color: 'white',
+              color: color.secondary,
               marginLeft: '5%',
               marginTop: 20,
               textAlign: 'center',
@@ -127,7 +119,7 @@ export default class Prediction extends Component {
             style={{
               fontSize: 18,
               fontWeight: '500',
-              color: 'white',
+              color: color.secondary,
               marginLeft: '5%',
               marginTop: 20,
             }}>
@@ -145,7 +137,7 @@ export default class Prediction extends Component {
             style={{
               fontSize: 18,
               fontWeight: '500',
-              color: 'white',
+              color: color.secondary,
               marginLeft: '5%',
               marginTop: 10,
             }}>
@@ -163,7 +155,7 @@ export default class Prediction extends Component {
             style={{
               fontSize: 18,
               fontWeight: '500',
-              color: 'white',
+              color: color.secondary,
               marginLeft: '5%',
               marginTop: 10,
             }}>
@@ -181,7 +173,7 @@ export default class Prediction extends Component {
             style={{
               fontSize: 18,
               fontWeight: '500',
-              color: 'white',
+              color: color.secondary,
               marginLeft: '5%',
               marginTop: 10,
             }}>
@@ -199,7 +191,7 @@ export default class Prediction extends Component {
             style={{
               fontSize: 18,
               fontWeight: '500',
-              color: 'white',
+              color: color.secondary,
               marginLeft: '5%',
               marginTop: 10,
             }}>
@@ -217,7 +209,7 @@ export default class Prediction extends Component {
             style={{
               fontSize: 18,
               fontWeight: '500',
-              color: 'white',
+              color: color.secondary,
               marginLeft: '5%',
               marginTop: 10,
             }}>
@@ -235,7 +227,7 @@ export default class Prediction extends Component {
             style={{
               fontSize: 18,
               fontWeight: '500',
-              color: 'white',
+              color: color.secondary,
               marginLeft: '5%',
               marginTop: 10,
             }}>

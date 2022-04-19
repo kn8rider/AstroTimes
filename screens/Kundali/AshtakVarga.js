@@ -12,6 +12,7 @@ import {ScrollView, TouchableOpacity} from 'react-native-gesture-handler';
 
 import base64 from 'react-native-base64';
 import {DataTable} from 'react-native-paper';
+import color from '../GlobalVariables';
 const userId = '618328';
 const apiKey = '51e43ea9a639e025dd62e04a4b7a32e0';
 const height = Dimensions.get('window').height;
@@ -111,11 +112,11 @@ export default class AshtakVarga extends Component {
   render() {
     // console.log('char : ', this.props.data);
     return (
-      <SafeAreaView style={{flex: 1, backgroundColor: 'black'}}>
+      <SafeAreaView style={{flex: 1, backgroundColor: color.primary}}>
         <ScrollView
           showsVerticalScrollIndicator={false}
           style={{
-            backgroundColor: 'black ',
+            backgroundColor: color.primary,
             flex: 1,
           }}>
           <ScrollView
@@ -123,7 +124,7 @@ export default class AshtakVarga extends Component {
             showsHorizontalScrollIndicator={false}
             style={{
               height: 40,
-              borderColor: 'white',
+              borderColor: color.secondary,
               borderWidth: 1,
               borderRightWidth: 0,
               borderTopLeftRadius: 10,
@@ -136,12 +137,14 @@ export default class AshtakVarga extends Component {
                 key={index}
                 style={{
                   backgroundColor:
-                    this.state.activeIndex == index ? '#FABD0B' : 'transparent',
+                    this.state.activeIndex == index
+                      ? color.themeColor
+                      : 'transparent',
                   justifyContent: 'center',
                   alignItems: 'center',
                   height: '100%',
                   paddingHorizontal: 10,
-                  borderColor: 'white',
+                  borderColor: color.secondary,
                   borderWidth: this.state.activeIndex == index ? 1 : 0,
                   borderRadius: 10,
                 }}
@@ -149,7 +152,12 @@ export default class AshtakVarga extends Component {
                   this.setState({activeIndex: index});
                   this.getMajorDetails(item.val);
                 }}>
-                <Text style={{fontSize: 17, color: 'white', fontWeight: '400'}}>
+                <Text
+                  style={{
+                    fontSize: 17,
+                    color: color.secondary,
+                    fontWeight: '400',
+                  }}>
                   {item.id}
                 </Text>
               </TouchableOpacity>
@@ -171,7 +179,7 @@ export default class AshtakVarga extends Component {
                 style={{
                   fontSize: 20,
                   fontWeight: '500',
-                  color: 'white',
+                  color: color.secondary,
                   marginLeft: '5%',
                   marginTop: 20,
                 }}>
@@ -181,7 +189,7 @@ export default class AshtakVarga extends Component {
                 style={{
                   fontSize: 17,
                   fontWeight: '400',
-                  color: 'white',
+                  color: color.secondary,
                   marginLeft: '5%',
                   marginTop: 20,
                 }}>
@@ -192,7 +200,7 @@ export default class AshtakVarga extends Component {
               <ScrollView
                 horizontal={true}
                 style={{
-                  borderColor: 'white',
+                  borderColor: color.secondary,
                   borderWidth: 1,
                   borderRadius: 10,
                   alignSelf: 'center',
@@ -203,7 +211,7 @@ export default class AshtakVarga extends Component {
                   <DataTable>
                     <DataTable.Header
                       style={{
-                        backgroundColor: '#FABD0B',
+                        backgroundColor: color.themeColor,
                         borderTopRightRadius: 10,
                         borderTopLeftRadius: 10,
                       }}>
@@ -212,7 +220,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 17,
                             fontWeight: '500',
-                            color: 'white',
+                            color: color.secondary,
                           }}>
                           Planets
                         </Text>
@@ -222,7 +230,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 17,
                             fontWeight: '500',
-                            color: 'white',
+                            color: color.secondary,
                             marginLeft: 30,
                           }}>
                           Sun
@@ -233,7 +241,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 17,
                             fontWeight: '500',
-                            color: 'white',
+                            color: color.secondary,
                           }}>
                           Moon
                         </Text>
@@ -243,7 +251,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 17,
                             fontWeight: '500',
-                            color: 'white',
+                            color: color.secondary,
                           }}>
                           Mars
                         </Text>
@@ -253,7 +261,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 17,
                             fontWeight: '500',
-                            color: 'white',
+                            color: color.secondary,
                           }}>
                           Mercury
                         </Text>
@@ -263,7 +271,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 17,
                             fontWeight: '500',
-                            color: 'white',
+                            color: color.secondary,
                           }}>
                           Jupiter
                         </Text>
@@ -273,7 +281,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 17,
                             fontWeight: '500',
-                            color: 'white',
+                            color: color.secondary,
                           }}>
                           Venus
                         </Text>
@@ -283,7 +291,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 17,
                             fontWeight: '500',
-                            color: 'white',
+                            color: color.secondary,
                           }}>
                           Saturn
                         </Text>
@@ -293,7 +301,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 17,
                             fontWeight: '500',
-                            color: 'white',
+                            color: color.secondary,
                           }}>
                           Ascendant
                         </Text>
@@ -303,7 +311,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 17,
                             fontWeight: '500',
-                            color: 'white',
+                            color: color.secondary,
                           }}>
                           Total
                         </Text>
@@ -316,7 +324,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                           }}>
                           {this.state.data.ashtak_points?.aquarius
                             ? 'Aqaurius'
@@ -328,7 +336,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                           }}>
                           {this.state.data.ashtak_points?.aquarius?.sun}
                         </Text>
@@ -338,7 +346,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.aquarius?.moon}
@@ -349,7 +357,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.aquarius?.mars}
@@ -360,7 +368,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.aquarius?.mercury}
@@ -371,7 +379,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.aquarius?.jupiter}
@@ -382,7 +390,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.aquarius?.venus}
@@ -393,7 +401,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.aquarius?.saturn}
@@ -404,7 +412,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.aquarius?.ascendant}
@@ -415,7 +423,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.aquarius?.total}
@@ -428,7 +436,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                           }}>
                           {this.state.data.ashtak_points?.taurus
                             ? 'Taurus'
@@ -440,7 +448,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                           }}>
                           {this.state.data.ashtak_points?.taurus?.sun}
                         </Text>
@@ -450,7 +458,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.taurus?.moon}
@@ -461,7 +469,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.taurus?.mars}
@@ -472,7 +480,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.taurus?.mercury}
@@ -483,7 +491,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.taurus?.jupiter}
@@ -494,7 +502,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.taurus?.venus}
@@ -505,7 +513,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.taurus?.saturn}
@@ -516,7 +524,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.taurus?.ascendant}
@@ -527,7 +535,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.taurus?.total}
@@ -540,7 +548,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                           }}>
                           {this.state.data.ashtak_points?.gemini
                             ? 'Gemini'
@@ -552,7 +560,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                           }}>
                           {this.state.data.ashtak_points?.gemini?.sun}
                         </Text>
@@ -562,7 +570,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.gemini?.moon}
@@ -573,7 +581,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.gemini?.mars}
@@ -584,7 +592,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.gemini?.mercury}
@@ -595,7 +603,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.gemini?.jupiter}
@@ -606,7 +614,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.gemini?.venus}
@@ -617,7 +625,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.gemini?.saturn}
@@ -628,7 +636,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.gemini?.ascendant}
@@ -639,7 +647,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.gemini?.total}
@@ -652,7 +660,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                           }}>
                           {this.state.data.ashtak_points?.cancer
                             ? 'Cancer'
@@ -664,7 +672,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                           }}>
                           {this.state.data.ashtak_points?.cancer?.sun}
                         </Text>
@@ -674,7 +682,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.cancer?.moon}
@@ -685,7 +693,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.cancer?.mars}
@@ -696,7 +704,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.cancer?.mercury}
@@ -707,7 +715,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.cancer?.jupiter}
@@ -718,7 +726,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.cancer?.venus}
@@ -729,7 +737,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.cancer?.saturn}
@@ -740,7 +748,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.cancer?.ascendant}
@@ -751,7 +759,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.cancer?.total}
@@ -764,7 +772,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                           }}>
                           {this.state.data.ashtak_points?.leo ? 'Leo' : ''}
                         </Text>
@@ -774,7 +782,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                           }}>
                           {this.state.data.ashtak_points?.leo?.sun}
                         </Text>
@@ -784,7 +792,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.leo?.moon}
@@ -795,7 +803,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.leo?.mars}
@@ -806,7 +814,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.leo?.mercury}
@@ -817,7 +825,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.leo?.jupiter}
@@ -828,7 +836,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.leo?.venus}
@@ -839,7 +847,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.leo?.saturn}
@@ -850,7 +858,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.leo?.ascendant}
@@ -861,7 +869,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.leo?.total}
@@ -874,7 +882,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                           }}>
                           {this.state.data.ashtak_points?.virgo ? 'Virgo' : ''}
                         </Text>
@@ -884,7 +892,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                           }}>
                           {this.state.data.ashtak_points?.virgo?.sun}
                         </Text>
@@ -894,7 +902,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.virgo?.moon}
@@ -905,7 +913,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.virgo?.mars}
@@ -916,7 +924,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.virgo?.mercury}
@@ -927,7 +935,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.virgo?.jupiter}
@@ -938,7 +946,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.virgo?.venus}
@@ -949,7 +957,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.virgo?.saturn}
@@ -960,7 +968,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.virgo?.ascendant}
@@ -971,7 +979,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.virgo?.total}
@@ -984,7 +992,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                           }}>
                           {this.state.data.ashtak_points?.libra ? 'Libra' : ''}
                         </Text>
@@ -994,7 +1002,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                           }}>
                           {this.state.data.ashtak_points?.libra?.sun}
                         </Text>
@@ -1004,7 +1012,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.libra?.moon}
@@ -1015,7 +1023,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.libra?.mars}
@@ -1026,7 +1034,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.libra?.mercury}
@@ -1037,7 +1045,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.libra?.jupiter}
@@ -1048,7 +1056,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.libra?.venus}
@@ -1059,7 +1067,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.libra?.saturn}
@@ -1070,7 +1078,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.libra?.ascendant}
@@ -1081,7 +1089,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.libra?.total}
@@ -1094,7 +1102,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                           }}>
                           {this.state.data.ashtak_points?.scorpio
                             ? 'Scorpio'
@@ -1106,7 +1114,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                           }}>
                           {this.state.data.ashtak_points?.scorpio?.sun}
                         </Text>
@@ -1116,7 +1124,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.scorpio?.moon}
@@ -1127,7 +1135,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.scorpio?.mars}
@@ -1138,7 +1146,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.scorpio?.mercury}
@@ -1149,7 +1157,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.scorpio?.jupiter}
@@ -1160,7 +1168,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.scorpio?.venus}
@@ -1171,7 +1179,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.scorpio?.saturn}
@@ -1182,7 +1190,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.scorpio?.ascendant}
@@ -1193,7 +1201,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.scorpio?.total}
@@ -1206,7 +1214,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                           }}>
                           {this.state.data.ashtak_points?.sagittarius
                             ? 'Sagittarius'
@@ -1218,7 +1226,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                           }}>
                           {this.state.data.ashtak_points?.sagittarius?.sun}
                         </Text>
@@ -1228,7 +1236,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.sagittarius?.moon}
@@ -1239,7 +1247,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.sagittarius?.mars}
@@ -1250,7 +1258,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.sagittarius?.mercury}
@@ -1261,7 +1269,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.sagittarius?.jupiter}
@@ -1272,7 +1280,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.sagittarius?.venus}
@@ -1283,7 +1291,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.sagittarius?.saturn}
@@ -1294,7 +1302,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {
@@ -1308,7 +1316,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.sagittarius?.total}
@@ -1321,7 +1329,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                           }}>
                           {this.state.data.ashtak_points?.capricorn
                             ? 'Capricorn'
@@ -1333,7 +1341,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                           }}>
                           {this.state.data.ashtak_points?.capricorn?.sun}
                         </Text>
@@ -1343,7 +1351,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.capricorn?.moon}
@@ -1354,7 +1362,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.capricorn?.mars}
@@ -1365,7 +1373,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.capricorn?.mercury}
@@ -1376,7 +1384,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.capricorn?.jupiter}
@@ -1387,7 +1395,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.capricorn?.venus}
@@ -1398,7 +1406,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.capricorn?.saturn}
@@ -1409,7 +1417,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.capricorn?.ascendant}
@@ -1420,7 +1428,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.capricorn?.total}
@@ -1433,7 +1441,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                           }}>
                           {this.state.data.ashtak_points?.aries ? 'Aries' : ''}
                         </Text>
@@ -1443,7 +1451,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                           }}>
                           {this.state.data.ashtak_points?.aries?.sun}
                         </Text>
@@ -1453,7 +1461,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.aries?.moon}
@@ -1464,7 +1472,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.aries?.mars}
@@ -1475,7 +1483,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.aries?.mercury}
@@ -1486,7 +1494,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.aries?.jupiter}
@@ -1497,7 +1505,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.aries?.venus}
@@ -1508,7 +1516,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.aries?.saturn}
@@ -1519,7 +1527,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.aries?.ascendant}
@@ -1530,7 +1538,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.aries?.total}
@@ -1543,7 +1551,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                           }}>
                           {this.state.data.ashtak_points?.pisces
                             ? 'Pisces'
@@ -1555,7 +1563,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                           }}>
                           {this.state.data.ashtak_points?.pisces?.sun}
                         </Text>
@@ -1565,7 +1573,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.pisces?.moon}
@@ -1576,7 +1584,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.pisces?.mars}
@@ -1587,7 +1595,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.pisces?.mercury}
@@ -1598,7 +1606,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.pisces?.jupiter}
@@ -1609,7 +1617,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.pisces?.venus}
@@ -1620,7 +1628,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.pisces?.saturn}
@@ -1631,7 +1639,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.pisces?.ascendant}
@@ -1642,7 +1650,7 @@ export default class AshtakVarga extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {this.state.data.ashtak_points?.pisces?.total}

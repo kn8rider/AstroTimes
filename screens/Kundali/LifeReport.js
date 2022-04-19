@@ -18,8 +18,8 @@ import {
   RadioButton,
 } from 'react-native-paper';
 import base64 from 'react-native-base64';
+import color from '../GlobalVariables';
 const height = Dimensions.get('window').height;
-
 const userId = '618328';
 const apiKey = '51e43ea9a639e025dd62e04a4b7a32e0';
 planetdID = [
@@ -146,11 +146,11 @@ export default class LifeReport extends Component {
   render() {
     // console.log('char : ', this.props.data);
     return (
-      <SafeAreaView style={{flex: 1, backgroundColor: 'black'}}>
+      <SafeAreaView style={{flex: 1, backgroundColor: color.primary}}>
         <ScrollView
           showsVerticalScrollIndicator={false}
           style={{
-            backgroundColor: 'black ',
+            backgroundColor: color.primary,
             flex: 1,
           }}>
           <ScrollView
@@ -158,7 +158,7 @@ export default class LifeReport extends Component {
             showsHorizontalScrollIndicator={false}
             style={{
               height: 40,
-              borderColor: 'white',
+              borderColor: color.secondary,
               borderWidth: 1,
               borderRightWidth: 0,
               borderTopLeftRadius: 10,
@@ -171,12 +171,14 @@ export default class LifeReport extends Component {
                 key={index}
                 style={{
                   backgroundColor:
-                    this.state.activeIndex == index ? '#FABD0B' : 'transparent',
+                    this.state.activeIndex == index
+                      ? color.themeColor
+                      : 'transparent',
                   justifyContent: 'center',
                   alignItems: 'center',
                   height: '100%',
                   paddingHorizontal: 10,
-                  borderColor: 'white',
+                  borderColor: color.secondary,
                   borderWidth: this.state.activeIndex == index ? 1 : 0,
                   borderRadius: 10,
                 }}
@@ -185,7 +187,12 @@ export default class LifeReport extends Component {
                   this.getRashiDetails(item.val);
                   this.getGenDetails(item.val);
                 }}>
-                <Text style={{fontSize: 17, color: 'white', fontWeight: '400'}}>
+                <Text
+                  style={{
+                    fontSize: 17,
+                    color: color.secondary,
+                    fontWeight: '400',
+                  }}>
                   {item.id}
                 </Text>
               </TouchableOpacity>
@@ -197,7 +204,7 @@ export default class LifeReport extends Component {
                 style={{
                   fontSize: 20,
                   fontWeight: '500',
-                  color: 'white',
+                  color: color.secondary,
                   marginLeft: '5%',
                   marginTop: 20,
                   textAlign: 'center',
@@ -208,7 +215,7 @@ export default class LifeReport extends Component {
                 style={{
                   fontSize: 16,
                   fontWeight: '400',
-                  color: 'white',
+                  color: color.secondary,
                   marginLeft: '5%',
                   marginTop: 5,
                   marginBottom: 20,
@@ -220,7 +227,7 @@ export default class LifeReport extends Component {
                 style={{
                   fontSize: 20,
                   fontWeight: '500',
-                  color: 'white',
+                  color: color.secondary,
                   marginLeft: '5%',
                   marginTop: 20,
                   textAlign: 'center',
@@ -231,7 +238,7 @@ export default class LifeReport extends Component {
                 style={{
                   fontSize: 16,
                   fontWeight: '400',
-                  color: 'white',
+                  color: color.secondary,
                   marginLeft: '5%',
                   marginTop: 5,
                   marginBottom: 20,
@@ -243,7 +250,7 @@ export default class LifeReport extends Component {
                 style={{
                   fontSize: 20,
                   fontWeight: '500',
-                  color: 'white',
+                  color: color.secondary,
                   marginLeft: '5%',
                   marginTop: 20,
                   textAlign: 'center',
@@ -254,7 +261,7 @@ export default class LifeReport extends Component {
                 style={{
                   fontSize: 18,
                   fontWeight: '500',
-                  color: 'white',
+                  color: color.secondary,
                   marginLeft: '5%',
                   marginTop: 20,
                 }}>
@@ -264,7 +271,7 @@ export default class LifeReport extends Component {
                 style={{
                   fontSize: 16,
                   fontWeight: '400',
-                  color: 'white',
+                  color: color.secondary,
                   marginLeft: '5%',
                   marginTop: 5,
                   marginBottom: 20,

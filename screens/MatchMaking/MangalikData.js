@@ -9,17 +9,9 @@ import {
   ActivityIndicator,
 } from 'react-native';
 import {ScrollView, TouchableOpacity} from 'react-native-gesture-handler';
-import {
-  Card,
-  Avatar,
-  List,
-  Appbar,
-  TextInput,
-  RadioButton,
-} from 'react-native-paper';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import base64 from 'react-native-base64';
 import {DataTable} from 'react-native-paper';
+import color from '../GlobalVariables';
 const userId = '618328';
 const apiKey = '51e43ea9a639e025dd62e04a4b7a32e0';
 const height = Dimensions.get('window').height;
@@ -78,11 +70,11 @@ export default class MangalikData extends Component {
     // console.log('data: ---', this.props.data);
 
     return (
-      <SafeAreaView style={{flex: 1, backgroundColor: 'black'}}>
+      <SafeAreaView style={{flex: 1, backgroundColor: color.primary}}>
         <ScrollView
           showsVerticalScrollIndicator={false}
           style={{
-            backgroundColor: 'black ',
+            backgroundColor: color.primary,
             flex: 1,
           }}>
           {this.state.load == true ? (
@@ -100,7 +92,7 @@ export default class MangalikData extends Component {
                 style={{
                   fontSize: 20,
                   fontWeight: '400',
-                  color: 'white',
+                  color: color.secondary,
                   marginTop: 20,
                   textAlign: 'center',
                 }}>
@@ -110,7 +102,7 @@ export default class MangalikData extends Component {
                 style={{
                   fontSize: 18,
                   fontWeight: '400',
-                  color: 'white',
+                  color: color.secondary,
                   marginTop: 10,
                 }}>
                 is_present : {'       '}
@@ -121,7 +113,7 @@ export default class MangalikData extends Component {
                   fontSize: 18,
                   fontWeight: '400',
                   marginTop: 10,
-                  color: 'white',
+                  color: color.secondary,
                 }}>
                 is_mars_manglik_cancelled : {'       '}
                 {this.state.mgData?.male?.is_mars_manglik_cancelled.toString()}
@@ -130,7 +122,7 @@ export default class MangalikData extends Component {
                 style={{
                   fontSize: 18,
                   fontWeight: '400',
-                  color: 'white',
+                  color: color.secondary,
                   marginTop: 10,
                 }}>
                 manglik_cancel_rule : {'       '}
@@ -140,7 +132,7 @@ export default class MangalikData extends Component {
                 style={{
                   fontSize: 18,
                   fontWeight: '400',
-                  color: 'white',
+                  color: color.secondary,
                   marginTop: 10,
                 }}>
                 manglik_present_rule : ---
@@ -149,7 +141,7 @@ export default class MangalikData extends Component {
                 style={{
                   fontSize: 18,
                   fontWeight: '400',
-                  color: 'white',
+                  color: color.secondary,
                   marginTop: 10,
                 }}>
                 based_on_aspect : {'       '}
@@ -159,7 +151,7 @@ export default class MangalikData extends Component {
                 style={{
                   fontSize: 18,
                   fontWeight: '400',
-                  color: 'white',
+                  color: color.secondary,
                   marginTop: 10,
                 }}>
                 based_on_house : {'       '}
@@ -169,7 +161,7 @@ export default class MangalikData extends Component {
                 style={{
                   fontSize: 18,
                   fontWeight: '400',
-                  color: 'white',
+                  color: color.secondary,
                   marginTop: 10,
                 }}>
                 manglik_report : {'       '}
@@ -179,7 +171,7 @@ export default class MangalikData extends Component {
                 style={{
                   fontSize: 18,
                   fontWeight: '400',
-                  color: 'white',
+                  color: color.secondary,
                   marginTop: 10,
                 }}>
                 manglik_status : {'       '}
@@ -189,7 +181,7 @@ export default class MangalikData extends Component {
                 style={{
                   fontSize: 18,
                   fontWeight: '400',
-                  color: 'white',
+                  color: color.secondary,
                   marginTop: 10,
                 }}>
                 percentage_manglik_after_cancellation : {'       '}
@@ -199,7 +191,7 @@ export default class MangalikData extends Component {
                 style={{
                   fontSize: 18,
                   fontWeight: '400',
-                  color: 'white',
+                  color: color.secondary,
                   marginTop: 10,
                 }}>
                 percentage_manglik_present : {'       '}
@@ -209,7 +201,7 @@ export default class MangalikData extends Component {
                 style={{
                   fontSize: 20,
                   fontWeight: '400',
-                  color: 'white',
+                  color: color.secondary,
                   marginTop: 20,
                   textAlign: 'center',
                 }}>
@@ -219,7 +211,7 @@ export default class MangalikData extends Component {
                 style={{
                   fontSize: 18,
                   fontWeight: '400',
-                  color: 'white',
+                  color: color.secondary,
                   marginTop: 10,
                 }}>
                 is_present : {'       '}
@@ -230,7 +222,7 @@ export default class MangalikData extends Component {
                   fontSize: 18,
                   fontWeight: '400',
                   marginTop: 10,
-                  color: 'white',
+                  color: color.secondary,
                 }}>
                 is_mars_manglik_cancelled : {'       '}
                 {this.state.mgData?.female?.is_mars_manglik_cancelled.toString()}
@@ -239,7 +231,7 @@ export default class MangalikData extends Component {
                 style={{
                   fontSize: 18,
                   fontWeight: '400',
-                  color: 'white',
+                  color: color.secondary,
                   marginTop: 10,
                 }}>
                 manglik_cancel_rule : {'       '}
@@ -249,7 +241,7 @@ export default class MangalikData extends Component {
                 style={{
                   fontSize: 18,
                   fontWeight: '400',
-                  color: 'white',
+                  color: color.secondary,
                   marginTop: 10,
                 }}>
                 manglik_present_rule : ---
@@ -258,7 +250,7 @@ export default class MangalikData extends Component {
                 style={{
                   fontSize: 18,
                   fontWeight: '400',
-                  color: 'white',
+                  color: color.secondary,
                   marginTop: 10,
                 }}>
                 based_on_aspect : {'       '}
@@ -271,7 +263,7 @@ export default class MangalikData extends Component {
                 style={{
                   fontSize: 18,
                   fontWeight: '400',
-                  color: 'white',
+                  color: color.secondary,
                   marginTop: 10,
                 }}>
                 based_on_house : {'       '}
@@ -284,7 +276,7 @@ export default class MangalikData extends Component {
                 style={{
                   fontSize: 18,
                   fontWeight: '400',
-                  color: 'white',
+                  color: color.secondary,
                   marginTop: 10,
                 }}>
                 manglik_report : {'       '}
@@ -294,7 +286,7 @@ export default class MangalikData extends Component {
                 style={{
                   fontSize: 18,
                   fontWeight: '400',
-                  color: 'white',
+                  color: color.secondary,
                   marginTop: 10,
                 }}>
                 manglik_status : {'       '}
@@ -304,7 +296,7 @@ export default class MangalikData extends Component {
                 style={{
                   fontSize: 18,
                   fontWeight: '400',
-                  color: 'white',
+                  color: color.secondary,
                   marginTop: 10,
                 }}>
                 percentage_manglik_after_cancellation : {'       '}
@@ -317,7 +309,7 @@ export default class MangalikData extends Component {
                 style={{
                   fontSize: 18,
                   fontWeight: '400',
-                  color: 'white',
+                  color: color.secondary,
                   marginTop: 10,
                 }}>
                 percentage_manglik_present : {'       '}
@@ -327,7 +319,7 @@ export default class MangalikData extends Component {
                 style={{
                   fontSize: 20,
                   fontWeight: '400',
-                  color: 'white',
+                  color: color.secondary,
                   marginTop: 20,
                   textAlign: 'center',
                 }}>
@@ -337,7 +329,7 @@ export default class MangalikData extends Component {
                 style={{
                   fontSize: 18,
                   fontWeight: '400',
-                  color: 'white',
+                  color: color.secondary,
                   marginTop: 20,
                 }}>
                 Match : {'       '}
@@ -347,7 +339,7 @@ export default class MangalikData extends Component {
                 style={{
                   fontSize: 18,
                   fontWeight: '400',
-                  color: 'white',
+                  color: color.secondary,
                   marginTop: 10,
                   marginBottom: 30,
                 }}>

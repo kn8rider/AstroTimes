@@ -9,17 +9,9 @@ import {
   ActivityIndicator,
 } from 'react-native';
 import {ScrollView, TouchableOpacity} from 'react-native-gesture-handler';
-import {
-  Card,
-  Avatar,
-  List,
-  Appbar,
-  TextInput,
-  RadioButton,
-} from 'react-native-paper';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import base64 from 'react-native-base64';
 import {DataTable} from 'react-native-paper';
+import color from '../GlobalVariables';
 const userId = '618328';
 const apiKey = '51e43ea9a639e025dd62e04a4b7a32e0';
 const height = Dimensions.get('window').height;
@@ -177,11 +169,11 @@ export default class MatchingData extends Component {
     // console.log('data: ---', this.props.data);
 
     return (
-      <SafeAreaView style={{flex: 1, backgroundColor: 'black'}}>
+      <SafeAreaView style={{flex: 1, backgroundColor: color.primary}}>
         <ScrollView
           showsVerticalScrollIndicator={false}
           style={{
-            backgroundColor: 'black ',
+            backgroundColor: color.primary,
             flex: 1,
           }}>
           <View
@@ -194,7 +186,7 @@ export default class MatchingData extends Component {
               width: 300,
               alignSelf: 'center',
               borderWidth: 1,
-              borderColor: 'white',
+              borderColor: color.secondary,
               borderRadius: 10,
               marginTop: 20,
             }}>
@@ -204,14 +196,19 @@ export default class MatchingData extends Component {
                 height: '99%',
                 borderRadius: 10,
                 backgroundColor:
-                  this.state.activeChat == 0 ? '#FABD0B' : 'black',
+                  this.state.activeChat == 0 ? color.themeColor : color.primary,
                 justifyContent: 'center',
                 borderWidth: this.state.activeChat == 0 ? 1 : 0,
-                borderColor: 'white',
+                borderColor: color.secondary,
                 alignItems: 'center',
               }}
               onPress={() => this.setState({activeChat: 0})}>
-              <Text style={{fontSize: 15, fontWeight: '400', color: 'white'}}>
+              <Text
+                style={{
+                  fontSize: 15,
+                  fontWeight: '400',
+                  color: color.secondary,
+                }}>
                 Birth Details
               </Text>
             </TouchableOpacity>
@@ -221,14 +218,19 @@ export default class MatchingData extends Component {
                 height: '99%',
                 borderRadius: 10,
                 backgroundColor:
-                  this.state.activeChat == 1 ? '#FABD0B' : 'black',
+                  this.state.activeChat == 1 ? color.themeColor : color.primary,
                 justifyContent: 'center',
                 borderWidth: this.state.activeChat == 1 ? 1 : 0,
-                borderColor: 'white',
+                borderColor: color.secondary,
                 alignItems: 'center',
               }}
               onPress={() => this.setState({activeChat: 1})}>
-              <Text style={{fontSize: 15, fontWeight: '500', color: 'white'}}>
+              <Text
+                style={{
+                  fontSize: 15,
+                  fontWeight: '500',
+                  color: color.secondary,
+                }}>
                 Astro Details
               </Text>
             </TouchableOpacity>
@@ -250,7 +252,7 @@ export default class MatchingData extends Component {
                     style={{
                       fontSize: 20,
                       fontWeight: '500',
-                      color: 'white',
+                      color: color.secondary,
                       marginTop: 20,
                       textAlign: 'center',
                     }}>
@@ -258,7 +260,7 @@ export default class MatchingData extends Component {
                   </Text>
                   <View
                     style={{
-                      borderColor: 'white',
+                      borderColor: color.secondary,
                       borderWidth: 1,
                       borderRadius: 10,
                       alignSelf: 'center',
@@ -274,7 +276,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           marginLeft: 10,
                         }}>
                         Year
@@ -283,7 +285,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           position: 'absolute',
                           left: 200,
                           maxWidth: '45%',
@@ -301,7 +303,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           marginLeft: 10,
                         }}>
                         Month
@@ -310,7 +312,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
 
                           position: 'absolute',
                           left: 200,
@@ -330,7 +332,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           marginLeft: 10,
                         }}>
                         Date
@@ -339,7 +341,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           position: 'absolute',
                           left: 200,
                           // textAlign: 'center',
@@ -358,7 +360,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           marginLeft: 10,
                         }}>
                         Hour
@@ -367,7 +369,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           position: 'absolute',
                           left: 200,
                           // textAlign: 'center',
@@ -386,7 +388,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           marginLeft: 10,
                         }}>
                         Minutes
@@ -395,7 +397,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           position: 'absolute',
                           left: 200,
                           // textAlign: 'center',
@@ -414,7 +416,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           marginLeft: 10,
                         }}>
                         Gender
@@ -423,7 +425,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           position: 'absolute',
                           left: 200,
                           // textAlign: 'center',
@@ -442,7 +444,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           marginLeft: 10,
                         }}>
                         Latitude
@@ -451,7 +453,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           position: 'absolute',
                           left: 200,
                           // textAlign: 'center',
@@ -470,7 +472,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           marginLeft: 10,
                         }}>
                         Longitude
@@ -479,7 +481,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           position: 'absolute',
                           left: 200,
                           // textAlign: 'center',
@@ -498,7 +500,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           marginLeft: 10,
                         }}>
                         Timezone
@@ -507,7 +509,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           position: 'absolute',
                           left: 200,
                           // textAlign: 'center',
@@ -526,7 +528,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           marginLeft: 10,
                         }}>
                         Ayanamsha
@@ -535,7 +537,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           position: 'absolute',
                           left: 200,
                           // textAlign: 'center',
@@ -554,7 +556,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           marginLeft: 10,
                         }}>
                         Sunrise
@@ -563,7 +565,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           position: 'absolute',
                           left: 200,
                           // textAlign: 'center',
@@ -582,7 +584,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           marginLeft: 10,
                         }}>
                         Sunset
@@ -591,7 +593,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           position: 'absolute',
                           left: 200,
                           // textAlign: 'center',
@@ -606,7 +608,7 @@ export default class MatchingData extends Component {
                     style={{
                       fontSize: 20,
                       fontWeight: '500',
-                      color: 'white',
+                      color: color.secondary,
                       marginTop: 20,
                       textAlign: 'center',
                     }}>
@@ -614,7 +616,7 @@ export default class MatchingData extends Component {
                   </Text>
                   <View
                     style={{
-                      borderColor: 'white',
+                      borderColor: color.secondary,
                       borderWidth: 1,
                       borderRadius: 10,
                       alignSelf: 'center',
@@ -630,7 +632,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           marginLeft: 10,
                         }}>
                         Year
@@ -639,7 +641,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           position: 'absolute',
                           left: 200,
                           maxWidth: '45%',
@@ -657,7 +659,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           marginLeft: 10,
                         }}>
                         Month
@@ -666,7 +668,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
 
                           position: 'absolute',
                           left: 200,
@@ -686,7 +688,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           marginLeft: 10,
                         }}>
                         Date
@@ -695,7 +697,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           position: 'absolute',
                           left: 200,
                           // textAlign: 'center',
@@ -714,7 +716,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           marginLeft: 10,
                         }}>
                         Hour
@@ -723,7 +725,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           position: 'absolute',
                           left: 200,
                           // textAlign: 'center',
@@ -742,7 +744,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           marginLeft: 10,
                         }}>
                         Minutes
@@ -751,7 +753,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           position: 'absolute',
                           left: 200,
                           // textAlign: 'center',
@@ -770,7 +772,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           marginLeft: 10,
                         }}>
                         Gender
@@ -779,7 +781,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           position: 'absolute',
                           left: 200,
                           // textAlign: 'center',
@@ -798,7 +800,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           marginLeft: 10,
                         }}>
                         Latitude
@@ -807,7 +809,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           position: 'absolute',
                           left: 200,
                           // textAlign: 'center',
@@ -829,7 +831,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           marginLeft: 10,
                         }}>
                         Longitude
@@ -838,7 +840,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           position: 'absolute',
                           left: 200,
                           // textAlign: 'center',
@@ -860,7 +862,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           marginLeft: 10,
                         }}>
                         Timezone
@@ -869,7 +871,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           position: 'absolute',
                           left: 200,
                           // textAlign: 'center',
@@ -891,7 +893,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           marginLeft: 10,
                         }}>
                         Ayanamsha
@@ -900,7 +902,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           position: 'absolute',
                           left: 200,
                           // textAlign: 'center',
@@ -922,7 +924,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           marginLeft: 10,
                         }}>
                         Sunrise
@@ -931,7 +933,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           position: 'absolute',
                           left: 200,
                           // textAlign: 'center',
@@ -950,7 +952,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           marginLeft: 10,
                         }}>
                         Sunset
@@ -959,7 +961,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           position: 'absolute',
                           left: 200,
                           // textAlign: 'center',
@@ -977,7 +979,7 @@ export default class MatchingData extends Component {
                     style={{
                       fontSize: 20,
                       fontWeight: '500',
-                      color: 'white',
+                      color: color.secondary,
                       marginTop: 20,
                       textAlign: 'center',
                     }}>
@@ -986,7 +988,7 @@ export default class MatchingData extends Component {
 
                   <View
                     style={{
-                      borderColor: 'white',
+                      borderColor: color.secondary,
                       borderWidth: 1,
                       borderRadius: 10,
                       alignSelf: 'center',
@@ -1002,7 +1004,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           marginLeft: 10,
                         }}>
                         Ascendant
@@ -1011,7 +1013,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           position: 'absolute',
                           left: 200,
                           maxWidth: '45%',
@@ -1029,7 +1031,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           marginLeft: 10,
                         }}>
                         Varna
@@ -1038,7 +1040,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           position: 'absolute',
                           left: 200,
                           // textAlign: 'center',
@@ -1057,7 +1059,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           marginLeft: 10,
                         }}>
                         Vashya
@@ -1066,7 +1068,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           position: 'absolute',
                           left: 200,
                           // textAlign: 'center',
@@ -1085,7 +1087,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           marginLeft: 10,
                         }}>
                         Yoni
@@ -1094,7 +1096,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           position: 'absolute',
                           left: 200,
                           // textAlign: 'center',
@@ -1113,7 +1115,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           marginLeft: 10,
                         }}>
                         Gan
@@ -1122,7 +1124,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           position: 'absolute',
                           left: 200,
                           // textAlign: 'center',
@@ -1141,7 +1143,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           marginLeft: 10,
                         }}>
                         Nadi
@@ -1150,7 +1152,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           position: 'absolute',
                           left: 200,
                           // textAlign: 'center',
@@ -1169,7 +1171,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           marginLeft: 10,
                         }}>
                         SignLord
@@ -1178,7 +1180,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           position: 'absolute',
                           left: 200,
                           // textAlign: 'center',
@@ -1197,7 +1199,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           marginLeft: 10,
                         }}>
                         sign
@@ -1206,7 +1208,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           position: 'absolute',
                           left: 200,
                           // textAlign: 'center',
@@ -1225,7 +1227,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           marginLeft: 10,
                         }}>
                         Naksahtra
@@ -1234,7 +1236,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           position: 'absolute',
                           left: 200,
                           // textAlign: 'center',
@@ -1253,7 +1255,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           marginLeft: 10,
                         }}>
                         NaksahtraLord
@@ -1262,7 +1264,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           position: 'absolute',
                           left: 200,
                           // textAlign: 'center',
@@ -1284,7 +1286,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           marginLeft: 10,
                         }}>
                         Charan
@@ -1293,7 +1295,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           position: 'absolute',
                           left: 200,
                           // textAlign: 'center',
@@ -1312,7 +1314,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           marginLeft: 10,
                         }}>
                         Yog
@@ -1321,7 +1323,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           position: 'absolute',
                           left: 200,
                           // textAlign: 'center',
@@ -1340,7 +1342,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           marginLeft: 10,
                         }}>
                         Karan
@@ -1349,7 +1351,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           position: 'absolute',
                           left: 200,
                           // textAlign: 'center',
@@ -1368,7 +1370,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           marginLeft: 10,
                         }}>
                         Tithi
@@ -1377,7 +1379,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           position: 'absolute',
                           left: 200,
                           // textAlign: 'center',
@@ -1396,7 +1398,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           marginLeft: 10,
                         }}>
                         Yunja
@@ -1405,7 +1407,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           position: 'absolute',
                           left: 200,
                           // textAlign: 'center',
@@ -1424,7 +1426,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           marginLeft: 10,
                         }}>
                         Tatva
@@ -1433,7 +1435,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           position: 'absolute',
                           left: 200,
                           // textAlign: 'center',
@@ -1452,7 +1454,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           marginLeft: 10,
                         }}>
                         Name alphabet
@@ -1461,7 +1463,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           position: 'absolute',
                           left: 200,
                           // textAlign: 'center',
@@ -1483,7 +1485,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           marginLeft: 10,
                         }}>
                         Paya
@@ -1492,7 +1494,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           position: 'absolute',
                           left: 200,
                           // textAlign: 'center',
@@ -1507,7 +1509,7 @@ export default class MatchingData extends Component {
                     style={{
                       fontSize: 20,
                       fontWeight: '500',
-                      color: 'white',
+                      color: color.secondary,
                       marginTop: 20,
                       textAlign: 'center',
                     }}>
@@ -1516,7 +1518,7 @@ export default class MatchingData extends Component {
 
                   <View
                     style={{
-                      borderColor: 'white',
+                      borderColor: color.secondary,
                       borderWidth: 1,
                       borderRadius: 10,
                       alignSelf: 'center',
@@ -1532,7 +1534,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           marginLeft: 10,
                         }}>
                         Ascendant
@@ -1541,7 +1543,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           position: 'absolute',
                           left: 200,
                           maxWidth: '45%',
@@ -1562,7 +1564,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           marginLeft: 10,
                         }}>
                         Varna
@@ -1571,7 +1573,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           position: 'absolute',
                           left: 200,
                           // textAlign: 'center',
@@ -1590,7 +1592,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           marginLeft: 10,
                         }}>
                         Vashya
@@ -1599,7 +1601,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           position: 'absolute',
                           left: 200,
                           // textAlign: 'center',
@@ -1618,7 +1620,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           marginLeft: 10,
                         }}>
                         Yoni
@@ -1627,7 +1629,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           position: 'absolute',
                           left: 200,
                           // textAlign: 'center',
@@ -1646,7 +1648,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           marginLeft: 10,
                         }}>
                         Gan
@@ -1655,7 +1657,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           position: 'absolute',
                           left: 200,
                           // textAlign: 'center',
@@ -1674,7 +1676,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           marginLeft: 10,
                         }}>
                         Nadi
@@ -1683,7 +1685,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           position: 'absolute',
                           left: 200,
                           // textAlign: 'center',
@@ -1702,7 +1704,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           marginLeft: 10,
                         }}>
                         SignLord
@@ -1711,7 +1713,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           position: 'absolute',
                           left: 200,
                           // textAlign: 'center',
@@ -1733,7 +1735,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           marginLeft: 10,
                         }}>
                         sign
@@ -1742,7 +1744,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           position: 'absolute',
                           left: 200,
                           // textAlign: 'center',
@@ -1761,7 +1763,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           marginLeft: 10,
                         }}>
                         Naksahtra
@@ -1770,7 +1772,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           position: 'absolute',
                           left: 200,
                           // textAlign: 'center',
@@ -1792,7 +1794,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           marginLeft: 10,
                         }}>
                         NaksahtraLord
@@ -1801,7 +1803,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           position: 'absolute',
                           left: 200,
                           // textAlign: 'center',
@@ -1823,7 +1825,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           marginLeft: 10,
                         }}>
                         Charan
@@ -1832,7 +1834,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           position: 'absolute',
                           left: 200,
                           // textAlign: 'center',
@@ -1851,7 +1853,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           marginLeft: 10,
                         }}>
                         Yog
@@ -1860,7 +1862,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           position: 'absolute',
                           left: 200,
                           // textAlign: 'center',
@@ -1879,7 +1881,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           marginLeft: 10,
                         }}>
                         Karan
@@ -1888,7 +1890,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           position: 'absolute',
                           left: 200,
                           // textAlign: 'center',
@@ -1907,7 +1909,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           marginLeft: 10,
                         }}>
                         Tithi
@@ -1916,7 +1918,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           position: 'absolute',
                           left: 200,
                           // textAlign: 'center',
@@ -1935,7 +1937,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           marginLeft: 10,
                         }}>
                         Yunja
@@ -1944,7 +1946,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           position: 'absolute',
                           left: 200,
                           // textAlign: 'center',
@@ -1963,7 +1965,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           marginLeft: 10,
                         }}>
                         Tatva
@@ -1972,7 +1974,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           position: 'absolute',
                           left: 200,
                           // textAlign: 'center',
@@ -1991,7 +1993,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           marginLeft: 10,
                         }}>
                         Name alphabet
@@ -2000,7 +2002,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           position: 'absolute',
                           left: 200,
                           // textAlign: 'center',
@@ -2022,7 +2024,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           marginLeft: 10,
                         }}>
                         Paya
@@ -2031,7 +2033,7 @@ export default class MatchingData extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           position: 'absolute',
                           left: 200,
                           // textAlign: 'center',

@@ -16,8 +16,9 @@ import {
   RadioButton,
 } from 'react-native-paper';
 import {connect} from 'react-redux';
-
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import color from './GlobalVariables';
 class Profile extends Component {
   constructor(props) {
     super(props);
@@ -30,24 +31,32 @@ class Profile extends Component {
       checked: 'Male',
     };
   }
+  async setLogOut() {
+    try {
+      await AsyncStorage.removeItem('userData');
+      this.props.navigation.navigate('Main');
+    } catch (error) {
+      console.log(error);
+    }
+  }
   render() {
     return (
       <SafeAreaView
         style={{
           flex: 1,
-          backgroundColor: 'black',
+          backgroundColor: color.primary,
         }}>
-        <Appbar style={{backgroundColor: '#FABD0B'}}>
+        <Appbar style={{backgroundColor: color.themeColor}}>
           <Icon
             name={'arrow-left'}
             size={30}
-            color={'white'}
+            color={color.secondary}
             style={{marginLeft: 10}}
             onPress={() => this.props.navigation.goBack()}
           />
           <Text
             style={{
-              color: 'white',
+              color: color.secondary,
               fontWeight: '400',
               fontSize: 18,
               marginLeft: 20,
@@ -61,8 +70,9 @@ class Profile extends Component {
           <View>
             <Image
               source={{
-                uri: this.props.itemArr.picture
-                  ? this.props.itemArr.picture
+                uri: this.props.itemArr
+                  ? this.props.itemArr.picture ??
+                    JSON.parse(this.props.itemArr).picture
                   : 'https://cdn-icons-png.flaticon.com/512/149/149071.png',
               }}
               style={{
@@ -77,43 +87,50 @@ class Profile extends Component {
           </View>
           <TextInput
             label={
-              this.props.itemArr.name ? this.props.itemArr.name : 'Full Name'
+              this.props.itemArr
+                ? this.props.itemArr.name ?? JSON.parse(this.props.itemArr).name
+                : 'Full Name'
             }
             activeUnderlineColor="#FB6B8F"
             value={this.state.name}
             onChangeText={text => this.setState({name: text})}
             underlineColor="#202020"
-            style={{backgroundColor: 'black'}}
-            theme={{colors: {placeholder: 'white', text: 'white'}}}
+            style={{backgroundColor: color.primary}}
+            theme={{
+              colors: {placeholder: color.secondary, text: color.secondary},
+            }}
           />
           <TextInput
             label={
-              this.props.itemArr.email ? this.props.itemArr.email : 'Email'
+              this.props.itemArr
+                ? this.props.itemArr.email ??
+                  JSON.parse(this.props.itemArr).email
+                : 'Email'
             }
             activeUnderlineColor="#FB6B8F"
             value={this.state.email}
             onChangeText={text => this.setState({email: text})}
             underlineColor="#202020"
-            style={{backgroundColor: 'black'}}
-            theme={{colors: {placeholder: 'white', text: 'white'}}}
+            style={{backgroundColor: color.primary}}
+            theme={{
+              colors: {placeholder: color.secondary, text: color.secondary},
+            }}
           />
           <TextInput
-            label={
-              this.props.itemArr.phone
-                ? this.props.itemArr.phone
-                : 'Phone (+1 987-543-210)'
-            }
+            label={'Phone (+1 987-543-210)'}
             activeUnderlineColor="#FB6B8F"
             value={this.state.phone}
             onChangeText={text => this.setState({phone: text})}
             underlineColor="#202020"
             keyboardType="numeric"
-            style={{backgroundColor: 'black'}}
-            theme={{colors: {placeholder: 'white', text: 'white'}}}
+            style={{backgroundColor: color.primary}}
+            theme={{
+              colors: {placeholder: color.secondary, text: color.secondary},
+            }}
           />
           <Text
             style={{
-              color: 'white',
+              color: color.secondary,
               marginLeft: 10,
               marginTop: 10,
               fontSize: 16,
@@ -131,7 +148,7 @@ class Profile extends Component {
               status={this.state.checked === 'Male' ? 'checked' : 'unchecked'}
               onPress={() => this.setState({checked: 'Male'})}
             />
-            <Text style={{color: 'white', marginLeft: 10}}>Male</Text>
+            <Text style={{color: color.secondary, marginLeft: 10}}>Male</Text>
           </View>
           <View
             style={{
@@ -143,7 +160,7 @@ class Profile extends Component {
               status={this.state.checked === 'Female' ? 'checked' : 'unchecked'}
               onPress={() => this.setState({checked: 'Female'})}
             />
-            <Text style={{color: 'white', marginLeft: 10}}>Female</Text>
+            <Text style={{color: color.secondary, marginLeft: 10}}>Female</Text>
           </View>
           <TextInput
             label="Password"
@@ -152,14 +169,16 @@ class Profile extends Component {
             onChangeText={text => this.setState({password: text})}
             underlineColor="#202020"
             secureTextEntry={true}
-            style={{backgroundColor: 'black'}}
-            theme={{colors: {placeholder: 'white', text: 'white'}}}
+            style={{backgroundColor: color.primary}}
+            theme={{
+              colors: {placeholder: color.secondary, text: color.secondary},
+            }}
           />
           <TouchableOpacity
             style={{
               width: '100%',
               height: 40,
-              backgroundColor: '#FABD0B',
+              backgroundColor: color.themeColor,
               alignSelf: 'center',
               marginVertical: 20,
               borderRadius: 3,
@@ -170,7 +189,7 @@ class Profile extends Component {
           >
             <Text
               style={{
-                color: 'white',
+                color: color.secondary,
                 fontSize: 14,
                 fontWeight: '400',
               }}>
@@ -179,7 +198,7 @@ class Profile extends Component {
           </TouchableOpacity>
           <Text
             style={{
-              color: 'white',
+              color: color.secondary,
               fontSize: 12,
               fontWeight: '400',
               alignSelf: 'center',
@@ -191,18 +210,17 @@ class Profile extends Component {
             style={{
               width: '100%',
               height: 40,
-              backgroundColor: '#FABD0B',
+              backgroundColor: color.themeColor,
               alignSelf: 'center',
               marginVertical: 20,
               borderRadius: 3,
               justifyContent: 'center',
               alignItems: 'center',
             }}
-            // onPress={() => this.props.navigation.navigate('Signup')}
-          >
+            onPress={() => this.setLogOut()}>
             <Text
               style={{
-                color: 'white',
+                color: color.secondary,
                 fontSize: 14,
                 fontWeight: '400',
               }}>

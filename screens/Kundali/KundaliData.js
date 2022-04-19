@@ -15,6 +15,7 @@ import Dosha from './Dosha';
 import Remedi from './Remedi';
 import Prediction from './Prediction';
 import LifeReport from './LifeReport';
+import color from '../GlobalVariables';
 const Tab = createMaterialTopTabNavigator();
 export default class KundaliData extends Component {
   constructor(props) {
@@ -31,18 +32,18 @@ export default class KundaliData extends Component {
   render() {
     // console.log('data main: ', this.props.route.params.data);
     return (
-      <SafeAreaView style={{flex: 1, backgroundColor: 'black'}}>
-        <Appbar style={{backgroundColor: '#FABD0B'}}>
+      <SafeAreaView style={{flex: 1, backgroundColor: color.primary}}>
+        <Appbar style={{backgroundColor: color.themeColor}}>
           <Icon
             name={'arrow-left'}
             size={30}
-            color={'white'}
+            color={color.secondary}
             style={{marginLeft: 10}}
             onPress={() => this.props.navigation.goBack()}
           />
           <Text
             style={{
-              color: 'white',
+              color: color.secondary,
               fontWeight: '500',
               fontSize: 18,
               marginLeft: 20,
@@ -57,10 +58,10 @@ export default class KundaliData extends Component {
             tabBarLabelStyle: {
               fontSize: 13,
               fontWeight: '400',
-              color: 'white',
+              color: color.secondary,
             },
             tabBarItemStyle: {height: 40},
-            tabBarStyle: {backgroundColor: 'black'},
+            tabBarStyle: {backgroundColor: color.primary},
           }}>
           <Tab.Screen name="Basic Details">
             {() => <BirthDetails data={this.props.route.params.data} />}

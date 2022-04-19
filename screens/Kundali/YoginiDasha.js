@@ -8,17 +8,9 @@ import {
   ActivityIndicator,
 } from 'react-native';
 import {ScrollView, TouchableOpacity} from 'react-native-gesture-handler';
-import {
-  Card,
-  Avatar,
-  List,
-  Appbar,
-  TextInput,
-  RadioButton,
-} from 'react-native-paper';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import base64 from 'react-native-base64';
 import {DataTable} from 'react-native-paper';
+import color from '../GlobalVariables';
 const userId = '618328';
 const apiKey = '51e43ea9a639e025dd62e04a4b7a32e0';
 export default class YoginiDasha extends Component {
@@ -106,11 +98,11 @@ export default class YoginiDasha extends Component {
   render() {
     // console.log('char : ', this.props.data);
     return (
-      <SafeAreaView style={{flex: 1, backgroundColor: 'black'}}>
+      <SafeAreaView style={{flex: 1, backgroundColor: color.primary}}>
         <ScrollView
           showsVerticalScrollIndicator={false}
           style={{
-            backgroundColor: 'black ',
+            backgroundColor: color.primary,
             flex: 1,
           }}>
           <View
@@ -123,7 +115,7 @@ export default class YoginiDasha extends Component {
               width: 300,
               alignSelf: 'center',
               borderWidth: 1,
-              borderColor: 'white',
+              borderColor: color.secondary,
               borderRadius: 10,
               marginTop: 20,
             }}>
@@ -133,14 +125,19 @@ export default class YoginiDasha extends Component {
                 height: '99%',
                 borderRadius: 10,
                 backgroundColor:
-                  this.state.setPlanet == 0 ? '#FABD0B' : 'black',
+                  this.state.setPlanet == 0 ? '#FABD0B' : color.primary,
                 justifyContent: 'center',
                 borderWidth: this.state.setPlanet == 0 ? 1 : 0,
-                borderColor: 'white',
+                borderColor: color.secondary,
                 alignItems: 'center',
               }}
               onPress={() => this.setState({setPlanet: 0})}>
-              <Text style={{fontSize: 17, fontWeight: '400', color: 'white'}}>
+              <Text
+                style={{
+                  fontSize: 17,
+                  fontWeight: '400',
+                  color: color.secondary,
+                }}>
                 Major Dasha
               </Text>
             </TouchableOpacity>
@@ -150,14 +147,19 @@ export default class YoginiDasha extends Component {
                 height: '99%',
                 borderRadius: 10,
                 backgroundColor:
-                  this.state.setPlanet == 1 ? '#FABD0B' : 'black',
+                  this.state.setPlanet == 1 ? '#FABD0B' : color.primary,
                 justifyContent: 'center',
                 borderWidth: this.state.setPlanet == 1 ? 1 : 0,
-                borderColor: 'white',
+                borderColor: color.secondary,
                 alignItems: 'center',
               }}
               onPress={() => this.setState({setPlanet: 1})}>
-              <Text style={{fontSize: 17, fontWeight: '500', color: 'white'}}>
+              <Text
+                style={{
+                  fontSize: 17,
+                  fontWeight: '500',
+                  color: color.secondary,
+                }}>
                 Current Dasha
               </Text>
             </TouchableOpacity>
@@ -165,7 +167,7 @@ export default class YoginiDasha extends Component {
           <ScrollView
             horizontal={true}
             style={{
-              borderColor: 'white',
+              borderColor: color.secondary,
               borderWidth: 1,
               borderRadius: 10,
               alignSelf: 'center',
@@ -189,7 +191,7 @@ export default class YoginiDasha extends Component {
                         style={{
                           fontSize: 17,
                           fontWeight: '500',
-                          color: 'white',
+                          color: color.secondary,
                         }}>
                         Duration
                       </Text>
@@ -200,7 +202,7 @@ export default class YoginiDasha extends Component {
                         style={{
                           fontSize: 17,
                           fontWeight: '500',
-                          color: 'white',
+                          color: color.secondary,
                         }}>
                         Dasha
                       </Text>
@@ -211,7 +213,7 @@ export default class YoginiDasha extends Component {
                         style={{
                           fontSize: 17,
                           fontWeight: '500',
-                          color: 'white',
+                          color: color.secondary,
                           marginLeft: 30,
                         }}>
                         Start Date
@@ -223,7 +225,7 @@ export default class YoginiDasha extends Component {
                         style={{
                           fontSize: 17,
                           fontWeight: '500',
-                          color: 'white',
+                          color: color.secondary,
                         }}>
                         End Date
                       </Text>
@@ -234,7 +236,7 @@ export default class YoginiDasha extends Component {
                         style={{
                           fontSize: 17,
                           fontWeight: '500',
-                          color: 'white',
+                          color: color.secondary,
                           marginLeft: 30,
                         }}>
                         Start_ms
@@ -246,7 +248,7 @@ export default class YoginiDasha extends Component {
                         style={{
                           fontSize: 17,
                           fontWeight: '500',
-                          color: 'white',
+                          color: color.secondary,
                         }}>
                         End_ms
                       </Text>
@@ -260,7 +262,7 @@ export default class YoginiDasha extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                           }}>
                           {item.duration}
                         </Text>
@@ -271,7 +273,7 @@ export default class YoginiDasha extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {item.dasha_name}
@@ -283,7 +285,7 @@ export default class YoginiDasha extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {item.start_date}
@@ -295,7 +297,7 @@ export default class YoginiDasha extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {item.end_date}
@@ -307,7 +309,7 @@ export default class YoginiDasha extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {item.start_ms}
@@ -319,7 +321,7 @@ export default class YoginiDasha extends Component {
                           style={{
                             fontSize: 15,
                             fontWeight: '400',
-                            color: 'white',
+                            color: color.secondary,
                             alignSelf: 'center',
                           }}>
                           {item.end_ms}
@@ -344,7 +346,7 @@ export default class YoginiDasha extends Component {
                         style={{
                           fontSize: 17,
                           fontWeight: '500',
-                          color: 'white',
+                          color: color.secondary,
                         }}>
                         Duration
                       </Text>
@@ -355,7 +357,7 @@ export default class YoginiDasha extends Component {
                         style={{
                           fontSize: 17,
                           fontWeight: '500',
-                          color: 'white',
+                          color: color.secondary,
                         }}>
                         Sign
                       </Text>
@@ -366,7 +368,7 @@ export default class YoginiDasha extends Component {
                         style={{
                           fontSize: 17,
                           fontWeight: '500',
-                          color: 'white',
+                          color: color.secondary,
                           marginLeft: 30,
                         }}>
                         Start Date
@@ -378,7 +380,7 @@ export default class YoginiDasha extends Component {
                         style={{
                           fontSize: 17,
                           fontWeight: '500',
-                          color: 'white',
+                          color: color.secondary,
                         }}>
                         End Date
                       </Text>
@@ -391,7 +393,7 @@ export default class YoginiDasha extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                         }}>
                         {this.state.currentDetails?.major_dasha?.duration}
                       </Text>
@@ -402,7 +404,7 @@ export default class YoginiDasha extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           alignSelf: 'center',
                         }}>
                         {this.state.currentDetails?.major_dasha?.dasha_name}
@@ -414,7 +416,7 @@ export default class YoginiDasha extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           alignSelf: 'center',
                         }}>
                         {this.state.currentDetails?.major_dasha?.start_date}
@@ -426,7 +428,7 @@ export default class YoginiDasha extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           alignSelf: 'center',
                         }}>
                         {this.state.currentDetails?.major_dasha?.end_date}
@@ -440,7 +442,7 @@ export default class YoginiDasha extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                         }}>
                         {this.state.currentDetails?.sub_dasha?.duration}
                       </Text>
@@ -451,7 +453,7 @@ export default class YoginiDasha extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           alignSelf: 'center',
                         }}>
                         {this.state.currentDetails?.sub_dasha?.dasha_name}
@@ -463,7 +465,7 @@ export default class YoginiDasha extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           alignSelf: 'center',
                         }}>
                         {this.state.currentDetails?.sub_dasha?.start_date}
@@ -475,7 +477,7 @@ export default class YoginiDasha extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           alignSelf: 'center',
                         }}>
                         {this.state.currentDetails?.sub_dasha?.end_date}
@@ -489,7 +491,7 @@ export default class YoginiDasha extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                         }}>
                         {this.state.currentDetails?.sub_sub_dasha?.duration}
                       </Text>
@@ -500,7 +502,7 @@ export default class YoginiDasha extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           alignSelf: 'center',
                         }}>
                         {this.state.currentDetails?.sub_sub_dasha?.dasha_name}
@@ -512,7 +514,7 @@ export default class YoginiDasha extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           alignSelf: 'center',
                         }}>
                         {this.state.currentDetails?.sub_sub_dasha?.start_date}
@@ -524,7 +526,7 @@ export default class YoginiDasha extends Component {
                         style={{
                           fontSize: 15,
                           fontWeight: '400',
-                          color: 'white',
+                          color: color.secondary,
                           alignSelf: 'center',
                         }}>
                         {this.state.currentDetails?.sub_sub_dasha?.end_date}

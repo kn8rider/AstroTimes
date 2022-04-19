@@ -9,17 +9,10 @@ import {
   Dimensions,
 } from 'react-native';
 import {ScrollView, TouchableOpacity} from 'react-native-gesture-handler';
-import {
-  Card,
-  Avatar,
-  List,
-  Appbar,
-  TextInput,
-  RadioButton,
-} from 'react-native-paper';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import base64 from 'react-native-base64';
 import {DataTable} from 'react-native-paper';
+import color from '../GlobalVariables';
 const height = Dimensions.get('window').height;
 
 const userId = '618328';
@@ -146,18 +139,18 @@ export default class PanchangData extends Component {
     console.log(this.state.AdPg);
     // console.log('render: ', this.props.route.params.data);
     return (
-      <SafeAreaView style={{flex: 1, backgroundColor: 'black'}}>
-        <Appbar style={{backgroundColor: '#FABD0B'}}>
+      <SafeAreaView style={{flex: 1, backgroundColor: color.primary}}>
+        <Appbar style={{backgroundColor: color.themeColor}}>
           <Icon
             name={'arrow-left'}
             size={30}
-            color={'white'}
+            color={color.secondary}
             style={{marginLeft: 10}}
             onPress={() => this.props.navigation.goBack()}
           />
           <Text
             style={{
-              color: 'white',
+              color: color.secondary,
               fontWeight: '400',
               fontSize: 18,
               marginLeft: 20,
@@ -181,7 +174,7 @@ export default class PanchangData extends Component {
               width: 400,
               alignSelf: 'center',
               borderWidth: 1,
-              borderColor: 'white',
+              borderColor: color.secondary,
               borderRadius: 10,
               marginTop: 10,
             }}>
@@ -191,14 +184,19 @@ export default class PanchangData extends Component {
                 height: '98%',
                 borderRadius: 10,
                 backgroundColor:
-                  this.state.activeChat == 0 ? '#FABD0B' : 'black',
+                  this.state.activeChat == 0 ? color.themeColor : color.primary,
                 justifyContent: 'center',
                 borderWidth: this.state.activeChat == 0 ? 1 : 0,
-                borderColor: 'white',
+                borderColor: color.secondary,
                 alignItems: 'center',
               }}
               onPress={() => this.setState({activeChat: 0})}>
-              <Text style={{fontSize: 15, fontWeight: '400', color: 'white'}}>
+              <Text
+                style={{
+                  fontSize: 15,
+                  fontWeight: '400',
+                  color: color.secondary,
+                }}>
                 Panchang Details
               </Text>
             </TouchableOpacity>
@@ -208,14 +206,19 @@ export default class PanchangData extends Component {
                 height: '98%',
                 borderRadius: 10,
                 backgroundColor:
-                  this.state.activeChat == 1 ? '#FABD0B' : 'black',
+                  this.state.activeChat == 1 ? color.themeColor : color.primary,
                 justifyContent: 'center',
                 borderWidth: this.state.activeChat == 1 ? 1 : 0,
-                borderColor: 'white',
+                borderColor: color.secondary,
                 alignItems: 'center',
               }}
               onPress={() => this.setState({activeChat: 1})}>
-              <Text style={{fontSize: 15, fontWeight: '500', color: 'white'}}>
+              <Text
+                style={{
+                  fontSize: 15,
+                  fontWeight: '500',
+                  color: color.secondary,
+                }}>
                 Planetary Positions
               </Text>
             </TouchableOpacity>
@@ -225,14 +228,19 @@ export default class PanchangData extends Component {
                 height: '98%',
                 borderRadius: 10,
                 backgroundColor:
-                  this.state.activeChat == 2 ? '#FABD0B' : 'black',
+                  this.state.activeChat == 2 ? color.themeColor : color.primary,
                 justifyContent: 'center',
                 borderWidth: this.state.activeChat == 2 ? 1 : 0,
-                borderColor: 'white',
+                borderColor: color.secondary,
                 alignItems: 'center',
               }}
               onPress={() => this.setState({activeChat: 2})}>
-              <Text style={{fontSize: 15, fontWeight: '500', color: 'white'}}>
+              <Text
+                style={{
+                  fontSize: 15,
+                  fontWeight: '500',
+                  color: color.secondary,
+                }}>
                 Hora Muhurta
               </Text>
             </TouchableOpacity>
@@ -253,7 +261,7 @@ export default class PanchangData extends Component {
                   horizontal={true}
                   showsHorizontalScrollIndicator={false}
                   style={{
-                    borderColor: 'white',
+                    borderColor: color.secondary,
                     borderWidth: 1,
                     borderRadius: 10,
                     alignSelf: 'center',
@@ -264,7 +272,7 @@ export default class PanchangData extends Component {
                     <DataTable>
                       <DataTable.Header
                         style={{
-                          backgroundColor: '#FABD0B',
+                          backgroundColor: color.themeColor,
                           borderTopRightRadius: 10,
                           borderTopLeftRadius: 10,
                         }}>
@@ -273,7 +281,7 @@ export default class PanchangData extends Component {
                             style={{
                               fontSize: 17,
                               fontWeight: '500',
-                              color: 'white',
+                              color: color.secondary,
                             }}>
                             Name
                           </Text>
@@ -283,7 +291,7 @@ export default class PanchangData extends Component {
                             style={{
                               fontSize: 17,
                               fontWeight: '500',
-                              color: 'white',
+                              color: color.secondary,
                             }}>
                             Sign
                           </Text>
@@ -293,7 +301,7 @@ export default class PanchangData extends Component {
                             style={{
                               fontSize: 17,
                               fontWeight: '500',
-                              color: 'white',
+                              color: color.secondary,
                               marginLeft: 30,
                             }}>
                             Sign Lord
@@ -304,7 +312,7 @@ export default class PanchangData extends Component {
                             style={{
                               fontSize: 17,
                               fontWeight: '500',
-                              color: 'white',
+                              color: color.secondary,
                             }}>
                             Full Degree
                           </Text>
@@ -314,7 +322,7 @@ export default class PanchangData extends Component {
                             style={{
                               fontSize: 17,
                               fontWeight: '500',
-                              color: 'white',
+                              color: color.secondary,
                             }}>
                             Speed
                           </Text>
@@ -324,7 +332,7 @@ export default class PanchangData extends Component {
                             style={{
                               fontSize: 17,
                               fontWeight: '500',
-                              color: 'white',
+                              color: color.secondary,
                             }}>
                             House
                           </Text>
@@ -334,7 +342,7 @@ export default class PanchangData extends Component {
                             style={{
                               fontSize: 17,
                               fontWeight: '500',
-                              color: 'white',
+                              color: color.secondary,
                             }}>
                             Is_Retro
                           </Text>
@@ -344,7 +352,7 @@ export default class PanchangData extends Component {
                             style={{
                               fontSize: 17,
                               fontWeight: '500',
-                              color: 'white',
+                              color: color.secondary,
                             }}>
                             Is_Planet Set
                           </Text>
@@ -354,7 +362,7 @@ export default class PanchangData extends Component {
                             style={{
                               fontSize: 17,
                               fontWeight: '500',
-                              color: 'white',
+                              color: color.secondary,
                             }}>
                             Nakshatra
                           </Text>
@@ -364,7 +372,7 @@ export default class PanchangData extends Component {
                             style={{
                               fontSize: 17,
                               fontWeight: '500',
-                              color: 'white',
+                              color: color.secondary,
                             }}>
                             Nakshatra Lord
                           </Text>
@@ -374,7 +382,7 @@ export default class PanchangData extends Component {
                             style={{
                               fontSize: 17,
                               fontWeight: '500',
-                              color: 'white',
+                              color: color.secondary,
                             }}>
                             Nakshatra Pad
                           </Text>
@@ -384,7 +392,7 @@ export default class PanchangData extends Component {
                             style={{
                               fontSize: 17,
                               fontWeight: '500',
-                              color: 'white',
+                              color: color.secondary,
                             }}>
                             Norm Degree
                           </Text>
@@ -394,7 +402,7 @@ export default class PanchangData extends Component {
                             style={{
                               fontSize: 17,
                               fontWeight: '500',
-                              color: 'white',
+                              color: color.secondary,
                             }}>
                             Planet Awastha
                           </Text>
@@ -407,7 +415,7 @@ export default class PanchangData extends Component {
                               style={{
                                 fontSize: 15,
                                 fontWeight: '400',
-                                color: 'white',
+                                color: color.secondary,
                               }}>
                               {item.name}
                             </Text>
@@ -417,7 +425,7 @@ export default class PanchangData extends Component {
                               style={{
                                 fontSize: 15,
                                 fontWeight: '400',
-                                color: 'white',
+                                color: color.secondary,
                               }}>
                               {item.sign}
                             </Text>
@@ -427,7 +435,7 @@ export default class PanchangData extends Component {
                               style={{
                                 fontSize: 15,
                                 fontWeight: '400',
-                                color: 'white',
+                                color: color.secondary,
                                 alignSelf: 'center',
                               }}>
                               {item.signLord}
@@ -438,7 +446,7 @@ export default class PanchangData extends Component {
                               style={{
                                 fontSize: 15,
                                 fontWeight: '400',
-                                color: 'white',
+                                color: color.secondary,
                                 alignSelf: 'center',
                               }}>
                               {item.fullDegree}
@@ -449,7 +457,7 @@ export default class PanchangData extends Component {
                               style={{
                                 fontSize: 15,
                                 fontWeight: '400',
-                                color: 'white',
+                                color: color.secondary,
                                 alignSelf: 'center',
                               }}>
                               {item.speed}
@@ -461,7 +469,7 @@ export default class PanchangData extends Component {
                               style={{
                                 fontSize: 15,
                                 fontWeight: '400',
-                                color: 'white',
+                                color: color.secondary,
                                 alignSelf: 'center',
                               }}>
                               {item.house}
@@ -472,7 +480,7 @@ export default class PanchangData extends Component {
                               style={{
                                 fontSize: 15,
                                 fontWeight: '400',
-                                color: 'white',
+                                color: color.secondary,
                                 alignSelf: 'center',
                               }}>
                               {item.isRetro.toString()}
@@ -483,7 +491,7 @@ export default class PanchangData extends Component {
                               style={{
                                 fontSize: 15,
                                 fontWeight: '400',
-                                color: 'white',
+                                color: color.secondary,
                                 alignSelf: 'center',
                               }}>
                               {item.is_planet_set.toString()}
@@ -494,7 +502,7 @@ export default class PanchangData extends Component {
                               style={{
                                 fontSize: 15,
                                 fontWeight: '400',
-                                color: 'white',
+                                color: color.secondary,
                                 alignSelf: 'center',
                               }}>
                               {item.nakshatra}
@@ -505,7 +513,7 @@ export default class PanchangData extends Component {
                               style={{
                                 fontSize: 15,
                                 fontWeight: '400',
-                                color: 'white',
+                                color: color.secondary,
                                 alignSelf: 'center',
                               }}>
                               {item.nakshatraLord}
@@ -516,7 +524,7 @@ export default class PanchangData extends Component {
                               style={{
                                 fontSize: 15,
                                 fontWeight: '400',
-                                color: 'white',
+                                color: color.secondary,
                                 alignSelf: 'center',
                               }}>
                               {item.nakshatra_pad}
@@ -527,7 +535,7 @@ export default class PanchangData extends Component {
                               style={{
                                 fontSize: 15,
                                 fontWeight: '400',
-                                color: 'white',
+                                color: color.secondary,
                                 alignSelf: 'center',
                               }}>
                               {item.normDegree}
@@ -538,7 +546,7 @@ export default class PanchangData extends Component {
                               style={{
                                 fontSize: 15,
                                 fontWeight: '400',
-                                color: 'white',
+                                color: color.secondary,
                                 alignSelf: 'center',
                               }}>
                               {item.planet_awastha}
@@ -553,7 +561,7 @@ export default class PanchangData extends Component {
                 <View>
                   <Text
                     style={{
-                      color: 'white',
+                      color: color.secondary,
                       fontWeight: '500',
                       fontSize: 20,
                       textAlign: 'center',
@@ -565,7 +573,7 @@ export default class PanchangData extends Component {
                     horizontal={true}
                     showsHorizontalScrollIndicator={false}
                     style={{
-                      borderColor: 'white',
+                      borderColor: color.secondary,
                       borderWidth: 1,
                       borderRadius: 10,
                       alignSelf: 'center',
@@ -576,7 +584,7 @@ export default class PanchangData extends Component {
                       <DataTable>
                         <DataTable.Header
                           style={{
-                            backgroundColor: '#FABD0B',
+                            backgroundColor: color.themeColor,
                             borderTopRightRadius: 10,
                             borderTopLeftRadius: 10,
                           }}>
@@ -585,7 +593,7 @@ export default class PanchangData extends Component {
                               style={{
                                 fontSize: 17,
                                 fontWeight: '500',
-                                color: 'white',
+                                color: color.secondary,
                               }}>
                               Hora
                             </Text>
@@ -595,7 +603,7 @@ export default class PanchangData extends Component {
                               style={{
                                 fontSize: 17,
                                 fontWeight: '500',
-                                color: 'white',
+                                color: color.secondary,
                               }}>
                               Time
                             </Text>
@@ -608,7 +616,7 @@ export default class PanchangData extends Component {
                                 style={{
                                   fontSize: 15,
                                   fontWeight: '400',
-                                  color: 'white',
+                                  color: color.secondary,
                                 }}>
                                 {item.hora}
                               </Text>
@@ -618,7 +626,7 @@ export default class PanchangData extends Component {
                                 style={{
                                   fontSize: 15,
                                   fontWeight: '400',
-                                  color: 'white',
+                                  color: color.secondary,
                                 }}>
                                 {item.time}
                               </Text>
@@ -630,7 +638,7 @@ export default class PanchangData extends Component {
                   </ScrollView>
                   <Text
                     style={{
-                      color: 'white',
+                      color: color.secondary,
                       fontWeight: '500',
                       fontSize: 20,
                       textAlign: 'center',
@@ -642,7 +650,7 @@ export default class PanchangData extends Component {
                     horizontal={true}
                     showsHorizontalScrollIndicator={false}
                     style={{
-                      borderColor: 'white',
+                      borderColor: color.secondary,
                       borderWidth: 1,
                       borderRadius: 10,
                       alignSelf: 'center',
@@ -653,7 +661,7 @@ export default class PanchangData extends Component {
                       <DataTable>
                         <DataTable.Header
                           style={{
-                            backgroundColor: '#FABD0B',
+                            backgroundColor: color.themeColor,
                             borderTopRightRadius: 10,
                             borderTopLeftRadius: 10,
                           }}>
@@ -662,7 +670,7 @@ export default class PanchangData extends Component {
                               style={{
                                 fontSize: 17,
                                 fontWeight: '500',
-                                color: 'white',
+                                color: color.secondary,
                               }}>
                               Hora
                             </Text>
@@ -672,7 +680,7 @@ export default class PanchangData extends Component {
                               style={{
                                 fontSize: 17,
                                 fontWeight: '500',
-                                color: 'white',
+                                color: color.secondary,
                               }}>
                               Time
                             </Text>
@@ -685,7 +693,7 @@ export default class PanchangData extends Component {
                                 style={{
                                   fontSize: 15,
                                   fontWeight: '400',
-                                  color: 'white',
+                                  color: color.secondary,
                                 }}>
                                 {item.hora}
                               </Text>
@@ -695,7 +703,7 @@ export default class PanchangData extends Component {
                                 style={{
                                   fontSize: 15,
                                   fontWeight: '400',
-                                  color: 'white',
+                                  color: color.secondary,
                                 }}>
                                 {item.time}
                               </Text>
@@ -713,7 +721,7 @@ export default class PanchangData extends Component {
                       marginTop: 20,
                       fontSize: 18,
                       fontWeight: '400',
-                      color: 'white',
+                      color: color.secondary,
                     }}>
                     Day : {'      '}
                     {this.state.AdPg?.day}
@@ -723,7 +731,7 @@ export default class PanchangData extends Component {
                       marginTop: 10,
                       fontSize: 18,
                       fontWeight: '400',
-                      color: 'white',
+                      color: color.secondary,
                     }}>
                     Sunrise : {'      '}
                     {this.state.AdPg?.sunrise}
@@ -733,7 +741,7 @@ export default class PanchangData extends Component {
                       marginTop: 10,
                       fontSize: 18,
                       fontWeight: '400',
-                      color: 'white',
+                      color: color.secondary,
                     }}>
                     Sunset : {'      '}
                     {this.state.AdPg?.sunset}
@@ -743,7 +751,7 @@ export default class PanchangData extends Component {
                       marginTop: 10,
                       fontSize: 18,
                       fontWeight: '400',
-                      color: 'white',
+                      color: color.secondary,
                     }}>
                     Moonrise : {'      '}
                     {this.state.AdPg?.moonrise}
@@ -753,7 +761,7 @@ export default class PanchangData extends Component {
                       marginTop: 10,
                       fontSize: 18,
                       fontWeight: '400',
-                      color: 'white',
+                      color: color.secondary,
                     }}>
                     Moonset : {'      '}
                     {this.state.AdPg?.moonrise}
@@ -763,7 +771,7 @@ export default class PanchangData extends Component {
                       marginTop: 10,
                       fontSize: 18,
                       fontWeight: '400',
-                      color: 'white',
+                      color: color.secondary,
                     }}>
                     Vedic Sunrise : {'      '}
                     {this.state.AdPg?.vedic_sunrise}
@@ -773,7 +781,7 @@ export default class PanchangData extends Component {
                       marginTop: 10,
                       fontSize: 18,
                       fontWeight: '400',
-                      color: 'white',
+                      color: color.secondary,
                     }}>
                     Vedic Sunset : {'      '}
                     {this.state.AdPg?.vedic_sunset}
@@ -783,7 +791,7 @@ export default class PanchangData extends Component {
                       marginTop: 10,
                       fontSize: 18,
                       fontWeight: '400',
-                      color: 'white',
+                      color: color.secondary,
                     }}>
                     Paksha : {'      '}
                     {this.state.AdPg?.paksha}
@@ -793,7 +801,7 @@ export default class PanchangData extends Component {
                       marginTop: 10,
                       fontSize: 18,
                       fontWeight: '400',
-                      color: 'white',
+                      color: color.secondary,
                     }}>
                     Ritu : {'      '}
                     {this.state.AdPg?.ritu}
@@ -803,7 +811,7 @@ export default class PanchangData extends Component {
                       marginTop: 10,
                       fontSize: 18,
                       fontWeight: '400',
-                      color: 'white',
+                      color: color.secondary,
                     }}>
                     Sun Sign : {'      '}
                     {this.state.AdPg?.sun_sign}
@@ -813,7 +821,7 @@ export default class PanchangData extends Component {
                       marginTop: 10,
                       fontSize: 18,
                       fontWeight: '400',
-                      color: 'white',
+                      color: color.secondary,
                     }}>
                     Moon Sign : {'      '}
                     {this.state.AdPg?.moon_sign}
@@ -823,7 +831,7 @@ export default class PanchangData extends Component {
                       marginTop: 10,
                       fontSize: 18,
                       fontWeight: '400',
-                      color: 'white',
+                      color: color.secondary,
                     }}>
                     Ayana : {'      '}
                     {this.state.AdPg?.ayana}
@@ -833,7 +841,7 @@ export default class PanchangData extends Component {
                       marginTop: 10,
                       fontSize: 18,
                       fontWeight: '400',
-                      color: 'white',
+                      color: color.secondary,
                     }}>
                     Panchang Yog : {'      '}
                     {this.state.AdPg?.panchang_yog}
@@ -843,7 +851,7 @@ export default class PanchangData extends Component {
                       marginTop: 10,
                       fontSize: 18,
                       fontWeight: '400',
-                      color: 'white',
+                      color: color.secondary,
                     }}>
                     Vikram Samvat : {'      '}
                     {this.state.AdPg?.vikram_samvat}
@@ -853,7 +861,7 @@ export default class PanchangData extends Component {
                       marginTop: 10,
                       fontSize: 18,
                       fontWeight: '400',
-                      color: 'white',
+                      color: color.secondary,
                     }}>
                     Shaka Samvat : {'      '}
                     {this.state.AdPg?.shaka_samvat}
@@ -863,7 +871,7 @@ export default class PanchangData extends Component {
                       marginTop: 10,
                       fontSize: 18,
                       fontWeight: '400',
-                      color: 'white',
+                      color: color.secondary,
                     }}>
                     Vikram Samvat Name : {'      '}
                     {this.state.AdPg?.vkram_samvat_name}
@@ -873,7 +881,7 @@ export default class PanchangData extends Component {
                       marginTop: 10,
                       fontSize: 18,
                       fontWeight: '400',
-                      color: 'white',
+                      color: color.secondary,
                     }}>
                     Shaka Samvat Name : {'      '}
                     {this.state.AdPg?.shaka_samvat_name}
@@ -883,7 +891,7 @@ export default class PanchangData extends Component {
                       marginTop: 10,
                       fontSize: 18,
                       fontWeight: '400',
-                      color: 'white',
+                      color: color.secondary,
                     }}>
                     Disha Shool : {'      '}
                     {this.state.AdPg?.disha_shool}
@@ -893,7 +901,7 @@ export default class PanchangData extends Component {
                       marginTop: 10,
                       fontSize: 18,
                       fontWeight: '400',
-                      color: 'white',
+                      color: color.secondary,
                     }}>
                     Disha Shool Remedies : {'      '}
                     {this.state.AdPg?.disha_shool_remedies}
@@ -903,7 +911,7 @@ export default class PanchangData extends Component {
                       marginTop: 10,
                       fontSize: 18,
                       fontWeight: '400',
-                      color: 'white',
+                      color: color.secondary,
                     }}>
                     Moon Nivas : {'      '}
                     {this.state.AdPg?.moon_nivas}
@@ -914,7 +922,7 @@ export default class PanchangData extends Component {
                       marginTop: 20,
                       fontSize: 20,
                       fontWeight: '500',
-                      color: 'white',
+                      color: color.secondary,
                       textAlign: 'center',
                     }}>
                     Tithi
@@ -924,7 +932,7 @@ export default class PanchangData extends Component {
                       marginTop: 10,
                       fontSize: 18,
                       fontWeight: '400',
-                      color: 'white',
+                      color: color.secondary,
                     }}>
                     end_time_ms : {'      '}
                     {this.state.AdPg?.tithi?.end_time_ms}
@@ -934,7 +942,7 @@ export default class PanchangData extends Component {
                       marginTop: 10,
                       fontSize: 18,
                       fontWeight: '400',
-                      color: 'white',
+                      color: color.secondary,
                     }}>
                     Details : {'      '}
                   </Text>
@@ -943,7 +951,7 @@ export default class PanchangData extends Component {
                       marginTop: 10,
                       fontSize: 18,
                       fontWeight: '400',
-                      color: 'white',
+                      color: color.secondary,
                     }}>
                     Tithi Number : {'      '}
                     {this.state.AdPg?.tithi?.details?.tithi_number}
@@ -953,7 +961,7 @@ export default class PanchangData extends Component {
                       marginTop: 10,
                       fontSize: 18,
                       fontWeight: '400',
-                      color: 'white',
+                      color: color.secondary,
                     }}>
                     Tithi Name : {'      '}
                     {this.state.AdPg?.tithi?.details?.tithi_name}
@@ -963,7 +971,7 @@ export default class PanchangData extends Component {
                       marginTop: 10,
                       fontSize: 18,
                       fontWeight: '400',
-                      color: 'white',
+                      color: color.secondary,
                     }}>
                     Special : {'      '}
                     {this.state.AdPg?.tithi?.details?.special}
@@ -973,7 +981,7 @@ export default class PanchangData extends Component {
                       marginTop: 10,
                       fontSize: 18,
                       fontWeight: '400',
-                      color: 'white',
+                      color: color.secondary,
                     }}>
                     Summary: {'      '}
                     {this.state.AdPg?.tithi?.details?.summary}
@@ -983,7 +991,7 @@ export default class PanchangData extends Component {
                       marginTop: 10,
                       fontSize: 18,
                       fontWeight: '400',
-                      color: 'white',
+                      color: color.secondary,
                     }}>
                     Deity : {'      '}
                     {this.state.AdPg?.tithi?.details?.deity}
@@ -993,7 +1001,7 @@ export default class PanchangData extends Component {
                       marginTop: 10,
                       fontSize: 18,
                       fontWeight: '400',
-                      color: 'white',
+                      color: color.secondary,
                     }}>
                     End Time : {'      '}
                   </Text>
@@ -1002,7 +1010,7 @@ export default class PanchangData extends Component {
                       marginTop: 10,
                       fontSize: 18,
                       fontWeight: '400',
-                      color: 'white',
+                      color: color.secondary,
                     }}>
                     Hour : {'      '}
                     {this.state.AdPg?.tithi?.end_time?.hour}
@@ -1012,7 +1020,7 @@ export default class PanchangData extends Component {
                       marginTop: 10,
                       fontSize: 18,
                       fontWeight: '400',
-                      color: 'white',
+                      color: color.secondary,
                     }}>
                     Minute : {'      '}
                     {this.state.AdPg?.tithi?.end_time?.minute}
@@ -1022,7 +1030,7 @@ export default class PanchangData extends Component {
                       marginTop: 10,
                       fontSize: 18,
                       fontWeight: '400',
-                      color: 'white',
+                      color: color.secondary,
                     }}>
                     Second : {'      '}
                     {this.state.AdPg?.tithi?.end_time?.second}
@@ -1032,7 +1040,7 @@ export default class PanchangData extends Component {
                       marginTop: 20,
                       fontSize: 20,
                       fontWeight: '500',
-                      color: 'white',
+                      color: color.secondary,
                       textAlign: 'center',
                     }}>
                     Nakshatra
@@ -1042,7 +1050,7 @@ export default class PanchangData extends Component {
                       marginTop: 10,
                       fontSize: 18,
                       fontWeight: '400',
-                      color: 'white',
+                      color: color.secondary,
                     }}>
                     end_time_ms : {'      '}
                     {this.state.AdPg?.nakshatra?.end_time_ms}
@@ -1052,7 +1060,7 @@ export default class PanchangData extends Component {
                       marginTop: 10,
                       fontSize: 18,
                       fontWeight: '400',
-                      color: 'white',
+                      color: color.secondary,
                     }}>
                     Details : {'      '}
                   </Text>
@@ -1061,7 +1069,7 @@ export default class PanchangData extends Component {
                       marginTop: 10,
                       fontSize: 18,
                       fontWeight: '400',
-                      color: 'white',
+                      color: color.secondary,
                     }}>
                     Nakshatra Number : {'      '}
                     {this.state.AdPg?.nakshatra?.details?.nak_number}
@@ -1071,7 +1079,7 @@ export default class PanchangData extends Component {
                       marginTop: 10,
                       fontSize: 18,
                       fontWeight: '400',
-                      color: 'white',
+                      color: color.secondary,
                     }}>
                     Nakshatra Name : {'      '}
                     {this.state.AdPg?.nakshatra?.details?.nak_name}
@@ -1081,7 +1089,7 @@ export default class PanchangData extends Component {
                       marginTop: 10,
                       fontSize: 18,
                       fontWeight: '400',
-                      color: 'white',
+                      color: color.secondary,
                     }}>
                     Special : {'      '}
                     {this.state.AdPg?.nakshatra?.details?.special}
@@ -1091,7 +1099,7 @@ export default class PanchangData extends Component {
                       marginTop: 10,
                       fontSize: 18,
                       fontWeight: '400',
-                      color: 'white',
+                      color: color.secondary,
                     }}>
                     Summary: {'      '}
                     {this.state.AdPg?.nakshatra?.details?.summary}
@@ -1101,7 +1109,7 @@ export default class PanchangData extends Component {
                       marginTop: 10,
                       fontSize: 18,
                       fontWeight: '400',
-                      color: 'white',
+                      color: color.secondary,
                     }}>
                     Deity : {'      '}
                     {this.state.AdPg?.nakshatra?.details?.deity}
@@ -1111,7 +1119,7 @@ export default class PanchangData extends Component {
                       marginTop: 10,
                       fontSize: 18,
                       fontWeight: '400',
-                      color: 'white',
+                      color: color.secondary,
                     }}>
                     End Time : {'      '}
                   </Text>
@@ -1120,7 +1128,7 @@ export default class PanchangData extends Component {
                       marginTop: 10,
                       fontSize: 18,
                       fontWeight: '400',
-                      color: 'white',
+                      color: color.secondary,
                     }}>
                     Hour : {'      '}
                     {this.state.AdPg?.nakshatra?.end_time?.hour}
@@ -1130,7 +1138,7 @@ export default class PanchangData extends Component {
                       marginTop: 10,
                       fontSize: 18,
                       fontWeight: '400',
-                      color: 'white',
+                      color: color.secondary,
                     }}>
                     Minute : {'      '}
                     {this.state.AdPg?.nakshatra?.end_time?.minute}
@@ -1140,7 +1148,7 @@ export default class PanchangData extends Component {
                       marginTop: 10,
                       fontSize: 18,
                       fontWeight: '400',
-                      color: 'white',
+                      color: color.secondary,
                     }}>
                     Second : {'      '}
                     {this.state.AdPg?.nakshatra?.end_time?.second}
@@ -1150,7 +1158,7 @@ export default class PanchangData extends Component {
                       marginTop: 20,
                       fontSize: 20,
                       fontWeight: '500',
-                      color: 'white',
+                      color: color.secondary,
                       textAlign: 'center',
                     }}>
                     Yog
@@ -1160,7 +1168,7 @@ export default class PanchangData extends Component {
                       marginTop: 10,
                       fontSize: 18,
                       fontWeight: '400',
-                      color: 'white',
+                      color: color.secondary,
                     }}>
                     end_time_ms : {'      '}
                     {this.state.AdPg?.yog?.end_time_ms}
@@ -1170,7 +1178,7 @@ export default class PanchangData extends Component {
                       marginTop: 10,
                       fontSize: 18,
                       fontWeight: '400',
-                      color: 'white',
+                      color: color.secondary,
                     }}>
                     Details : {'      '}
                   </Text>
@@ -1179,7 +1187,7 @@ export default class PanchangData extends Component {
                       marginTop: 10,
                       fontSize: 18,
                       fontWeight: '400',
-                      color: 'white',
+                      color: color.secondary,
                     }}>
                     Yog Number : {'      '}
                     {this.state.AdPg?.yog?.details?.yog_number}
@@ -1189,7 +1197,7 @@ export default class PanchangData extends Component {
                       marginTop: 10,
                       fontSize: 18,
                       fontWeight: '400',
-                      color: 'white',
+                      color: color.secondary,
                     }}>
                     Yog Name : {'      '}
                     {this.state.AdPg?.yog?.details?.yog_name}
@@ -1199,7 +1207,7 @@ export default class PanchangData extends Component {
                       marginTop: 10,
                       fontSize: 18,
                       fontWeight: '400',
-                      color: 'white',
+                      color: color.secondary,
                     }}>
                     Special : {'      '}
                     {this.state.AdPg?.yog?.details?.special}
@@ -1209,7 +1217,7 @@ export default class PanchangData extends Component {
                       marginTop: 10,
                       fontSize: 18,
                       fontWeight: '400',
-                      color: 'white',
+                      color: color.secondary,
                     }}>
                     Meaning: {'      '}
                     {this.state.AdPg?.yog?.details?.meaning}
@@ -1219,7 +1227,7 @@ export default class PanchangData extends Component {
                       marginTop: 10,
                       fontSize: 18,
                       fontWeight: '400',
-                      color: 'white',
+                      color: color.secondary,
                     }}>
                     End Time : {'      '}
                   </Text>
@@ -1228,7 +1236,7 @@ export default class PanchangData extends Component {
                       marginTop: 10,
                       fontSize: 18,
                       fontWeight: '400',
-                      color: 'white',
+                      color: color.secondary,
                     }}>
                     Hour : {'      '}
                     {this.state.AdPg?.yog?.end_time?.hour}
@@ -1238,7 +1246,7 @@ export default class PanchangData extends Component {
                       marginTop: 10,
                       fontSize: 18,
                       fontWeight: '400',
-                      color: 'white',
+                      color: color.secondary,
                     }}>
                     Minute : {'      '}
                     {this.state.AdPg?.yog?.end_time?.minute}
@@ -1248,7 +1256,7 @@ export default class PanchangData extends Component {
                       marginTop: 10,
                       fontSize: 18,
                       fontWeight: '400',
-                      color: 'white',
+                      color: color.secondary,
                     }}>
                     Second : {'      '}
                     {this.state.AdPg?.yog?.end_time?.second}
@@ -1258,7 +1266,7 @@ export default class PanchangData extends Component {
                       marginTop: 20,
                       fontSize: 20,
                       fontWeight: '500',
-                      color: 'white',
+                      color: color.secondary,
                       textAlign: 'center',
                     }}>
                     Karan
@@ -1268,7 +1276,7 @@ export default class PanchangData extends Component {
                       marginTop: 10,
                       fontSize: 18,
                       fontWeight: '400',
-                      color: 'white',
+                      color: color.secondary,
                     }}>
                     end_time_ms : {'      '}
                     {this.state.AdPg?.karan?.end_time_ms}
@@ -1278,7 +1286,7 @@ export default class PanchangData extends Component {
                       marginTop: 10,
                       fontSize: 18,
                       fontWeight: '400',
-                      color: 'white',
+                      color: color.secondary,
                     }}>
                     Details : {'      '}
                   </Text>
@@ -1287,7 +1295,7 @@ export default class PanchangData extends Component {
                       marginTop: 10,
                       fontSize: 18,
                       fontWeight: '400',
-                      color: 'white',
+                      color: color.secondary,
                     }}>
                     Karan Number : {'      '}
                     {this.state.AdPg?.karan?.details?.karan_number}
@@ -1297,7 +1305,7 @@ export default class PanchangData extends Component {
                       marginTop: 10,
                       fontSize: 18,
                       fontWeight: '400',
-                      color: 'white',
+                      color: color.secondary,
                     }}>
                     Karan Name : {'      '}
                     {this.state.AdPg?.karan?.details?.karan_name}
@@ -1307,7 +1315,7 @@ export default class PanchangData extends Component {
                       marginTop: 10,
                       fontSize: 18,
                       fontWeight: '400',
-                      color: 'white',
+                      color: color.secondary,
                     }}>
                     Special : {'      '}
                     {this.state.AdPg?.karan?.details?.special}
@@ -1317,7 +1325,7 @@ export default class PanchangData extends Component {
                       marginTop: 10,
                       fontSize: 18,
                       fontWeight: '400',
-                      color: 'white',
+                      color: color.secondary,
                     }}>
                     Deity : {'      '}
                     {this.state.AdPg?.karan?.details?.deity}
@@ -1327,7 +1335,7 @@ export default class PanchangData extends Component {
                       marginTop: 10,
                       fontSize: 18,
                       fontWeight: '400',
-                      color: 'white',
+                      color: color.secondary,
                     }}>
                     End Time : {'      '}
                   </Text>
@@ -1336,7 +1344,7 @@ export default class PanchangData extends Component {
                       marginTop: 10,
                       fontSize: 18,
                       fontWeight: '400',
-                      color: 'white',
+                      color: color.secondary,
                     }}>
                     Hour : {'      '}
                     {this.state.AdPg?.karan?.end_time?.hour}
@@ -1346,7 +1354,7 @@ export default class PanchangData extends Component {
                       marginTop: 10,
                       fontSize: 18,
                       fontWeight: '400',
-                      color: 'white',
+                      color: color.secondary,
                     }}>
                     Minute : {'      '}
                     {this.state.AdPg?.karan?.end_time?.minute}
@@ -1356,7 +1364,7 @@ export default class PanchangData extends Component {
                       marginTop: 10,
                       fontSize: 18,
                       fontWeight: '400',
-                      color: 'white',
+                      color: color.secondary,
                     }}>
                     Second : {'      '}
                     {this.state.AdPg?.karan?.end_time?.second}
@@ -1366,7 +1374,7 @@ export default class PanchangData extends Component {
                       marginTop: 20,
                       fontSize: 20,
                       fontWeight: '500',
-                      color: 'white',
+                      color: color.secondary,
                       textAlign: 'center',
                     }}>
                     Hindu Mah
@@ -1376,7 +1384,7 @@ export default class PanchangData extends Component {
                       marginTop: 10,
                       fontSize: 18,
                       fontWeight: '400',
-                      color: 'white',
+                      color: color.secondary,
                     }}>
                     Adhik Status : {'      '}
                     {this.state.AdPg?.hindu_maah?.adhik_status.toString()}
@@ -1386,7 +1394,7 @@ export default class PanchangData extends Component {
                       marginTop: 10,
                       fontSize: 18,
                       fontWeight: '400',
-                      color: 'white',
+                      color: color.secondary,
                     }}>
                     Purnimanta : {'      '}
                     {this.state.AdPg?.hindu_maah?.purnimanta}
@@ -1396,7 +1404,7 @@ export default class PanchangData extends Component {
                       marginTop: 10,
                       fontSize: 18,
                       fontWeight: '400',
-                      color: 'white',
+                      color: color.secondary,
                     }}>
                     Amanta : {'      '}
                     {this.state.AdPg?.hindu_maah?.amanta}
@@ -1406,7 +1414,7 @@ export default class PanchangData extends Component {
                       marginTop: 10,
                       fontSize: 18,
                       fontWeight: '400',
-                      color: 'white',
+                      color: color.secondary,
                     }}>
                     Amanta id : {'      '}
                     {this.state.AdPg?.hindu_maah?.amanta_id}
@@ -1416,7 +1424,7 @@ export default class PanchangData extends Component {
                       marginTop: 10,
                       fontSize: 18,
                       fontWeight: '400',
-                      color: 'white',
+                      color: color.secondary,
                     }}>
                     Purnimanta Id : {'      '}
                     {this.state.AdPg?.hindu_maah?.purnimanta_id}
@@ -1426,7 +1434,7 @@ export default class PanchangData extends Component {
                       marginTop: 20,
                       fontSize: 20,
                       fontWeight: '500',
-                      color: 'white',
+                      color: color.secondary,
                       textAlign: 'center',
                     }}>
                     Nak Shool
@@ -1436,7 +1444,7 @@ export default class PanchangData extends Component {
                       marginTop: 10,
                       fontSize: 18,
                       fontWeight: '400',
-                      color: 'white',
+                      color: color.secondary,
                     }}>
                     Direction : {'      '}
                     {this.state.AdPg?.nak_shool?.direction}
@@ -1446,7 +1454,7 @@ export default class PanchangData extends Component {
                       marginTop: 10,
                       fontSize: 18,
                       fontWeight: '400',
-                      color: 'white',
+                      color: color.secondary,
                     }}>
                     Remedies : {'      '}
                     {this.state.AdPg?.nak_shool?.remedies}
@@ -1456,7 +1464,7 @@ export default class PanchangData extends Component {
                       marginTop: 20,
                       fontSize: 20,
                       fontWeight: '500',
-                      color: 'white',
+                      color: color.secondary,
                       textAlign: 'center',
                     }}>
                     Abhijit Muhurta
@@ -1466,7 +1474,7 @@ export default class PanchangData extends Component {
                       marginTop: 10,
                       fontSize: 18,
                       fontWeight: '400',
-                      color: 'white',
+                      color: color.secondary,
                     }}>
                     Start : {'      '}
                     {this.state.AdPg?.abhijit_muhurta?.start}
@@ -1476,7 +1484,7 @@ export default class PanchangData extends Component {
                       marginTop: 10,
                       fontSize: 18,
                       fontWeight: '400',
-                      color: 'white',
+                      color: color.secondary,
                     }}>
                     End : {'      '}
                     {this.state.AdPg?.abhijit_muhurta?.end}
@@ -1486,7 +1494,7 @@ export default class PanchangData extends Component {
                       marginTop: 20,
                       fontSize: 20,
                       fontWeight: '500',
-                      color: 'white',
+                      color: color.secondary,
                       textAlign: 'center',
                     }}>
                     Rahukaal
@@ -1496,7 +1504,7 @@ export default class PanchangData extends Component {
                       marginTop: 10,
                       fontSize: 18,
                       fontWeight: '400',
-                      color: 'white',
+                      color: color.secondary,
                     }}>
                     Start : {'      '}
                     {this.state.AdPg?.rahukaal?.start}
@@ -1506,7 +1514,7 @@ export default class PanchangData extends Component {
                       marginTop: 10,
                       fontSize: 18,
                       fontWeight: '400',
-                      color: 'white',
+                      color: color.secondary,
                     }}>
                     End : {'      '}
                     {this.state.AdPg?.rahukaal?.end}
@@ -1516,7 +1524,7 @@ export default class PanchangData extends Component {
                       marginTop: 20,
                       fontSize: 20,
                       fontWeight: '500',
-                      color: 'white',
+                      color: color.secondary,
                       textAlign: 'center',
                     }}>
                     GuliKaal
@@ -1526,7 +1534,7 @@ export default class PanchangData extends Component {
                       marginTop: 10,
                       fontSize: 18,
                       fontWeight: '400',
-                      color: 'white',
+                      color: color.secondary,
                     }}>
                     Start : {'      '}
                     {this.state.AdPg?.guliKaal?.start}
@@ -1536,7 +1544,7 @@ export default class PanchangData extends Component {
                       marginTop: 10,
                       fontSize: 18,
                       fontWeight: '400',
-                      color: 'white',
+                      color: color.secondary,
                     }}>
                     End : {'      '}
                     {this.state.AdPg?.guliKaal?.end}
@@ -1546,7 +1554,7 @@ export default class PanchangData extends Component {
                       marginTop: 20,
                       fontSize: 20,
                       fontWeight: '500',
-                      color: 'white',
+                      color: color.secondary,
                       textAlign: 'center',
                     }}>
                     Yamghant Kaal
@@ -1556,7 +1564,7 @@ export default class PanchangData extends Component {
                       marginTop: 10,
                       fontSize: 18,
                       fontWeight: '400',
-                      color: 'white',
+                      color: color.secondary,
                     }}>
                     Start : {'      '}
                     {this.state.AdPg?.yamghant_kaal?.start}
@@ -1566,7 +1574,7 @@ export default class PanchangData extends Component {
                       marginTop: 10,
                       fontSize: 18,
                       fontWeight: '400',
-                      color: 'white',
+                      color: color.secondary,
                       marginBottom: 30,
                     }}>
                     End : {'      '}
